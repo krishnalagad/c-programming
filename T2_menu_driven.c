@@ -3,7 +3,7 @@
 int main(void)
 {
     int num1, num2, choice, ans;
-    char ch;
+    char ch = 'y';
 
     do
     {
@@ -22,7 +22,8 @@ int main(void)
             printf("Addition is %d ", ans);
 
             printf("\nDo you want to continue (y/n): ");
-            scanf("%c", &ch);
+            scanf(" %c", &ch);
+            printf("\n");
             break;
         case 2:
             break;
@@ -32,9 +33,10 @@ int main(void)
             break;
         case 5:
             ch = 'n';
+            printf("\nExiting application, Bye !\n\n");
             break;
         default:
-            printf("Please enter correct choice");
+            printf("Please enter correct choice\n");
             break;
         }
     } while (ch == 'y' || ch == 'Y');

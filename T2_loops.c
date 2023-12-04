@@ -1,14 +1,16 @@
-#include<stdio.h>
+#include <stdio.h>
 
 int main(int argc, char const *argv[])
 {
-    int i, sum = 0;
-    for ( i = 0; i <= 10; i++)
+    int num, i, rev = 0;
+    printf("Enter number: ");
+    scanf("%d", &num);
+    while (num > 0)
     {
-        sum += i;
+        int rem = num % 10;
+        rev = (rev * 10) + rem;
+        num /= 10;
     }
-
-    sum = 10 * (10 + 1) / 2;
-    printf("%d", sum);
+    printf("\nReverse of number: %d\n\n", rev);
     return 0;
 }
