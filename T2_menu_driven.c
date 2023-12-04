@@ -26,17 +26,52 @@ int main(void)
             printf("\n");
             break;
         case 2:
+            printf("Enter number 1: ");
+            scanf("%d", &num1);
+            printf("Enter number 2: ");
+            scanf("%d", &num2);
+            ans = num1 - num2;
+            printf("Substraction is %d ", ans);
+
+            printf("\nDo you want to continue (y/n): ");
+            scanf(" %c", &ch);
+            printf("\n");
             break;
         case 3:
+            printf("Enter number 1: ");
+            scanf("%d", &num1);
+            printf("Enter number 2: ");
+            scanf("%d", &num2);
+            ans = num1 * num2;
+            printf("Multiplication is %d ", ans);
+
+            printf("\nDo you want to continue (y/n): ");
+            scanf(" %c", &ch);
+            printf("\n");
             break;
         case 4:
+            printf("Enter number 1: ");
+            scanf("%d", &num1);
+            printf("Enter number 2: ");
+            scanf("%d", &num2);
+            if (num2 == 0){
+                printf("\n Can't perfrom division by zero\n\n");
+                break;
+            } else {
+                ans = num1 / num2;
+            }
+            printf("Division is %d ", ans);
+
+            printf("\nDo you want to continue (y/n): ");
+            scanf(" %c", &ch);
+            printf("\n");
             break;
         case 5:
             ch = 'n';
             printf("\nExiting application, Bye !\n\n");
             break;
         default:
-            printf("Please enter correct choice\n");
+            printf("Please enter correct choice\n\n");
             break;
         }
     } while (ch == 'y' || ch == 'Y');
