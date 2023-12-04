@@ -1,0 +1,1 @@
+void chechNumber(int num);
