@@ -39,5 +39,11 @@ int main(void)
     }
     printf("\n");
 
+    // String compare
+    char str3[] = {"krishna"};
+    char str2[] = {"lagad"};
+    int len = strcmp(str3, str2);
+    printf("Comparision: %d\n", len);
+
     return 0;
 }
