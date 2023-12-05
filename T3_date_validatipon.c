@@ -5,7 +5,7 @@ int isLeapYear(int year) {
     if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)) {
         return 1; // Leap year
     } else {
-        return 0; // Not a leap year
+        return 0; // Not leap year
     }
 }
 
@@ -23,7 +23,7 @@ int isValidDate(int day, int month, int year) {
     } else if ((month == 4 || month == 6 || month == 9 || month == 11) && (day < 1 || day > 30)) {
         return 0; // Invalid day
     } else if (month == 2) {
-        // Check for February, considering leap year
+        // Check for February for leap year
         if (isLeapYear(year) && (day < 1 || day > 29)) {
             return 0; // Invalid day in leap year
         } else if (!isLeapYear(year) && (day < 1 || day > 28)) {
@@ -31,9 +31,9 @@ int isValidDate(int day, int month, int year) {
         }
     }
 
-    // Validate year (you can add your own criteria if needed)
+    // Validate year 
     if (year < 0) {
-        return 0; // Invalid year (assuming years cannot be negative)
+        return 0; // Invalid year 
     }
 
     // If all validations pass, return 1 (valid date)
@@ -47,7 +47,6 @@ int main(void) {
     printf("Enter date (day/month/year): ");
     scanf("%d/%d/%d", &day, &month, &year);
 
-    // Perform date validation
     if (isValidDate(day, month, year)) {
         printf("The date is valid.\n");
     } else {
