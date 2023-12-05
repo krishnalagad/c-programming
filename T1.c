@@ -39,8 +39,12 @@ int main()
         case 3:
             printf("Three\n");
             break;
+
+    // -------------------------------------------------------------------------
         
-        
+        int x = -1, y = 5;
+        int z = ++x || ++y;
+        printf("\nx = %d, y = %d, z = %d\n\n", x, y, z);
     }
 
     return 0;
