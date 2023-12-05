@@ -45,7 +45,25 @@ int main(void)
     int len = strcmp(str3, str2);
     printf("Comparision: %d\n", len);
 
-    
-
+    // String reverse
+    char str4[] = {"Krishna"};
+    printf("\nBefore reverse: %s", str4);
+    reverseString(str4);
+    printf("\nAfter reverse: %s\n", str4);
     return 0;
+}
+
+void reverseString(char *str) {
+    int start = 0;
+    int end = strlen(str) - 1;
+
+    while (start < end){
+        char temp = str[start];
+        str[start] = str[end];
+        str[end] = temp;
+
+        start++;
+        end--;
+    }
+    
 }
