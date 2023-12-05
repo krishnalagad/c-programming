@@ -18,5 +18,11 @@ int main(void){
     printf("\nBitwise OR: %d\n", num3);
     num3 = num1 ^ num2;
     printf("\nBitwise XOR: %d\n", num3);
+
+    // --------------------------------------------------------------------------------
+
+    char strArr[] = {"Krishna", "Dilip", "Lagad"};
+    int len = sizeof(strArr);
+    printf("\nSize: %d\n", len);
     return 0;
 }
