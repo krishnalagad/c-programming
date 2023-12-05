@@ -21,8 +21,5 @@ int main(void){
 
     // --------------------------------------------------------------------------------
 
-    char strArr[] = {"Krishna", "Dilip", "Lagad"};
-    int len = sizeof(strArr);
-    printf("\nSize: %d\n", len);
     return 0;
 }
