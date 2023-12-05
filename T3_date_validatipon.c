@@ -43,7 +43,7 @@ int isValidDate(int day, int month, int year) {
 int main(void) {
     int day, month, year;
 
-    // Input date in the format "day/month/year"
+    // Input date in the format day/month/year
     printf("Enter date (day/month/year): ");
     scanf("%d/%d/%d", &day, &month, &year);
 
