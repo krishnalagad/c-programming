@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 
 int main(void)
 {
@@ -8,19 +9,27 @@ int main(void)
     // printf("%d\n", a);
     // return 0;
 
-    int i = 1;
-    while (i < 10){       // condition in while loop in must.
-        printf("%d\n", i++);
-        // if (i > 10){
-        //     break;
-        // }
+    // int i = 1;
+    // while (i < 10){       // condition in while loop in must.
+    //     printf("%d\n", i++);
+    //     // if (i > 10){
+    //     //     break;
+    //     // }
         
-    }
+    // }
+
+    char str[20];
+    printf("Enter nmae: ");
+    scanf("%s", str);
+    printf("\nReversed: %s", strsep(str));
     
 }
-int func(float num)
-// float num;
-{
-    return ((int)num);
-}
-// int a = 20;
+
+
+
+// int func(float num)
+// // float num;
+// {
+//     return ((int)num);
+// }
+// // int a = 20;
