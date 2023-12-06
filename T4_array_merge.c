@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int main(void) {
-    int arr[] = {35, 66, 23, 99, 112, 12};
+    int arr[] = {35, 66, 23, 99, 112, 12, 224, 446, 123, 900};
     int eIndex = 0, oIndex = 0;
     int size = sizeof(arr) / sizeof(arr[0]);
     int arr1[size];
