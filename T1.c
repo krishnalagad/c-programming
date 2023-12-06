@@ -2,6 +2,21 @@
 
 int main()
 {
+    // int no = 10;
+    // if (no == 7)
+    // {
+    //     printf("no==7");
+    // }
+    // else if (no == 8)
+    // {
+    //      printf("no==8");
+    // }
+    // else 
+    // {
+    //     printf("no==10");
+    // }
+    
+    
     // int *arr[10]; // array of integer pointers
     // int(*p)[6];   // p is pointer to an array
     // int x = -10, y = -1;
