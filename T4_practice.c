@@ -3,10 +3,11 @@
 int main(void) {
     extern int fun(float);
     int a;
-    a = fun(3.14);
+    a = func(3.14);
     printf("%d\n", a);
+    return 0;
 }
-int fun(float num)
+int func(float num)
 // float num;
 {
     return ((int) num);
