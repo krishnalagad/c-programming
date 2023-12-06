@@ -27,18 +27,7 @@ int main(void) {
 
     int size1 = eIndex;
     int size2 = oIndex;
-    printf("\n");
-    for (int i = 0; i < eIndex; i++){
-        printf("%d ", arr1[i]);
-    }
-    printf("\n");
-    for (int i = 0; i < oIndex; i++){
-        printf("%d ", arr2[i]);
-    }
-    printf("\n");
-
     int mergedArr[size1 + size2];
-
     int i, j, k;
     i = j = k = 0;
 
