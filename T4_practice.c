@@ -3,6 +3,17 @@
 
 int main(void)
 {
+
+    int a = 10, b;
+    a >= 5 ? b = 100: (b = 200);
+    printf("%d\n", b);
+
+    char str[] = "Krishna lagad is my name";
+    int c = 5;
+    printf("%d %d\n", c++, c++);
+    int len = printf(c > 10 ? "%50s\n" : "%s\n", str);
+    printf("%d\n", len);
+
     // extern int func(float);
     // int a;
     // a = func(3.14);
@@ -18,10 +29,10 @@ int main(void)
         
     // }
 
-    char str[20];
-    printf("Enter nmae: ");
-    scanf("%s", str);
-    printf("\nReversed: %s", strsep(str));
+    // char str[20];
+    // printf("Enter nmae: ");
+    // scanf("%s", str);
+    // printf("\nReversed: %s", strrev(str));  // function doen't exist
     
 }
 

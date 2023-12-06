@@ -24,28 +24,29 @@ int main()
 
     // -----------------------------------------------------------------------
 
-    int choice = 3;
+    int choice = 2;
     switch (choice)
     {
-        default:
-            printf("Default\n");
-            break;
-        case 1:
-            printf("\nOne\n");
-            break;
-        case 2:
-            printf("Two\n");
-            break;
-        case 3:
-            printf("Three\n");
-            break;
+        // printf("Hello Guys");   // this statement never get executed.
+        // case 1:
+        //     printf("\nOne\n");
+        //     break;
+        // case 2*2/2:
+        //     printf("Two\n");
+        //     break;
+        // case 3:
+        //     printf("Three\n");
+        //     break;
+        // default:
+        //     printf("Default\n");
+        //     break;
+    }
 
     // -------------------------------------------------------------------------
         
-        int x = -1, y = 5;
-        int z = ++x || ++y;
-        printf("\nx = %d, y = %d, z = %d\n\n", x, y, z);
-    }
+    int x = -1, y = 5;
+    int z = ++x || ++y;
+    printf("\nx = %d, y = %d, z = %d\n\n", x, y, z);
 
     return 0;
 }
