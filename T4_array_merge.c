@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int main(void) {
-    int arr[] = {5, 12, 16, 3, 7, 8};
+    int arr[] = {35, 66, 23, 99, 112, 12};
     int eIndex = 0, oIndex = 0;
     int size = sizeof(arr) / sizeof(arr[0]);
     int arr1[size];
@@ -27,24 +27,36 @@ int main(void) {
 
     int size1 = eIndex;
     int size2 = oIndex;
+    printf("\n");
+    for (int i = 0; i < eIndex; i++){
+        printf("%d ", arr1[i]);
+    }
+    printf("\n");
+    for (int i = 0; i < oIndex; i++){
+        printf("%d ", arr2[i]);
+    }
+    printf("\n");
 
     int mergedArr[size1 + size2];
 
     int i, j, k;
     i = j = k = 0;
 
+    // compare 1st element of both arrays to get smallest one.
+    if (arr1[i] < arr2[j]){
+        mergedArr[k++] = arr1[i++];
+        mergedArr[k++] = arr2[j++];
+    } else {
+        mergedArr[k++] = arr2[j++];
+        mergedArr[k++] = arr1[i++];
+    }  
     // add elements alternatively into merged array.
     while (i < size1 && j < size2){
         if (arr1[i] == 0 || arr2[j] == 0){
             continue;
         }
-        if (arr1[i] < arr2[j]){
-            mergedArr[k++] = arr1[i++];
-            mergedArr[k++] = arr2[j++];
-        } else {
-            mergedArr[k++] = arr2[j++];
-            mergedArr[k++] = arr1[i++];
-        }  
+        mergedArr[k++] = arr1[i++];
+        mergedArr[k++] = arr2[j++];
     }
     
     // if there are remaining elements in array1
