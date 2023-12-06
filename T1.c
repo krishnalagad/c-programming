@@ -24,17 +24,17 @@ int main()
 
     // -----------------------------------------------------------------------
 
-    int choice = 1;
+    int choice = 3;
     switch (choice)
     {
         default:
-        printf("Default\n");
-        // break;
+            printf("Default\n");
+            break;
         case 1:
             printf("\nOne\n");
-            // break;
+            break;
         case 2:
-        printf("Two\n");
+            printf("Two\n");
             break;
         case 3:
             printf("Three\n");

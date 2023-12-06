@@ -1,7 +1,8 @@
 #include <stdio.h>
 
-int main(void) {
-    extern int fun(float);
+int main(void)
+{
+    extern int func(float);
     int a;
     a = func(3.14);
     printf("%d\n", a);
@@ -10,6 +11,6 @@ int main(void) {
 int func(float num)
 // float num;
 {
-    return ((int) num);
+    return ((int)num);
 }
 // int a = 20;
