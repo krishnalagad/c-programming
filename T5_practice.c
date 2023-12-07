@@ -30,7 +30,7 @@ int main(void) {
     // solution(ptr);
     // printf("\nValue: %d\n\n", a);
     int eSum, oSum;
-    calculate(&eSum, &oSum, 20);
+    calculate(&eSum, &oSum, 10);
     printf("\nSum of even numbers: %d \nSum of odd numbers: %d\n", eSum, oSum);
     return 1;
 }
