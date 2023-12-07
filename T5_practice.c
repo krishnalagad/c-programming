@@ -1,27 +1,14 @@
 #include <stdio.h>
 
+void solution(int *p) {
+    printf("\nEnter number: ");
+    scanf("%d", p);
+}
 int main(void) {
 
-    int a = 10;
-    printf("%d", a>>2);
-    // int ch = 'a';
-    // switch (ch)
-    // {
-    //     case 'a':
-    //         printf("\na\n");
-    //         break;
-    //     case 'b':
-    //         printf("\nb\n");
-    //         break;
-    //     case 'c':
-    //         printf("\nc\n");
-    //         break;
-    //     case 'k' + 'a':
-    //         printf("\nk\n");
-    //         break;
-        
-    //     default:
-    //         printf("Default");
-    //         break;
-    // }
+    int a;
+    int *ptr = &a;
+    solution(ptr);
+    printf("\nValue: %d\n\n", a);
+    return 1;
 }
