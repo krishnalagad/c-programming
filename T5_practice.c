@@ -4,6 +4,7 @@ void solution(int *p) {
     printf("\nEnter number: ");
     scanf("%d", p);
 }
+
 int main(void) {
 
     int a;
