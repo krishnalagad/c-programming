@@ -12,7 +12,7 @@ int solution(int *arr, int target) {
 
 int main(void) {
 
-    int arr[] = {2,3,4, 6, 7};
+    int arr[] = {2, 3, 4, 6, 7};
     int target = 9;
     int res = solution(arr, target);
     return 0;
