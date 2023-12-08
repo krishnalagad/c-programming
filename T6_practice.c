@@ -2,6 +2,7 @@
 #define SIZE 9
 
 void reverse(int *arr, int len) {
+    printf("Reverse array: ");
     for (int i = len - 1; i >= 0; i--)
         printf("%d ", *(arr + i));
     printf("\n");
@@ -29,27 +30,37 @@ void sortArray(int *arr, int len) {
             } 
         }   
     } 
+    printf("Sorted array: ");
     for (int i = 0; i < len; i++){
         printf("%d ", *(arr + i));
     }
-     printf("\n");
 }
 
-void findMaxithoutSort(int *arr, int len) {
-    
+void findMaxWithoutSort(int *arr, int len) {
+    int max = arr[0];
+    int min = arr[0];
+    for (int i = 1; i < len; i++){
+        if (arr[i] > max)
+            max = arr[i]; 
+        else if (arr[i] < min)
+            min = arr[i];
+    }
+         
+    printf("\nMaximun element: %d, Minimum element: %d\n", max, min);    
 }
 
 int main(void) {
     int arr[SIZE] = {5, 7, 12, 34, 89, 7, 12, 7, 34};
     int len = sizeof(arr) / sizeof(arr[0]);
     int element;
-    // reverse(arr, len);
+    reverse(arr, len);
 
     // printf("Enter number: ");
     // scanf("%d", &element);
     // countOccurance(arr, len, element);
 
     sortArray(arr, len);
+    findMaxWithoutSort(arr, len);
 
     return 1;
 }
