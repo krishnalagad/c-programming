@@ -19,6 +19,6 @@ int main(void) {
         items += 1;
     } while (amount > 0);
 
-    printf("Total items purchased are: %d\n\n", items);
+    printf("\nTotal items purchased are: %d\n\n", items);
     return 1;
 }
