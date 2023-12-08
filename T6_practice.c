@@ -28,7 +28,15 @@ void sortArray(int *arr, int len) {
                 arr[j + 1] = temp;
             } 
         }   
-    }  
+    } 
+    for (int i = 0; i < len; i++){
+        printf("%d ", *(arr + i));
+    }
+     printf("\n");
+}
+
+void findMaxithoutSort(int *arr, int len) {
+    
 }
 
 int main(void) {
@@ -37,9 +45,9 @@ int main(void) {
     int element;
     // reverse(arr, len);
 
-    printf("Enter number: ");
-    scanf("%d", &element);
-    countOccurance(arr, len, element);
+    // printf("Enter number: ");
+    // scanf("%d", &element);
+    // countOccurance(arr, len, element);
 
     sortArray(arr, len);
 
