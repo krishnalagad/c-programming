@@ -11,7 +11,7 @@ int main(void) {
             continue;;
         }
         if (amount < curAmt){
-            printf("\nYou dont have enough amount to purchase, try purchasing items of cost Rs.5\n");
+            printf("\nYou dont have enough amount to purchase Rs.20 items, try purchasing items of cost Rs.5\n");
             continue;
         }
         
@@ -19,6 +19,6 @@ int main(void) {
         items += 1;
     } while (amount > 0);
 
-    printf("Total items purchased are: %d", items);
+    printf("Total items purchased are: %d\n\n", items);
     return 1;
 }
