@@ -10,7 +10,7 @@ int main(void) {
             printf("\nYou can't purchase items of prices other than Rs.20 & Rs.5\n");
             continue;
         }
-        if(curAmt == 6 || curAmt == 19) {
+        if(curAmt > 5 && curAmt < 20) {
             printf("\nYou can't purchase items of prices other than Rs.20 & Rs.5\n");
             continue;
         }
