@@ -21,10 +21,17 @@ int main(void) {
     printf("How many elements you want to store: ");
     scanf("%d", &n);
 
-    int *ptr = (int*) malloc(n * sizeof(int));
+    int *ptr = (int*) calloc(n, sizeof(int));
 
     accept(ptr, n);
     display(ptr, n);
+
+    int n1;
+    printf("Want to allocate more memory? How many elements: ");
+    scanf("%d", &n1);
+    ptr = (int*) realloc(ptr, (n + n1) * sizeof(int));
+
+    display(ptr, (n + n1));
 
     free(ptr);
     return 1;
