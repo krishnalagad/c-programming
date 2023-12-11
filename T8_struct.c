@@ -5,11 +5,11 @@ struct T8_practice
     int marks[5];
 }stud;  // default value is 0
 
-struct Employee{
+typedef struct Employee{
     int empId;
     char name[30];
     double salary;
-};
+} Emp;
 
 
 void acceptData(struct Employee *ptr) {
@@ -21,7 +21,7 @@ void acceptData(struct Employee *ptr) {
     scanf("%lf", &ptr->salary);
 }
 
-void display(struct Employee emp) {
+void display(Emp emp) {
     printf("\nEmployee Details\n");
     printf("Id: %d\n", emp.empId);
     printf("Name: %s\n", emp.name);
@@ -43,8 +43,10 @@ int main(void) {
 
     // -----------------------------------------------------------------------------------
 
-    struct Employee employee;
-    acceptData(&employee);
-    display(employee);
+    // struct Employee employee;
+    Emp employee;
+    Emp *e1 = &employee;
+    acceptData(e1);
+    display(*e1);
 
 }
