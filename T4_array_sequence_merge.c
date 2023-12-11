@@ -1,4 +1,7 @@
 #include <stdio.h>
+struct Output{
+    int out[100];
+};
 
 int main(void) {
     int arr[] = {35, 66, 23, 99, 112, 12, 224, 446, 123, 900};
@@ -57,9 +60,14 @@ int main(void) {
     while (j < size2){
         mergedArr[k++] = arr2[j++];
     }
+
+    struct Output output;
+    for (int i = 0; i < size1 + size2; i++){
+        output.out[i] = mergedArr[i];
+    }
     
     for (int i = 0; i < size1 + size2; i++){
-        printf("%d ", mergedArr[i]);
+        printf("%d ", output.out[i]);
     }
     printf("\n");
 }
