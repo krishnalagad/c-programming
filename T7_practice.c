@@ -72,5 +72,5 @@ int main(void) {
     int arr[2][3] = {2,3,4,5,6,6};
     display(arr);
 
-    return 1;
+    return 0;
 }
