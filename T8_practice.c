@@ -16,12 +16,13 @@ void acceptData(struct Employee *ptr) {
     printf("Enter ID: ");
     scanf("%d", &ptr->empId);
     printf("Enter name: ");
-    scanf("%[^\n]s", ptr->name);
+    scanf(" %[^\n]s", ptr->name);
     printf("Enter salary: ");
     scanf("%lf", &ptr->salary);
 }
 
 void display(struct Employee emp) {
+    printf("\nEmployee Details\n");
     printf("Id: %d\n", emp.empId);
     printf("Name: %s\n", emp.name);
     printf("Salary: %lf\n", emp.salary);
@@ -42,5 +43,8 @@ int main(void) {
 
     // -----------------------------------------------------------------------------------
 
+    struct Employee employee;
+    acceptData(&employee);
+    display(employee);
 
 }
