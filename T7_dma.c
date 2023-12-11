@@ -3,7 +3,7 @@
 
 void accept(int arr[], int len, int index) {
     for (int i = index; i < len; i++){
-        printf("Enter data: ");
+        printf("Enter data %d: ", (i + 1));
         scanf("%d", &arr[i]);
     }
 }
