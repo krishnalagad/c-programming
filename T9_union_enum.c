@@ -1,23 +1,26 @@
 #include <stdio.h>
 
-enum Category{
+typedef enum Category{
     PRIMARY,
     HIGHER
-};
+} Category;
 
-union Performnce {
+typedef union Performnce {
     char grade;
     float percentage;
-};
+} Performnce;
 
 typedef struct Student {
     char name[30];
     int marks[3];
-    enum Category sType;
-    union Performnce pf;
+     Category sType;
+     Performnce pf;
 } Std;
 
-
+float getPercent(int mark1, int mark2, int mark3) {
+    float percentage = (float) (mark1 + mark2 + mark3) / 3;
+    return percentage;
+}
 
 void display(Std s) {
     printf("Name: %s\n", s.name);
@@ -28,12 +31,13 @@ void display(Std s) {
     switch (s.sType)
     {
     case PRIMARY:
-        printf("Grade: %c\n", s.pf.grade);
+        printf("\nGrade: %c\n", s.pf.grade);
         break;
     case HIGHER:
-        printf("Percentage: %f\n", s.pf.percentage);
+        printf("\nPercentage: %f\n", s.pf.percentage);
         break;
     default:
+        printf("Not applicable.");
         break;
     }
 }
