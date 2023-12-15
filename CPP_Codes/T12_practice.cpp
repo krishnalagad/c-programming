@@ -1,5 +1,6 @@
 #include <iostream>
-#include <cstring>  // string library in C programming
+#include <cstring>  // string library from C programming
+#include <string>   // string library in C++ programming
 using namespace std;
 
 // << insertion opertor
@@ -8,6 +9,7 @@ using namespace std;
 // We can return global variable by reference, but cant local variable.(gives warning)
 // Unlike pointer, References has to be initilize on the same line.
 // Unlike pointer, Array of references is not allowed.
+// structure in C++ can contain functions also.
 
 void fun(int &a) {    // reference
     a += 2;
