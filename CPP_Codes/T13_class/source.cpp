@@ -25,3 +25,7 @@ void Student::display() {
 Circle::Circle() {
     this.radius = 12;
 }
+
+Circle::Circle(int radius) {
+    this.radius = radius;
+}
