@@ -1,4 +1,5 @@
 #include "Student.h"
+// #include "Shapes.h"
 #include <iostream>
 #include <cstring>
 using namespace std;
@@ -9,9 +10,9 @@ Student::Student() {
     strcpy(this->name, "Default Name");
 }
 
-Student::Student(int id, const char *name, float marks) {
-    this->id = id;
-    this->marks = marks;
+Student::Student(int id, const char *name, float marks): id(id), marks(marks) {
+    // this->id = id;
+    // this->marks = marks;
     strcpy(this->name, name);
 }
 
@@ -22,10 +23,10 @@ void Student::display() {
 
 // --------------------------------------------------------------------------------------
 
-Circle::Circle() {
-    this.radius = 12;
-}
+// Circle::Circle() {
+//     this.radius = 12;
+// }
 
-Circle::Circle(int radius) {
-    this.radius = radius;
-}
+// Circle::Circle(int radius): radius(radius) {
+
+// }
