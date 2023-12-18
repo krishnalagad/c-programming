@@ -23,17 +23,17 @@ float calAvg(int *arr, int len) {
 
 void maxAvg(Student *std, int len) {
     float arr[len];
-    for (int i = 0; i < len; i++){
+    cout<<endl;
+    for (int i = 0; i < len; i++)
         arr[i] = calAvg(std[i].getSubjects(), 3);
-        cout<<arr[i]<<" ";
-    }
+    
+    cout<<endl;
     float max = arr[0];
     for (int i = 1; i < len; i++){
-        if (arr[i] > max){
+        if (arr[i] > max)
             max = arr[i];
-        } 
     }
-    cout<<"Max Avg: "<<max<<endl; 
+    cout<<"\nMax Avg: "<<max<<endl; 
 }
 
 
@@ -68,6 +68,8 @@ int main(void){
     int arr2[3] = {45,56,67};
     int arr3[3] = {12,21,23};
     Student sArr1[3] = {{"Krishna Lagad", 98.23, arr1}, {"Ankita Jogi", 90.23, arr2}, {"Himanshu Wankar", 89.445, arr3}};
+    for (int i = 0; i < 3; i++)
+        sArr1[i].display();
     maxAvg(sArr1, 3);
     
     return 0;
