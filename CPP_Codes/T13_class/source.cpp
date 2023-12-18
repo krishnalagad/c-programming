@@ -4,15 +4,20 @@
 #include <cstring>
 using namespace std;
 
+static int count = 219304;
+
 Student::Student() {
-    this->id = 1;
+    this->id = count;
+    count += 1;
     this->marks = 92.34;
     strcpy(this->name, "Default Name");
 }
 
-Student::Student(int id, const char *name, float marks): id(id), marks(marks) {
+Student::Student(const char *name, float marks): marks(marks) {
     // this->id = id;
     // this->marks = marks;
+    this->id = count;
+    count += 1;
     strcpy(this->name, name);
 }
 

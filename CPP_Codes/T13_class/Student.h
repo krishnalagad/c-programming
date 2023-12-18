@@ -11,7 +11,7 @@ class Student{
         float marks;
     public:
         Student();
-        Student(int, const char *, float);
+        Student(const char *, float);
         void display();
 
         float getMarks() { return marks; }
