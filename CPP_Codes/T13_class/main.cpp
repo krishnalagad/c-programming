@@ -8,9 +8,35 @@ void searchStudentById(Student students[], int len, int id) {
             cout<<"\nStudent found!!"<<endl;
             break;
         } 
-    }
-    
+    }   
 }
+
+float calAvg(int *arr, int len) {
+    int sum = 0;
+    for (int i = 0; i < len; i++){
+        cout<<arr[i]<<" ";
+        sum += arr[i];
+    } 
+    cout<<endl;
+    return sum / 3.0f;
+}
+
+void maxAvg(Student *std, int len) {
+    float arr[len];
+    for (int i = 0; i < len; i++){
+        arr[i] = calAvg(std[i].getSubjects(), 3);
+        cout<<arr[i]<<" ";
+    }
+    float max = arr[0];
+    for (int i = 1; i < len; i++){
+        if (arr[i] > max){
+            max = arr[i];
+        } 
+    }
+    cout<<"Max Avg: "<<max<<endl; 
+}
+
+
 
 int main(void){
     // store object in stack
@@ -37,6 +63,12 @@ int main(void){
         sArr[i].display();
     
     searchStudentById(sptr, size, 219308);
+
+    int arr1[3] = {12,23,34};
+    int arr2[3] = {45,56,67};
+    int arr3[3] = {12,21,23};
+    Student sArr1[3] = {{"Krishna Lagad", 98.23, arr1}, {"Ankita Jogi", 90.23, arr2}, {"Himanshu Wankar", 89.445, arr3}};
+    maxAvg(sArr1, 3);
     
     return 0;
 }

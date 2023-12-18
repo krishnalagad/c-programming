@@ -9,9 +9,11 @@ class Student{
         int id;
         char name[30];
         float marks;
+        int subjects[3];
     public:
         Student();
         Student(const char *, float);
+        Student(const char *, float, int *);
         void display();
 
         float getMarks() { return marks; }
@@ -22,6 +24,12 @@ class Student{
 
         int getId() { return id; }
         void setId(int id_) { id = id_; }
+
+        int * getSubjects() { return subjects; }
+        void setSubjects(int *subjects_) { 
+            for (int i = 0; i < 3; i++)
+                this->subjects[i] = subjects[i];
+        }
 };
 
 #endif // STUDENT_H
