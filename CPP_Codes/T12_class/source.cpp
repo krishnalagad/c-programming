@@ -17,4 +17,11 @@ Student::Student(int id, const char *name, float marks) {
 
 void Student::display() {
     cout<<"\nID: "<<this->id<<"\nName: "<<this->name<<"\nMarks: "<<this->marks<<endl;
+    // cout<<"\nID: "<<this.id<<"\nName: "<<this.name<<"\nMarks: "<<this.marks<<endl;
+}
+
+// --------------------------------------------------------------------------------------
+
+Circle::Circle() {
+    this.radius = 12;
 }
