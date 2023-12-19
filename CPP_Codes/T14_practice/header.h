@@ -2,6 +2,7 @@
 #define HEADER_H
 
 #include <cstring>
+#include <iostream>
 #define MARK_SIZE 3
 
 class Student{
