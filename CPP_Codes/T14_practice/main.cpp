@@ -16,6 +16,9 @@ int main(){
     
     for (int i = 0; i < size; i++)
         sPtr[i].display();
+
+    Student s3 = s2;
+    s3.display();
     
     delete []sPtr;
     

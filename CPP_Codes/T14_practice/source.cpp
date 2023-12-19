@@ -18,6 +18,13 @@ Student::Student(const char *name) {
     strcpy(this->name, name);
 }
 
+// customized copy constructor
+Student::Student(Student &std) {
+    this->id = idCount++;   // Not assigning ID of old student, rather assign new one
+    this->name = new char[strlen(std.getName()) + 1];
+    strcpy(this->name, std.getName());
+}
+
 Student::~Student() {
     std::cout<<"Student Obj destroyed!!"<<std::endl;
     delete []name;

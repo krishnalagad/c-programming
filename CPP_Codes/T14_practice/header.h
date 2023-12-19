@@ -10,6 +10,7 @@ class Student{
     public:
         Student();
         Student(const char *);
+        Student(Student &std);
         ~Student();
 
         void display();
