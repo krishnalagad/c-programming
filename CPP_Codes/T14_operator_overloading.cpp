@@ -61,6 +61,15 @@ class Point{
             os<<p.x<<"\n";
             os<<p.y<<"\n";
         }
+
+        // operator overlading: >>
+        friend std::istream& operator>>(std::istream &is, Point &p) {
+            std::cout<<"Enter x: ";
+            is>>p.x;
+            std::cout<<"Enter y: ";
+            is>>p.y;
+            return is;
+        }
 };
 
 int main(void) {
@@ -77,6 +86,10 @@ int main(void) {
     p3 = ++p3;
     p3();
     std::cout<<p3;
+
+    Point p4;
+    std::cin>>p4;
+    p4.display();
     
     return 0;
 }
