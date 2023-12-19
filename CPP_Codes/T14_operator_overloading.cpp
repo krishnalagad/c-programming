@@ -10,6 +10,7 @@ class Point{
             std::cout<<"\nx = "<<this->x<<"\ny = "<<this->y<<std::endl;
         }
 
+        // operator overloading: +
         Point operator +(Point &point) {    // p2 reference come here in parameter
             Point ans;
             ans.x = this->x + point.x;      // p1 come here in this pointer.
@@ -17,6 +18,7 @@ class Point{
             return ans;
         }
 
+        // operator overloading: -
         Point operator -(Point &point) {
             Point ans;
             ans.x = this->x - point.x;
@@ -24,6 +26,7 @@ class Point{
             return ans;
         }
 
+        // operator overloading: ==
         bool operator ==(Point &point) {
             bool xVal = this->x == point.x;
             bool yVal = this->y == point.y;
@@ -33,12 +36,14 @@ class Point{
                 return false;
         }
 
+        // operator overloading: pre-increment
         Point& operator++() {
             ++this->x;
             ++this->y;
             return *this;
         }
 
+        // operator overloading: post-increment
         Point operator++(int) {
             Point temp = *this;
             this->x++;
@@ -46,10 +51,12 @@ class Point{
             return temp;
         }
 
+        // operator overloading: ()
         void operator() () {
             display();
         }
 
+        // oparator overloading: <<
         friend void operator<<(std::ostream &os, const Point &p) {
             os<<p.x<<"\n";
             os<<p.y<<"\n";
