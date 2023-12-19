@@ -30,6 +30,7 @@ class Student{
         int *getMarks() { return marks; }
         void setMarks(int *marks_) { 
             delete []marks;
+            this->marks = new int[MARK_SIZE];
             for (int i = 0; i < MARK_SIZE; i++){
                 this->marks[i] = marks_[i];
             } 
