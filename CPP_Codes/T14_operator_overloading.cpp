@@ -32,6 +32,19 @@ class Point{
             else
                 return false;
         }
+
+        Point& operator++() {
+            ++this->x;
+            ++this->y;
+            return *this;
+        }
+
+        Pointer operator++(int) {
+            Point temp = *this;
+            this->x++;
+            this->y++;
+            return temp;
+        }
 };
 
 int main(void) {
