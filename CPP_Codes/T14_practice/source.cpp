@@ -4,6 +4,7 @@
 
 static int idCount = 219300;
 
+// default constructor
 Student::Student(){
     this->id = idCount;
     idCount++;
@@ -35,6 +36,7 @@ Student::Student(Student &std) {
         this->marks[i] = temp[i];
 }
 
+// destructor
 Student::~Student() {
     std::cout<<"Student Obj destroyed!!"<<std::endl;
     delete []name;
