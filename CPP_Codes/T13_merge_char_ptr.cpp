@@ -14,7 +14,7 @@ using namespace std;
 class Product {
     char *name;
     public:
-        Product(): name(nullptr){}
+        Product(){}
         Product(char *name) {
             this->name = new char[strlen(name) + 1];
             strcpy(this->name, name);
@@ -22,14 +22,12 @@ class Product {
         ~Product() {
             delete []name;
         }
-
         char *getName() const { return name; }
         void setName(char *name_) { 
             delete []name;  // delete existing memory if present.
             this->name = new char[strlen(name_) + 1];
             strcpy(this->name, name_); 
         }  
-
         Product operator+(Product &product) {
             Product temp;
             temp.name = new char[strlen(this->name) + strlen(product.name) + 1];
@@ -46,6 +44,8 @@ int main(void) {
     Product p1("Hello");
     Product p2("Krishna");
     Product p3 = p1 + p2;
+    cout<<p1;
+    cout<<p2;
     cout<<p3;
     return 0;
 }

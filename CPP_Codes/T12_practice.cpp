@@ -18,7 +18,7 @@ void fun(int &a) {    // reference
 void fun(int *a) {
     int x;
     const int *const ptr = &x;  // constant pointer to constant data (integer)
-    a += 2;
+    *a += 10;
 }
 
 int main(void) {
