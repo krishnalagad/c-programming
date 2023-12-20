@@ -6,7 +6,7 @@ int main(void) {
     Book b1;
     char ch;
     do{
-        std::cout<<"\n1. Add book\n2. Edit book\n3. Search book\n4. View all books\n";
+        std::cout<<"\n1. Add book\n2. Edit book\n3. Search book\n4. View all books\n5. Exit\n";
         
         std::cout<<"\nEnter your choice: ";
         int choice;
@@ -16,7 +16,9 @@ int main(void) {
             case 1:
                 std::cout<<"\nEnter book name: ";
                 char bookName[50];
-                std::cin>>bookName;
+                // std::cin>>bookName;
+                getchar();
+                std::cin.getline(bookName, 50);
 
                 std::cout<<"Enter total pages: ";
                 int size;
@@ -49,6 +51,9 @@ int main(void) {
                 break;
             case 4:
                 b1.displayAll();
+                break;
+            case 5:
+                ch == 'n';
                 break;
             default:
                 break;
