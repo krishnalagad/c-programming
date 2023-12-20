@@ -20,4 +20,10 @@ class User {
         void setActivity(Activity activity) {
             currentActivity = activity;
         }
+
+        int getId() const { return id; }
+        void setId(int id_) { id = id_; }
+
+        std::string getName() const { return name; }
+        void setName(const std::string &name_) { name = name_; }
 };
