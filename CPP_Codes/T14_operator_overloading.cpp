@@ -57,9 +57,10 @@ class Point{
         }
 
         // oparator overloading: <<
-        friend void operator<<(std::ostream &os, const Point &p) {
+        friend std::ostream& operator<<(std::ostream &os, const Point &p) {
             os<<p.x<<"\n";
             os<<p.y<<"\n";
+            return os;
         }
 
         // operator overlading: >>
