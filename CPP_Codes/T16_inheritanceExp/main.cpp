@@ -2,6 +2,8 @@
 #include "vehicle.h"
 #include "car.h"
 #include "mclaren.h"
+#include "bike.h"
+#include "h2r.h"
 
 int main(void) {
     Vehicle v1;
@@ -28,6 +30,23 @@ int main(void) {
     m1.start();
     m1.show();
     m1.stop();
+    std::cout<<"\n";
+
+    std::cout<<"\n";
+    Bike b1;
+    b1.setSpeed(90);
+    b1.setEngine(110);
+    b1.setSeats(4);
+    b1.start();
+    b1.show();
+    b1.stop();
+    std::cout<<"\n";
+
+    std::cout<<"\n";
+    H2R h1 = H2R(6700000, 408, 1200, 1);
+    h1.start();
+    h1.show();
+    h1.stop();
     std::cout<<"\n";
 
     return 0;
