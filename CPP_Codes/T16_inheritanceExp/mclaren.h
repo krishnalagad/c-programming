@@ -3,16 +3,17 @@
 
 #include <iostream>
 #include "car.h"
-#include "vehicle.h"
 
 class McLaren: public Car {
     private:
         int airbags;
     public: 
         McLaren(): airbags(8) {std::cout<<"\nMcLaren() called!!";}
-        McLaren(int airbags, int gears, int speed): airbags(airbags) {
+        McLaren(int airbags, int gears, int speed, int engine, int seats): airbags(airbags) {
             setGear(gears);
             setSpeed(speed);
+            setEngine(engine);
+            setSeats(seats);
             std::cout<<"\nMcLaren(...) called!!";
         }
         ~McLaren() { std::cout<<"\n~McLaren() called!!\n"; }

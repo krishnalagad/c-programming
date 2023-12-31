@@ -9,8 +9,10 @@ class Car: public Vehicle {
         int gear;
     public:
         Car(): gear(6) { std::cout<<"\nCar() called!!";}
-        Car(int gear, int speed): gear(gear) {
+        Car(int gear, int speed, int engine, int seats): gear(gear) {
             Vehicle::setSpeed(speed);
+            Vehicle::setEngine(engine);
+            Vehicle::setSeats(seats);
             std::cout<<"\nCar(...) called!!";
         }
         ~Car() { std::cout<<"\n~Car() called!!\n";}
