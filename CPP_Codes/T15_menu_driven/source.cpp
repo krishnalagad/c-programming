@@ -77,6 +77,6 @@ void Book::modifyBook(int bookId){
         }
     } 
     if (!flag){
-        std::cout<<"\nBook you want eddit is not found!!\n";
+        std::cout<<"\nBook you want edit is not found!!\n";
     }
 }
