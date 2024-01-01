@@ -8,86 +8,86 @@ enum Party {
 static int idCounter = 100;
 class Candidate {
 
-private:
-    int id;
-    char *name;
-    Party party;
+    private:
+        int id;
+        char *name;
+        Party party;
 
-public:
-    // Default constructor
-    Candidate() {
-        this->id = idCounter++;
-        this->name = new char[8];
-        strcpy(this->name, "DEFAULT");
-        this->party = BJP;
-    }
+    public:
+        // Default constructor
+        Candidate() {
+            this->id = idCounter++;
+            this->name = new char[8];
+            strcpy(this->name, "DEFAULT");
+            this->party = BJP;
+        }
 
-    // Parameterized constructor
-    Candidate(const char *name) {
-        this->id = idCounter++;
-        this->name = new char[strlen(name) + 1];
-        strcpy(this->name, name);
-        this->party = BJP;
-    }
+        // Parameterized constructor
+        Candidate(const char *name) {
+            this->id = idCounter++;
+            this->name = new char[strlen(name) + 1];
+            strcpy(this->name, name);
+            this->party = BJP;
+        }
 
-    // Copy constructor
-    Candidate(const Candidate &other) {
-        this->id = other.id;
-        this->name = new char[strlen(other.name) + 1];
-        strcpy(this->name, other.name);
-        this->party = other.party;
-    }
-
-    // Destructor
-    ~Candidate() {
-        delete[] name;
-    }
-
-    // Overloaded assignment operator
-    Candidate &operator=(const Candidate &other) {
-        if (this != &other) {
+        // Copy constructor
+        Candidate(const Candidate &other) {
             this->id = other.id;
-            delete[] this->name;
             this->name = new char[strlen(other.name) + 1];
             strcpy(this->name, other.name);
             this->party = other.party;
         }
-        return *this;
-    }
 
-    void display() const {
-        std::cout << "\nId: " << this->id << "\nName: " << this->name << "\nParty: ";
-        switch (this->party) {
-            case BJP:
-                std::cout << "BJP";
-                break;
-            case INC:
-                std::cout << "INC";
-                break;
-            case AAP:
-                std::cout << "AAP";
-                break;
-            case RNC:
-                std::cout << "RNC";
-                break;
-            default:
-                break;
+        // Destructor
+        ~Candidate() {
+            delete[] name;
         }
-        std::cout << "\n";
-    }
 
-    int getId() const { return id; }
-    void setId(int id_) { id = id_; }
+        // Overloaded assignment operator
+        Candidate &operator=(const Candidate &other) {
+            if (this != &other) {
+                this->id = other.id;
+                delete[] this->name;
+                this->name = new char[strlen(other.name) + 1];
+                strcpy(this->name, other.name);
+                this->party = other.party;
+            }
+            return *this;
+        }
 
-    const char *getName() const { return name; }
-    void setName(const char *name_) {
-        delete[] name;
-        this->name = new char[strlen(name_) + 1];
-        strcpy(this->name, name_);
-    }
+        void display() const {
+            std::cout << "\nId: " << this->id << "\nName: " << this->name << "\nParty: ";
+            switch (this->party) {
+                case BJP:
+                    std::cout << "BJP";
+                    break;
+                case INC:
+                    std::cout << "INC";
+                    break;
+                case AAP:
+                    std::cout << "AAP";
+                    break;
+                case RNC:
+                    std::cout << "RNC";
+                    break;
+                default:
+                    break;
+            }
+            std::cout << "\n";
+        }
 
-    Party getParty() const { return party; }
-    void setParty(Party party_) { party = party_; }
+        int getId() const { return id; }
+        void setId(int id_) { id = id_; }
+
+        const char *getName() const { return name; }
+        void setName(const char *name_) {
+            delete[] name;
+            this->name = new char[strlen(name_) + 1];
+            strcpy(this->name, name_);
+        }
+
+        Party getParty() const { return party; }
+        void setParty(Party party_) { party = party_; }
 };
 
 int main() {
