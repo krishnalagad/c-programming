@@ -7,9 +7,10 @@
 class Car: public Vehicle {
     private:
         int gear;
+        int ac;
     public:
-        Car(): gear(6) { std::cout<<"\nCar() called!!";}
-        Car(int gear, int speed, int engine, int seats): gear(gear) {
+        Car(): gear(6), ac(28) { std::cout<<"\nCar() called!!";}
+        Car(int gear, int ac, int speed, int engine, int seats): gear(gear), ac(ac) {
             Vehicle::setSpeed(speed);
             Vehicle::setEngine(engine);
             Vehicle::setSeats(seats);
@@ -21,11 +22,14 @@ class Car: public Vehicle {
         void stop() { std::cout<<"\nCar stopped!!"; }
         void show() { 
             Vehicle::show();
-            std::cout<<"\nGear: "<<this->gear; 
+            std::cout<<"\nGear: "<<this->gear<<"\nAC: "<<this->ac; 
         }
 
         int getGear() { return gear; }
         void setGear(int gear_) { gear = gear_; }
+
+        int getAc() const { return ac; }
+        void setAc(int ac_) { ac = ac_; }
 };
 
 #endif // CAR_H

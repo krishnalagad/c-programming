@@ -9,8 +9,9 @@ class McLaren: public Car {
         int airbags;
     public: 
         McLaren(): airbags(8) {std::cout<<"\nMcLaren() called!!";}
-        McLaren(int airbags, int gears, int speed, int engine, int seats): airbags(airbags) {
+        McLaren(int airbags, int gears, int ac, int speed, int engine, int seats): airbags(airbags) {
             setGear(gears);
+            setAc(ac);
             setSpeed(speed);
             setEngine(engine);
             setSeats(seats);
