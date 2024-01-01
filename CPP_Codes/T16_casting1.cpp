@@ -53,10 +53,6 @@ int main(void) {
         // Cast failed, basePtr does not point to a Derived object
     }
 
-    Derived* derivedPtr1 = new Derived(12,23,34,45);
-    Base* basePtr1 = dynamic_cast<Base*>(derivedPtr1);
-    basePtr1->show();
-
-    delete basePtr, derivedPtr1;
+    delete basePtr;
     return 0;
 }
