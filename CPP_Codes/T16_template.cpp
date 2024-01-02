@@ -25,7 +25,7 @@ K getSquare(K num) {
 }
 
 int main(void) {
-    Container<std::string> c1 = Container<std::string>("Krishna Lagad");
+    Container<std::string> c1 = Container<std::string>("KPIT AutoSAR");
     std::cout<<c1<<"\n";
 
     Container<int> c2 = Container<int>(987654);
