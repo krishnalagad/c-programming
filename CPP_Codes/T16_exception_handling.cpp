@@ -5,7 +5,7 @@ class MyException: public std::exception {
     char message[100];
     public:
         MyException() {
-            strcpy(this->message, "\nMyException occured!!");
+            strcpy(this->message, "MyException occured!!");
         }
         MyException(const char *message) {
             strcpy(this->message, message);
@@ -36,16 +36,19 @@ void checkCustomException(int num) {
     if(num == 0)
         throw CustomException("Number cannot be zero!!\n");
     else if (num == 1)
-        throw CustomException();
+        throw MyException();
+        // throw CustomException();
     std::cout<<num<<std::endl;
 }
 
 int main() {
     std::cout<<divide(12, 0);
     try {
-        checkCustomException(12);
+        checkCustomException(1);
     } catch (const CustomException& ex) {
         std::cout<<"\nCustom Exception caught: "<<ex.what();
+    } catch (MyException ex) {
+        std::cout<<"\nMyException caught: "<<ex.what();
     }
     return 0;
 }
