@@ -1,6 +1,19 @@
 #include <iostream>
+#include <cstring>
 
-
+class MyException: public std::exception {
+    char message[100];
+    public:
+        MyException() {
+            strcpy(this->message, "\nMyException occured!!");
+        }
+        MyException(const char *message) {
+            strcpy(this->message, message);
+        }
+        char* what() {
+            return this->message;
+        }
+};
 
 class CustomException: public std::runtime_error {
     public: 
