@@ -18,7 +18,7 @@ class Vehicle {
 
         virtual void start() { std::cout<<"\nVehicle started!!"; }
         virtual void stop() { std::cout<<"\nVehicle stopped!!"; }
-        void show() { std::cout<<"\nSpeed: "<<this->speed<<"\nEngine: "<<this->engine<<"\nSeats: "<<this->seats; }
+        virtual void show() { std::cout<<"\nSpeed: "<<this->speed<<"\nEngine: "<<this->engine<<"\nSeats: "<<this->seats; }
 
         int getSpeed() { return speed; }
         void setSpeed(int speed_) { speed = speed_; }

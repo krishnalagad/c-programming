@@ -1,5 +1,7 @@
 #include <iostream>
 
+
+
 class CustomException: public std::runtime_error {
     public: 
         CustomException(): std::runtime_error("Custom exception occured!!\n") {}
