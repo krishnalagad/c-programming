@@ -1,0 +1,5 @@
+Training 11st day logs:
+
+sudo apt update --fix-missing
+sudo apt install  gcc  g++
+sudo snap install code --classic
