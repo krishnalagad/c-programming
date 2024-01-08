@@ -45,5 +45,10 @@ int main() {
     std::string *ans = getMax(strArr, strArr + 3);
     std::cout<<"Max Element: "<<*ans<<std::endl;
 
+    // swap with max element
+    std::cout<<"strArr[0] = "<<strArr[0]<<"  strArr[1] = "<<strArr[2]<<std::endl;
+    std::swap(strArr[0], *ans);
+    std::cout<<"strArr[0] = "<<strArr[0]<<"  strArr[1] = "<<strArr[2]<<std::endl;
+
     return 0;
 }
