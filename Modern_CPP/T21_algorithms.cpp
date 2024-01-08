@@ -2,6 +2,21 @@
 #include <algorithm>
 #include <string>
 
+template <class T>
+T* getMax(T *first, T *last) {
+    T *max = first;
+    while (first < last){
+        if(*first > *max) 
+            max = first;
+        ++first;
+    }
+    
+    return max;
+
+    // T *result = std::max_element(first, last);
+    // return *result;
+}
+
 int main() {
     // get min-max of two variables;
     int a = 10;
@@ -14,9 +29,16 @@ int main() {
 
     // get max element from array;
     int arr[] = {1, 2, 3};  // max_element() returns address of max element;
-    int *resAdd = std::max_element(arr, arr + 3);
-    std::cout<<"maxAdd: "<<resAdd<<"\tbaseAdd: "<<arr<<std::endl;
-    int index = (resAdd - arr);
-    std::cout<<"Max Element: "<<*resAdd<<"\tIndex: "<<index<<std::endl;
+    // int *ptrMax = std::max_element(arr, arr + 3);
+    int *ptrMax = std::max_element(std::begin(arr), std::end(arr));
+    std::cout<<"maxAdd: "<<ptrMax<<"\tbaseAdd: "<<arr<<std::endl;
+    int index = (ptrMax - arr);
+    std::cout<<"Max Element: "<<*ptrMax<<"\tIndex: "<<index<<std::endl;
 
+    // get max element using template
+    int *ptrRes = getMax(arr, arr + 3);
+    index = ptrRes - arr;
+    std::cout<<"Max Element: "<<*ptrRes<<"\tIndex: "<<index<<std::endl;
+
+    return 0;
 }
