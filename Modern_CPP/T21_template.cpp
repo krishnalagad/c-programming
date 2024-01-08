@@ -1,6 +1,7 @@
 #define TEMPLATE
 
 #include <iostream>
+#include <typeinfo>
 
 #ifdef TEMPLATE
 template <typename T>
@@ -15,4 +16,5 @@ int getMax(const int &a, const int &b) {
 
 int main() {
     std::cout<<"\n"<<getMax(12, 56)<<"\n";
+    // std::cout<<"\n"<<typeid(12)<<"\n";
 }
