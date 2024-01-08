@@ -8,7 +8,7 @@ T getMax(const T &a, const T &b) {
     return a > b ? a : b;
 }
 #else
-int getMax(int &a, int &b) {
+int getMax(const int &a, const int &b) {
     return a > b ? a : b;
 }
 #endif
