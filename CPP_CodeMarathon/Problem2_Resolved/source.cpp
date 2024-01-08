@@ -1,97 +1,90 @@
-#include <iostream>
-#include "vehicle.h"
 #include "car.h"
 #include "bike.h"
 
-static int chassisGenerator = 219300;
+// Implement the member functions for Vehicle, Car, and Bike here
 
-// ------------- Vehicle class data-------------
+Vehicle::Vehicle() : chassisNumber(0), vehicleBrand("DEFAULT"), exPrice(2300000), tax(17.5), insuranceAmt(5000) {}
 
-// Constructors and destructor
-Vehicle::Vehicle(): chassisNumber(chassisGenerator++), vehicleBrand("DEFAULT"), exPrice(2300000), tax(17.5), insuranceAmt(5000) {}
-Vehicle::Vehicle(std::string brand, double price, float tax, double amt): chassisNumber(chassisGenerator++), vehicleBrand(brand), exPrice(price), tax(tax), insuranceAmt(amt) {}
+Vehicle::Vehicle(int chassis, const std::string& brand, double price, float tax, double insurance)
+    : chassisNumber(chassis), vehicleBrand(brand), exPrice(price), tax(tax), insuranceAmt(insurance) {}
+
 Vehicle::~Vehicle() {}
-void Vehicle::display() {
-    std::cout<<"\nChassis Number: "<<chassisNumber<<"\nBrand Name: "<<vehicleBrand;
-    std::cout<<"\nEx-Showroom Price: "<<exPrice<<"\nTax: "<<tax<<"\nInsurance Amount: "<<insuranceAmt;
-    std::cout<<"\nCategory: ";
-    // switch (cat)
-    // {
-    //     case 1:
-    //         std::cout<<"SUV";
-    //         break;
-    //     case 2:
-    //         std::cout<<"HatchBack";
-    //         break;
-    //     case 3:
-    //         std::cout<<"Sedan";
-    //         break;
-    //     case 4:
-    //         std::cout<<"Commute";
-    //         break;
-    //     case 5:
-    //         std::cout<<"Sports";
-    //         break;
-    //     case 6:
-    //         std::cout<<"Offroad";
-    //         break;
-    
-    //     default:
-    //         break;
-    // }
-    std::cout<<"\n";
+
+int Vehicle::getChassisNumber() const { return chassisNumber; }
+
+std::string Vehicle::getVehicleBrand() const { return vehicleBrand; }
+
+double Vehicle::getExPrice() const { return exPrice; }
+
+float Vehicle::getTax() const { return tax; }
+
+double Vehicle::getInsuranceAmt() const { return insuranceAmt; }
+
+void Vehicle::setChassisNumber(int chassis) { chassisNumber = chassis; }
+
+void Vehicle::setVehicleBrand(const std::string& brand) { vehicleBrand = brand; }
+
+void Vehicle::setExPrice(double price) { exPrice = price; }
+
+void Vehicle::setTax(float tax) { this->tax = tax; }
+
+void Vehicle::setInsuranceAmt(double insurance) { insuranceAmt = insurance; }
+
+void Vehicle::display() const {
+    std::cout << "\nChassis Number: " << chassisNumber << "\nBrand Name: " << vehicleBrand;
+    std::cout << "\nEx-Showroom Price: " << exPrice << "\nTax: " << tax << "\nInsurance Amount: " << insuranceAmt;
+
+    std::cout << "\n";
 }
 
-void Vehicle::getVehicleByChassisNumber(int no){
-    
-}
+Car::Car() : Vehicle() {}
 
-// ------------- Car class data-------------
+Car::Car(int chassis, const std::string& brand, double price, float tax, double insurance, CarCategory cat)
+    : Vehicle(chassis, brand, price, tax, insurance), category(cat) {}
 
-// Constructors and destructor
-Car::Car(): Vehicle() {}
-Car::Car(std::string brand, double price, float tax, double amt): Vehicle(brand, price, tax, amt) {}
 Car::~Car() {}
-void Car::display() {
+
+CarCategory Car::getCarCategory() const { return category; }
+
+void Car::setCarCategory(CarCategory cat) { category = cat; }
+
+void Car::display() const {
     Vehicle::display();
-    switch (carCategory)
-    {
-        case 0:
-            std::cout<<"SUV";
+    switch (category) {
+        case SUV:
+            std::cout << "SUV";
             break;
-        case 1:
-            std::cout<<"HatchBack";
+        case HatchBack:
+            std::cout << "HatchBack";
             break;
-        case 2:
-            std::cout<<"Sedan";
-            break;
-        
-    
-        default:
+        case Sedan:
+            std::cout << "Sedan";
             break;
     }
 }
 
-// ------------- Bike class data-------------
+Bike::Bike() : Vehicle() {}
 
-// Constructors and destructor
-Bike::Bike(): Vehicle() {}
-Bike::Bike(std::string brand, double price, float tax, double amt): Vehicle(brand, price, tax, amt) {}
+Bike::Bike(int chassis, const std::string& brand, double price, float tax, double insurance, BikeCategory cat)
+    : Vehicle(chassis, brand, price, tax, insurance), category(cat) {}
+
 Bike::~Bike() {}
-void Bike::display() {
+
+BikeCategory Bike::getBikeCategory() const { return category; }
+
+void Bike::setBikeCategory(BikeCategory cat) { category = cat; }
+
+void Bike::display() const {
     Vehicle::display();
-    switch (bikeCategory)
-    {
-        case 4:
-            std::cout<<"Commute";
+    switch (category) {
+        case Commute:
+            std::cout << "Commute";
             break;
-        case 5:
-            std::cout<<"Sports";
+        case Sports:
+            std::cout << "Sports";
             break;
-        case 6:
-            std::cout<<"Offroad";
-            break;
-        default:
+        case Offroader:
+            std::cout << "Offroader";
             break;
     }
 }

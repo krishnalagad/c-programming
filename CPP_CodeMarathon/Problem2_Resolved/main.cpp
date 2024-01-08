@@ -1,134 +1,89 @@
 #include <iostream>
-#include "vehicle.h"
 #include "car.h"
 #include "bike.h"
-#include "vehicleNotFoundException.h"
 
-double getAvgOfvehicle(int cat, Car *cars, Bike *bikes) {
-    double sum = 0;
+// Implement the global functions for functionalities here
+
+// Function to get vehicle by chassis number
+void getVehicleByChassisNumber(int no, Vehicle* vehicles) {
     bool flag = false;
-    int count = 0;
     for (int i = 0; i < 3; i++) {
-        if (cat == cars[i].getCarCategory()) {
-            sum += cars[i].getExPrice();
-            count += 1;
-            flag = true;
-        }
-    }
-    for (int i = 0; i < 3; i++) {
-        if (cat == bikes[i].getBikeCategory()) {
-            sum += bikes[i].getExPrice();
-            count += 1;
+        if (no == vehicles[i].getChassisNumber()) {
+            vehicles[i].display();
             flag = true;
         }
     }
 
     if (!flag)
-        throw VehicleNotFoundException();
-
-    return sum / count;
+        std::cout << "Vehicle not found with given chassis number\n";
 }
 
-int getCountOnCategory(int cat, Car *cars, Bike *bikes) {
-    bool flag = false;
+// Function to get total count of vehicles by category
+int getCountOnCategory(int cat, Vehicle* vehicles) {
     int count = 0;
     for (int i = 0; i < 3; i++) {
-        if (cat == cars[i].getCarCategory()) {
+        // Assuming category is stored as an integer in the base class
+        if (cat == vehicles[i].getExPrice()) {
             count += 1;
-            flag = true;
         }
     }
-    for (int i = 0; i < 3; i++) {
-        if (cat == bikes[i].getBikeCategory()) {
-            count += 1;
-            flag = true;
-        }
-    }
-    if (!flag)
-        throw VehicleNotFoundException();
 
     return count;
 }
 
-void getVehicleByChassisNumber(int no, Vehicle *cars, Vehicle *bikes) {
-    bool flag = false;
+// Function to get average of price of vehicle for the specific category
+double getAvgOfvehicle(int cat, Vehicle* vehicles) {
+    double sum = 0;
+    int count = 0;
     for (int i = 0; i < 3; i++) {
-        if (no == cars[i].getChassisNumber()) {
-            cars[i].display();
-            flag = true;
-        }
-    }
-    for (int i = 0; i < 3; i++) {
-        if (no == bikes[i].getChassisNumber()) {
-            bikes[i].display();
-            flag = true;
+        // Assuming category is stored as an integer in the base class
+        if (cat == vehicles[i].getExPrice()) {
+            sum += vehicles[i].getExPrice();
+            count += 1;
         }
     }
 
-    if (!flag)
-        throw VehicleNotFoundException();
+    if (count == 0) {
+        std::cout << "No vehicles found in the given category\n";
+        return 0.0;
+    }
+
+    return sum / count;
 }
 
 int main() {
-    Vehicle *cars = new Car[3];
-    std::cout << "---------Enter data for your Cars----------\n";
-    for (int i = 0; i < 3; i++)
-        std::cin >> cars[i];
+    // Create arrays for Car and Bike
+    Car cars[3];
+    Bike bikes[3];
 
-    std::cout << "---------Your Cars Data----------\n";
-    for (int i = 0; i < 3; i++)
-        cars[i].display();
+    // Initialize Car array
+    cars[0] = Car(1001, "Toyota", 25000.0, 10.0, 500.0, SUV);
+    cars[1] = Car(1002, "Honda", 22000.0, 9.5, 450.0, HatchBack);
+    cars[2] = Car(1003, "Ford", 27000.0, 11.0, 550.0, Sedan);
 
-    Vehicle *bikes = new Bike[3];
-    std::cout << "---------Enter data for your Bikes----------\n";
-    for (int i = 0; i < 3; i++)
-        std::cin >> bikes[i];
+    // Initialize Bike array
+    bikes[0] = Bike(2001, "Hero", 12000.0, 5.0, 300.0, Commute);
+    bikes[1] = Bike(2002, "Ducati", 18000.0, 7.5, 400.0, Sports);
+    bikes[2] = Bike(2003, "KTM", 15000.0, 6.5, 350.0, Offroader);
 
-    std::cout << "---------Your Bikes Data----------\n";
-    for (int i = 0; i < 3; i++)
-        bikes[i].display();
+    // Use base class pointer to access functionalities
+    Vehicle* vehiclePtr;
 
-    // find by chassis number
-    std::cout << "\nEnter chassis number to search: ";
-    int temp;
-    getchar();
-    std::cin >> temp;
-    try {
-        Car *c = dynamic_cast<Car *>(cars);
-        Bike *b = dynamic_cast<Bike *>(bikes);
-        // getVehicleByChassisNumber(temp, cars, bikes);
-        getVehicleByChassisNumber(temp, c, b);
-    } catch (VehicleNotFoundException ex) {
-        std::cout << "\n" << ex.what();
-    }
+    // Example 1: Get vehicle by chassis number
+    int chassisToFind = 1002;
+    vehiclePtr = cars; // Assigning the array to the base class pointer
 
-    // get count by category
-    std::cout << "\nAvailable vehicle categories: \n1. SUV\t2. HatchBack\t3. Sedan\n\n\nEnter Vehicle category to get count: ";
-    int choice;
-    getchar();
-    std::cin >> choice;
-    try {
-        Car *c = dynamic_cast<Car *>(cars);
-        Bike *b = dynamic_cast<Bike *>(bikes);
-        std::cout << "\n\nCount of vehicles of category is " << getCountOnCategory(choice, c, b) << "\n\n";
-    } catch (VehicleNotFoundException ex) {
-        std::cout << "\n" << ex.what();
-    }
+    getVehicleByChassisNumber(chassisToFind, vehiclePtr);
 
-    // get average by category
-    std::cout << "\nAvailable vehicle categories: \n4. Commute\t5. Sports\t6. Offreader\n\nEnter Vehicle category to get average: ";
-    int choice1;
-    // getchar();
-    std::cin >> choice1;
-    try {
-        Car *c = dynamic_cast<Car *>(cars);
-        Bike *b = dynamic_cast<Bike *>(bikes);
-        std::cout << "\n\nAverage price of vehicles of category is " << getAvgOfvehicle(choice1, c, b) << "\n\n";
-    } catch (VehicleNotFoundException ex) {
-        std::cout << "\n" << ex.what();
-    }
+    // Example 2: Get total count of vehicles by category
+    int categoryToCount = 22000.0;
+    int count = getCountOnCategory(categoryToCount, vehiclePtr);
+    std::cout << "Count of vehicles in the given category: " << count << "\n";
 
-    delete[] cars;
-    delete[] bikes;
+    // Example 3: Get average of price of vehicle for the specific category
+    int categoryToAverage = 25000.0;
+    double average = getAvgOfvehicle(categoryToAverage, vehiclePtr);
+    std::cout << "Average price of vehicles in the given category: " << average << "\n";
+
     return 0;
 }
