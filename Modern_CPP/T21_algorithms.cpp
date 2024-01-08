@@ -40,5 +40,10 @@ int main() {
     index = ptrRes - arr;
     std::cout<<"Max Element: "<<*ptrRes<<"\tIndex: "<<index<<std::endl;
 
+    // get max element for string arr;
+    std::string strArr[] = {"Krishna", "Dilip", "Lagad"};
+    std::string *ans = getMax(strArr, strArr + 3);
+    std::cout<<"Max Element: "<<*ans<<std::endl;
+
     return 0;
 }
