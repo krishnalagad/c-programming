@@ -56,14 +56,14 @@ int main() {
     std::cout<<"Count: "<<cnt<<std::endl;
 
     // sort array element
-    int arr2[] = {4, 4, 1, 3};
+    int arr2[] = {4, 4, 1, 3, 5, 9};
     std::sort(std::begin(arr2), std::end(arr2));
     int result = std::count(std::begin(arr2), std::end(arr2), *(std::end(arr2) - 1));
-    std::cout<<"\n"<<result<<std::endl;
+    std::cout<<"\nCandles: "<<result<<std::endl;
 
     // sorting in descending
     std::sort(std::begin(arr2), std::end(arr2), std::greater<int>());
-    for(int i = 0; i < 4; i++)
+    for(int i = 0; i < 6; i++)
         std::cout<<arr2[i]<<" ";
 
     // count_if
