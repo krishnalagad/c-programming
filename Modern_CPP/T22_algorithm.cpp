@@ -70,5 +70,8 @@ int main() {
     result = std::count_if(std::begin(arr2), std::end(arr2), isOdd);
     std::cout<<"\nCount_if: "<<result<<std::endl;
 
+    // find_if
+    
+
     return 0;
 }
