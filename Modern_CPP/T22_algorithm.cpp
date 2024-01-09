@@ -29,6 +29,13 @@ int main() {
         std::cout<<"Binary search: Element is found!!\n";
     else 
         std::cout<<"Binary search: Element is not present!!\n";
-    
+
+    // upper bound of an array
+    int* ptr1 = std::upper_bound(std::begin(arr), std::end(arr), 9);    // internally uses binary search
+    int* ptr2 = std::lower_bound(std::begin(arr), std::end(arr), 0);
+    std::cout<<"Base address: "<<arr<<std::endl;
+    std::cout<<"Upper bound where element is present: "<<ptr1<<std::endl;
+    std::cout<<"Lower bound where element is present: "<<*ptr2<<std::endl;
+
     return 0;
 }
