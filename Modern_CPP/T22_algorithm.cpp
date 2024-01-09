@@ -37,5 +37,16 @@ int main() {
     std::cout<<"Upper bound where element is present: "<<ptr1<<std::endl;
     std::cout<<"Lower bound where element is present: "<<*ptr2<<std::endl;
 
+    // get index of element using binary search
+    int arr1[] = {1,2,3,4,5,6,7};
+    int key = 7;
+    bool res = std::binary_search(std::begin(arr1), std::end(arr), key);
+    int *indexPtr = std::lower_bound(std::begin(arr1), std::end(arr1), key);
+    if (res)
+        std::cout<<"\nBinary search: Element is found!!\nIndex of element: "<<(*indexPtr - 1) <<std::endl;
+    else 
+        std::cout<<"\nBinary search: Element is not present!!\n";
+
+
     return 0;
 }
