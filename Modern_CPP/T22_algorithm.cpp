@@ -12,6 +12,10 @@ T* find(T *startPtr, T* lastPtr, T key) {
     return startPtr;
 }
 
+bool isOdd(int a) {
+    return a % 2 != 0;
+}
+
 int main() {
     // find element from array
     int arr[] = {1,2,3,4,5,6,7,8,9,9,0};
@@ -50,6 +54,21 @@ int main() {
     // get the count of same element in array
     int cnt = std::count(std::begin(arr), std::end(arr), 0);
     std::cout<<"Count: "<<cnt<<std::endl;
+
+    // sort array element
+    int arr2[] = {4, 4, 1, 3};
+    std::sort(std::begin(arr2), std::end(arr2));
+    int result = std::count(std::begin(arr2), std::end(arr2), *(std::end(arr2) - 1));
+    std::cout<<"\n"<<result<<std::endl;
+
+    // sorting in descending
+    std::sort(std::begin(arr2), std::end(arr2), std::greater<int>());
+    for(int i = 0; i < 4; i++)
+        std::cout<<arr2[i]<<" ";
+
+    // count_if
+    result = std::count_if(std::begin(arr2), std::end(arr2), isOdd);
+    std::cout<<"\nCount_if: "<<result<<std::endl;
 
     return 0;
 }
