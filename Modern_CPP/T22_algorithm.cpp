@@ -22,5 +22,13 @@ int main() {
         std::cout<<"Base address: "<<arr<<std::endl;
         std::cout<<"Address where element is present: "<<ptr<<"\nIndex: "<<ptr - arr<<std::endl;
     }
+
+    // binary search function
+    bool isFound = std::binary_search(std::begin(arr), std::end(arr), 0);
+    if (isFound)
+        std::cout<<"Binary search: Element is found!!\n";
+    else 
+        std::cout<<"Binary search: Element is not present!!\n";
+    
     return 0;
 }
