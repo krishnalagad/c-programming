@@ -11,7 +11,7 @@ int main() {
     else    
         std::cout<<"NO"<<std::endl;
 
-    int key = 2;    //specify inside of [], if what to make accisible all vars then specify [=]
+    int key = 2;    //specify inside of [], if want to make accisible all vars then specify [=]
     int cnt = std::count_if(std::begin(arr), std::end(arr), [key](int ele){ return ele >= key;});
     std::cout<<"Number of elements >= "<<cnt<<std::endl;
 
