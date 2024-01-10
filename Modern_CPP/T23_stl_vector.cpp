@@ -21,6 +21,20 @@ void tryVector2() {
     for(it = v.begin(); it != v.end(); it++)
         std::cout<<*it<<" ";
     std::cout<<std::endl;
+
+    std::cout<<"Enter element to delete: ";
+    int key;
+    std::cin>>key;
+    it = std::find(v.begin(), v.end(), key);
+    if(it == v.end())
+        std::cout<<"\nElement is not present in vector to delete!!";
+    else    
+        v.erase(it);
+
+    std::cout<<std::endl;
+    for(it = v.begin(); it != v.end(); it++)
+        std::cout<<*it<<" ";
+    std::cout<<std::endl;
 }
 
 void tryVector() {
