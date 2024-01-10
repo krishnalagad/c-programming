@@ -8,10 +8,10 @@ void tryVector2() {
     std::vector<int> v;
 
     int size = 4;
-    int ele = 0;
+    int ele;
     auto it = v.begin();
     for(int i = 0; i < size; i++) {
-        std::cout<<"\nEnter val: ";
+        std::cout<<"\nEnter data "<<(i + 1)<<": ";
         std::cin>>ele;
         it = std::upper_bound(std::begin(v), std::end(v), ele);
         v.insert(it, ele);
