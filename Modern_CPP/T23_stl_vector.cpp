@@ -50,9 +50,9 @@ void tryVector3() {
     std::cout<<std::endl;
 
     std::cout<<"\nMax Element: ";
-    // it = std::max_element(v.begin(), v.end());      // get max value based on saalary of employee
+    // it = std::max_element(v.begin(), v.end());      
     it = std::max_element(v.begin(), v.end(), [](const Employee& a, const Employee& b) {
-        return a.getSalary() < b.getSalary();
+        return a.getSalary() < b.getSalary();   // get max value based on saalary of employee
     });
     std::cout<<*it;
 
@@ -80,9 +80,9 @@ void tryVectorWithObjectsAndUpperBound() {
         std::cout<<*it<<" ";
     std::cout<<std::endl;
 
-    // it = std::max_element(v.begin(), v.end());      // get max value based on ID of employee
+    // it = std::max_element(v.begin(), v.end());      
     it = std::max_element(v.begin(), v.end(), [](const Employee& a, const Employee& b) {
-        return a.getSalary() < b.getSalary();
+        return a.getSalary() < b.getSalary();   // get max value based on ID of employee
     });
     std::cout<<*it;
 
