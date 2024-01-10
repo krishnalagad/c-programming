@@ -7,6 +7,7 @@ class Employee {
     private:
         int id;
         std::string name;
+        int salary;
     public:
         Employee() = default;
         Employee(int id, std::string name): id(id), name(name) {} 
@@ -15,18 +16,21 @@ class Employee {
             is>>e.id;
             std::cout<<"\nEnter name: ";
             is>>e.name;
+            std::cout<<"\nEnter salary: ";
+            is>>e.salary;
             return is;
         }
         friend std::ostream& operator<< (std::ostream& is, const Employee& e) {
             is<<"\nID: "<<e.id;
             is<<"\nName: "<<e.name;
+            is<<"\nSalary: "<<e.salary;
             return is;
         }
         bool operator<(const Employee& other) const {
             return id < other.id;
         }
         // bool compareEmployees(const Employee& a, const Employee& b) {
-        //     return a.id < b.id; // Assuming getId() is a member function that returns the ID.
+        //     return a.id < b.id; 
         // }
 };
 
@@ -42,6 +46,15 @@ void tryVectorWithObjectsAndUpperBound() {
         v.insert(it, ele);
     }
 
+    std::cout<<std::endl;
+    for(it = v.begin(); it != v.end(); it++)
+        std::cout<<*it<<" ";
+    std::cout<<std::endl;
+
+    it = std::max_element(v.begin(), v.end());      // get max value based on ID of employee
+    std::cout<<*it;
+
+    std::sort(v.begin(), v.end());      // sort based on ID of employee
     std::cout<<std::endl;
     for(it = v.begin(); it != v.end(); it++)
         std::cout<<*it<<" ";
@@ -112,7 +125,7 @@ int main() {
 
     // std::vector<int>::iterator it;
     // it = v.begin();
-    auto it = v.begin();    // use auto keyword, it requires initialisation on the same line
+    auto it = v.begin();    // while using auto keyword, it requires initialisation on the same line
 
     // accessing elements of vector using iterator.
     std::cout<<*it<<std::endl;
@@ -131,8 +144,8 @@ int main() {
     for(it = v.begin(); it != v.end(); it++)
         std::cout<<*it<<" ";
 
-    // std::cout<<"\nAUTO ITERATOR TRY 1\n";
-    // tryVector();
+    std::cout<<"\nAUTO ITERATOR TRY 1\n";
+    tryVector();
 
     // std::cout<<"\nAUTO ITERATOR TRY 2\n";
     // tryVector2();
