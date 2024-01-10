@@ -27,12 +27,41 @@ class Employee {
             return is;
         }
         bool operator<(const Employee& other) const {
-            return id < other.id;
+            return salary > other.salary;
         }
-        // bool compareEmployees(const Employee& a, const Employee& b) {
-        //     return a.id < b.id; 
-        // }
+
+        int getSalary() const { return salary; }
+        void setSalary(int salary_) { salary = salary_; }
 };
+
+void tryVector3() {
+    std::vector<Employee> v;
+    int size = 2;
+    Employee ele;
+    for(int i = 0; i < size; i++) {
+        std::cin>>ele;
+        v.push_back(ele);
+    }
+
+    auto it = v.begin();
+    std::cout<<std::endl;
+    for(it = v.begin(); it != v.end(); it++)
+        std::cout<<*it<<" ";
+    std::cout<<std::endl;
+
+    std::cout<<"\nMax Element: ";
+    // it = std::max_element(v.begin(), v.end());      // get max value based on saalary of employee
+    it = std::max_element(v.begin(), v.end(), [](const Employee& a, const Employee& b) {
+        return a.getSalary() < b.getSalary();
+    });
+    std::cout<<*it;
+
+    std::sort(v.begin(), v.end());      // sort based on salary of employee
+    std::cout<<std::endl;
+    for(it = v.begin(); it != v.end(); it++)
+        std::cout<<*it<<" ";
+    std::cout<<std::endl;
+}
 
 void tryVectorWithObjectsAndUpperBound() {
     std::vector<Employee> v;
@@ -51,10 +80,13 @@ void tryVectorWithObjectsAndUpperBound() {
         std::cout<<*it<<" ";
     std::cout<<std::endl;
 
-    it = std::max_element(v.begin(), v.end());      // get max value based on ID of employee
+    // it = std::max_element(v.begin(), v.end());      // get max value based on ID of employee
+    it = std::max_element(v.begin(), v.end(), [](const Employee& a, const Employee& b) {
+        return a.getSalary() < b.getSalary();
+    });
     std::cout<<*it;
 
-    std::sort(v.begin(), v.end());      // sort based on ID of employee
+    std::sort(v.begin(), v.end());      // sort based on salary of employee
     std::cout<<std::endl;
     for(it = v.begin(); it != v.end(); it++)
         std::cout<<*it<<" ";
@@ -147,11 +179,14 @@ int main() {
     std::cout<<"\nAUTO ITERATOR TRY 1\n";
     tryVector();
 
-    // std::cout<<"\nAUTO ITERATOR TRY 2\n";
-    // tryVector2();
+    std::cout<<"\nAUTO ITERATOR TRY 2\n";
+    tryVector2();
 
-    std::cout<<"\nAUTO ITERATOR TRY 3\n";
+    std::cout<<"\nAUTO ITERATOR TRY 3 WITH UPPER BOUND\n";
     tryVectorWithObjectsAndUpperBound();
+
+    std::cout<<"\nAUTO ITERATOR TRY 4 WITH PUSH BACK\n";
+    tryVector3();
 
     return 0;
 }
