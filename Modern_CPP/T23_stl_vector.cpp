@@ -3,6 +3,8 @@
 #include <string>
 #include <algorithm>
 
+// auto str = 10;   // allowed here
+
 class Employee {
     private:
         int id;
