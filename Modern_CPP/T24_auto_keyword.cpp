@@ -36,5 +36,9 @@ int main() {
     std::cout<<"Type of ptr3: "<<typeid(ptr3).name()<<std::endl;
 
     std::cout<<"Max element: "<<getMaxT(12, 23.4f)<<std::endl;
+
+    delete ptr1;
+    delete []ptr2;
+    delete []ptr3;
     return 0;
 }
