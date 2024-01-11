@@ -38,6 +38,3 @@ int main() {
     std::cout<<"Max element: "<<getMaxT(12, 23.4f)<<std::endl;
     return 0;
 }
-;
-
-;
