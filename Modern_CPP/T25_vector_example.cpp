@@ -57,10 +57,18 @@ void getEmployeeWithMaxSalary(const std::vector<Employee>& v) {
     std::cout<<*it;
 }
 
+void sortVectorBasedOnSalary(std::vector<Employee>& v) {
+    std::sort(std::begin(v), std::end(v), [](const Employee& e1, const Employee& e2){
+        return e1.getSalary() < e2.getSalary();
+    });
+    display(v);
+}
+
 int main() {
     std::vector<Employee> v;
     addData(v); addData(v); addData(v);
     display(v);
     getEmployeeWithMaxSalary(v);
+    sortVectorBasedOnSalary(v);
     return 0;
 }
