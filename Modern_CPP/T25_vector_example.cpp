@@ -50,10 +50,17 @@ void display(const std::vector<Employee>& v) {
         std::cout<<emp;
 }
 
+void getEmployeeWithMaxSalary(const std::vector<Employee>& v) {
+    auto it = std::max_element(std::begin(v), std::end(v), [](const Employee& e1, const Employee& e2){
+        return e1.getSalary() < e2.getSalary();
+    });
+    std::cout<<*it;
+}
+
 int main() {
     std::vector<Employee> v;
     addData(v); addData(v); addData(v);
     display(v);
-
+    getEmployeeWithMaxSalary(v);
     return 0;
 }

@@ -22,14 +22,17 @@ int main() {
         return s1.length() < s2.length();
     });
 
-    for(int i = 0; i < 5; i++) {
-        std::cout<<strArr[i]<<std::endl;
-    }
-    std::cout<<std::endl;
+    
 
-    std::vector<Vehicle*> v = {new Vehicle(), new Bike()};
-    for(Vehicle* i: v)
-        i->show();
+
+    // for(int i = 0; i < 5; i++) {
+    //     std::cout<<strArr[i]<<std::endl;
+    // }
+    // std::cout<<std::endl;
+
+    // std::vector<Vehicle*> v = {new Vehicle(), new Bike()};
+    // for(Vehicle* i: v)
+    //     i->show();
 
     return 0;
 }
