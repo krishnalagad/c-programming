@@ -45,8 +45,8 @@ void addData(std::vector<Employee>& v) {
     // v.push_back(e);
 
     // dummy data
-    v = { Employee(1, "Krishna Lagad", 25000), Employee(2, "Jack Sparrow", 23000), 
-        Employee(3, "Don Bradman", 12000)};
+    v = { Employee(2, "Jack Sparrow", 23000), Employee(3, "Don Bradman", 12000), 
+            Employee(4, "Krishna Lagad", 52000), Employee(4, "Jack Sparrow", 24000)};
     
 }
 
@@ -95,7 +95,7 @@ void getEmployeeWithNameUpperBound(std::vector<Employee>& v, const std::string& 
     targetEmployee.setName(name);
 
     auto endPtr = std::upper_bound(std::begin(v), std::end(v), targetEmployee, [](const Employee& emp, const Employee& target) {
-        return emp.getName() == target.getName();  // Use less-than to establish a strict weak ordering
+        return emp.getName() == target.getName();  
     });
 
     if (endPtr != std::end(v) && endPtr->getName() == targetEmployee.getName()) {
@@ -107,9 +107,6 @@ void getEmployeeWithNameUpperBound(std::vector<Employee>& v, const std::string& 
         std::cout << "No record match with name " << name;
     }
 }
-
-
-
 
 void getEmployeeWithNameFindIf(std::vector<Employee>& v, const std::string name) {
     std::cout<<"\n-----SEARCH EMPLOYEE WITH NAME (FIND_IF())-----"<<std::endl;
@@ -129,6 +126,34 @@ void getEmployeeWithNameFindIf(std::vector<Employee>& v, const std::string name)
     }
 }
 
+void getEmployeeWithNameEqualRange(std::vector<Employee>& v, const std::string& name) {
+    std::cout << "\n-----SEARCH EMPLOYEE WITH NAME (EQUAL_RANGE())-----" << std::endl;
+
+    Employee targetEmployee;
+    targetEmployee.setName(name);
+
+    // Sort the vector based name of emp
+    std::sort(std::begin(v), std::end(v), [](const Employee& a, const Employee& b) {
+        return a.getName().compare(b.getName()) < 0;
+    });
+
+    // Use equal_range on the sorted vector
+    auto range = std::equal_range(std::begin(v), std::end(v), targetEmployee, [](const Employee& emp, const Employee& target) {
+        return emp.getName().compare(target.getName()) < 0;
+    });
+
+    if (range.first != std::end(v) && range.second != std::end(v)) {
+        std::string upperName = name;
+        std::transform(upperName.begin(), upperName.end(), upperName.begin(), ::toupper);
+        std::cout << "Employees found with name " << upperName << std::endl;
+
+        for (auto it = range.first; it != range.second; ++it) {
+            std::cout << *it << std::endl;
+        }
+    } else {
+        std::cout << "No records match with name " << name;
+    }
+}
 
 int main() {
     std::vector<Employee> v;
@@ -140,6 +165,7 @@ int main() {
     countTotSalGret20k(v);
     getEmployeeWithNameFindIf(v, "Krishna Lagad");
     getEmployeeWithNameUpperBound(v, "Jack Sparrow");   // this uses binary search, so vector shoud be in sorted order
+    getEmployeeWithNameEqualRange(v, "Jack Sparrow");
 
     return 0;
 }
