@@ -165,7 +165,7 @@ int main() {
     countTotSalGret20k(v);
     getEmployeeWithNameFindIf(v, "Krishna Lagad");
     getEmployeeWithNameUpperBound(v, "Jack Sparrow");   // this uses binary search, so vector shoud be in sorted order
-    getEmployeeWithNameEqualRange(v, "Don Bradman");   // get total employee ith same name
+    getEmployeeWithNameEqualRange(v, "Jack Sparrow");   // get total employee ith same name
 
     return 0;
 }
