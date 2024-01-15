@@ -46,7 +46,7 @@ void addData(std::vector<Employee>& v) {
 
     // dummy data
     v = { Employee(2, "Jack Sparrow", 23000), Employee(3, "Don Bradman", 12000), 
-            Employee(4, "Krishna Lagad", 52000), Employee(4, "Jack Sparrow", 24000)};
+            Employee(4, "Krishna Lagad", 52000), Employee(5, "Jack Sparrow", 24000)};
     
 }
 
@@ -165,7 +165,7 @@ int main() {
     countTotSalGret20k(v);
     getEmployeeWithNameFindIf(v, "Krishna Lagad");
     getEmployeeWithNameUpperBound(v, "Jack Sparrow");   // this uses binary search, so vector shoud be in sorted order
-    getEmployeeWithNameEqualRange(v, "Jack Sparrow");
+    getEmployeeWithNameEqualRange(v, "Don Bradman");   // get total employee ith same name
 
     return 0;
 }
