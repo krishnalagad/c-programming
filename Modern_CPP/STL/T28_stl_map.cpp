@@ -43,5 +43,18 @@ int main() {
     uint32_t foundedYear = foundedMap[CityData("Pune", 500000, 29876.3, 92873.9)];
     std::cout<<foundedYear<<std::endl;
 
+    CityData& delhi = data["Delhi"];    // if the key is not present in map, then new record with tha key will create.
+    delhi.population = 1200000;
+    delhi.name = "Delhi";
+    delhi.longitude = 2398.5;
+    delhi.latitude = 12356.67;
+    std::cout<<delhi.population<<std::endl;
+
+    const auto& cities = data;
+    if (cities.find("Delhi") != cities.end()) {
+        const CityData& city = cities.at("Delhi");
+        std::cout<<city.name;
+    }
+
     return 0;
 }
