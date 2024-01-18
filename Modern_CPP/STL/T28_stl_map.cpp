@@ -57,5 +57,12 @@ int main() {
         std::cout<<city.name<<std::endl;
     }
 
+    for(auto& [key, val] : cities) 
+        std::cout << key << "-> " << val.population << std::endl;
+
+    data.erase("Mumbai");
+    for(auto& [key, val] : cities) 
+        std::cout << key << "-> " << val.population << std::endl;
+
     return 0;
 }
