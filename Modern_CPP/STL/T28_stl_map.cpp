@@ -51,9 +51,10 @@ int main() {
     std::cout<<delhi.population<<std::endl;
 
     const auto& cities = data;
-    if (cities.find("Delhi") != cities.end()) {
+    auto it = cities.find("Delhi");
+    if (it != cities.end()) {
         const CityData& city = cities.at("Delhi");
-        std::cout<<city.name;
+        std::cout<<city.name<<std::endl;
     }
 
     return 0;
