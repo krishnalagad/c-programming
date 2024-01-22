@@ -21,8 +21,11 @@ float averagePrice(container &data) {
 }
 
 float getPriceById(container &data, std::string id) {
-
-    return 0.0f;
+    float tot;
+    for(Pointer& ptr: data)
+        if (id == ptr->id())
+            return ptr->price();
+    throw std::runtime_error("NO ID FOUND!!");
 }
 
 float getAvg(std::vector<Car *> v) {

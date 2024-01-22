@@ -11,13 +11,13 @@ int main() {
                             new Car("car003", 56000.3, VehicleType::SUV) };
 
     std::cout<<"Average price of 3 Cars is: "<<getAvg(v)<<std::endl;
-    // std::cout
+
     std::string id = "car001";
     Car resultCar = getCarById(v, id);
-
-    std::cout<<"ID: "<<resultCar.id()<<std::endl;
     std::cout<<"Price: "<<resultCar.price()<<std::endl;
 
+    for(Car* c: v)
+        delete c;
 
     container data;    // empty container
 
