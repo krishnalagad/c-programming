@@ -18,5 +18,14 @@ int main() {
     std::cout<<"ID: "<<resultCar.id()<<std::endl;
     std::cout<<"Price: "<<resultCar.price()<<std::endl;
 
+
+    container data;    // empty container
+
+    createObjects(data);
+
+    averagePrice(data);
+
+    getPriceById(data, id);
+
     return 0;
 }   
