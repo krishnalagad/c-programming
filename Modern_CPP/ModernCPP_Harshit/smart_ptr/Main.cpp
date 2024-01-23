@@ -5,7 +5,18 @@
 #include <vector>
 #include "Functionalities.h"
 
+void magic(Car& car) {
+    std::cout<<car.price();
+}
+
 int main() {
+
+    // Car c1("car000", 98000.0f, VehicleType::HATCHBACK);
+    // magic(c1);
+
+    // std::string str = "idcode";
+    // magic(str);
+
     std::vector<Car*> v = { new Car("car001", 23000.3, VehicleType::HATCHBACK), 
                             new Car("car002", 32000.3, VehicleType::SEDAN),
                             new Car("car003", 56000.3, VehicleType::SUV) };

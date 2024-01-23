@@ -6,20 +6,22 @@
 
 class Car {
     private:
-        std::string _id;
-        float _price;
-        VehicleType _type;
+        std::string _id {"car000"};
+        float _price {0.0f};
+        VehicleType _type {VehicleType::HATCHBACK};
 
     public:
-        // Six special functions
-        Car() = default;     // deleted default constructor, means dont want default constructor
+        // ---------------- Six special functions---------------
+        // Car() = delete;     // deleted default constructor, means dont want default constructor
+        Car() = default;    // default : now we can set default values to attr in priavte section
+        explicit Car(std::string id);  // mark it explicit, if one param is there
+        Car(std::string id, VehicleType type);  // mark it explicit even if one unknown param and other are not
+        Car(std::string id, float price, VehicleType type = VehicleType::SEDAN);
         // Car(const Car&) = delete;  // deleted copy constructor
         ~Car() = default;   // defaulted desctructor
         // Car& operator=(const Car&) = delete;
         // Car& operator=(const Car&&) = delete;   // new concept! move assignment
         // Car(Car&&) = delete;    // new concept! move constructor
-
-        Car(std::string, float, VehicleType);
 
         std::string id() const { return _id; }
         void setId(const std::string &id) { _id = id; }
