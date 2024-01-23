@@ -29,6 +29,18 @@ lvalues: values that are in the RAM (have a fixed location) aka have an adress
 rvalues: temporary value (result of an expression or displacement).
           rvalues dont have a fixed address (We cant go to their location in RAM and find value )
 
+Intention:
+ 
+1) Both Accepted:
+    a) Lvalues accepted by copy, rvalues must be assigned e.g Magic(int n1);
+    b) Lvalue by reference, rvaules must be assigned e.g: Magic(const int& n1)
+ 
+2) Only value by reference: 
+        e.g: Magic(int& n1)
+ 
+3) Only rvalues by assignment 
+        e.g: Magic(int&& n1)
+
 OS by Galvin
 Computer Architecture by Hwang
 Computer Networking by tanenbaum
