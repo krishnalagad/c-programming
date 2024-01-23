@@ -48,4 +48,5 @@ Car& getCarById(std::vector<Car*> v, std::string id) {
     if (!(it == std::end(v))) {
         return **it;
     }
+    throw std::runtime_error("NO ID FOUND!!");
 }
