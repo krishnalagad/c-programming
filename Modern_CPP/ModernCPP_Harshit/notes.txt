@@ -23,3 +23,13 @@
 
 8) nullptr
     : replacement of NULL macro with a proper type (std::nullptr_t)
+
+lvalues: values that are in the RAM (have a fixed location) aka have an adress
+
+rvalues: temporary value (result of an expression or displacement).
+          rvalues dont have a fixed address (We cant go to their location in RAM and find value )
+
+OS by Galvin
+Computer Architecture by Hwang
+Computer Networking by tanenbaum
+Effective Modern C++ by Scott Mears
