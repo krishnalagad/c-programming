@@ -25,6 +25,7 @@
     : replacement of NULL macro with a proper type (std::nullptr_t)
 
 lvalues: values that are in the RAM (have a fixed location) aka have an adress
+         lvalues have a name given by us
 
 rvalues: temporary value (result of an expression or displacement).
           rvalues dont have a fixed address (We cant go to their location in RAM and find value )
@@ -40,6 +41,9 @@ Intention:
  
 3) Only rvalues by assignment 
         e.g: Magic(int&& n1)
+
+For every STL container, actual data is stored in heap, only start and end ptr are stored on stack
+regardless of the size.
 
 OS by Galvin
 Computer Architecture by Hwang
