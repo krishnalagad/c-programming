@@ -12,6 +12,9 @@ class Demo {
         : _id(id), _age(age), _name(name), _arr(std::move(arr)) {}
         ~Demo() {
             std::cout<<_arr[0]<<std::endl;
+            std::cout<<_id<<std::endl;
+            std::cout<<_age<<std::endl;
+            std::cout<<_name<<std::endl;
         }
 };
 
