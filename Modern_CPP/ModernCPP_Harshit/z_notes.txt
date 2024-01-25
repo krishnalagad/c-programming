@@ -63,6 +63,15 @@ Intention:
                 Beta is instantiated by using one or more instances of Alpha. Instance of Beta does 
                 not control the lifetime of instance/s of Alpha
 
+For every data member, following things must be considered
+ 
+    1) Is it supposed to be mutable or immutable?
+        - Does it need to auto-increment based on previous value ?
+    2) Should be accepted by value, by lvalue reference or rvalue reference or both?
+    3) Is it stack allocated or heap allocated? (or maybe both partially?)
+    4) Does it need to be smartly managed? (applicable only for heap allocated members)
+    5) Does the data member need to have a non-null state at the time of instantiation of the object
+
 OS by Galvin
 Computer Architecture by Hwang
 Computer Networking by tanenbaum
