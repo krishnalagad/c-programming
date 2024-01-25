@@ -18,13 +18,13 @@ class BankAccount {
         CardPointer _accountDebitCard;
 
     public:
-        // special functions enaable/disable
+        // special functions enable/disable
         BankAccount() = delete;
         BankAccount(const BankAccount&) = delete;
         BankAccount& operator=(const BankAccount&) = delete;
         BankAccount(BankAccount&&) = delete;
         BankAccount& operator=(BankAccount&&) = delete;
-        ~BankAccount() = default;
+        ~BankAccount() { std::cout<<"Bank account destroyed!! "<<_accountNumber<<std::endl; };
 
         // parameterized constructor for initialization of obj
         BankAccount(std::string, AccountType, float);
@@ -44,6 +44,6 @@ class BankAccount {
         CardPointer acccountDebitCard() { return _accountDebitCard; }     
 };
 
-int BankAccount::_counter = 9000000;
+inline int BankAccount::_counter = 9000000;
 
 #endif // BANKACCOUNT_H

@@ -3,6 +3,7 @@
 
 #include <string>
 #include "DebitCardType.h"
+#include <iostream>
 
 class DebitCard {
     private:
@@ -18,7 +19,7 @@ class DebitCard {
         DebitCard& operator=(const DebitCard&) = delete;
         DebitCard(DebitCard&&) = delete;
         DebitCard& operator=(DebitCard&&) = delete;
-        ~DebitCard() = default;
+        ~DebitCard() { std::cout<<"Debit card destroyed!! "<<_cardNumber<<std::endl; };
 
         unsigned short cvv() const { return _cvv; }
         long cardNumber() const { return _cardNumber; }
