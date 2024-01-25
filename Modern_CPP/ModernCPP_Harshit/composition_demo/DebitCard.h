@@ -1,8 +1,8 @@
 #ifndef DEBITCARD_H
 #define DEBITCARD_H
 
-#include "DebitCardType.h"
 #include <string>
+#include "DebitCardType.h"
 
 class DebitCard {
     private:
@@ -22,7 +22,7 @@ class DebitCard {
 
         unsigned short cvv() const { return _cvv; }
         long cardNumber() const { return _cardNumber; }
-        std::string&& expiryDate() const { return _expiryDate; }     // return type is rvalue ref and acctually returning lvalue, so use one & ony
+        const std::string& expiryDate() const { return _expiryDate; }     // return type is rvalue ref and acctually returning lvalue, so use one & ony
         DebitCardType cardType() const { return _cardType; }
 };
 

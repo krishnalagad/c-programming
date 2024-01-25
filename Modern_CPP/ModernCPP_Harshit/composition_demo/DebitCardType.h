@@ -4,7 +4,7 @@
 enum class DebitCardType {
     VISA,
     MASTERCARD,
-    RYPAY
+    RUPAY
 };
 
 #endif // DEBITCARDTYPE_H

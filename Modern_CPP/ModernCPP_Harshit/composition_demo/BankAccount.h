@@ -2,7 +2,11 @@
 #define BANKACCOUNT_H
 
 #include <string>
+#include <memory>
 #include "AccountType.h"
+#include "DebitCard.h"
+
+using CardPointer = std::shared_ptr<DebitCard>;
 
 class BankAccount {
     private:
@@ -11,6 +15,7 @@ class BankAccount {
         std::string _accountHolderName;
         AccountType _accountType;
         float _accountBalance;
+        CardPointer _accountDebitCard;
 
     public:
         // special functions enaable/disable
@@ -23,6 +28,7 @@ class BankAccount {
 
         // parameterized constructor for initialization of obj
         BankAccount(std::string, AccountType, float);
+        BankAccount(std::string, AccountType, float, CardPointer);
 
         // member function for account
         void depositAmount(long amount);
@@ -34,7 +40,8 @@ class BankAccount {
         void setAccountHolderName(const std::string &accountHolderName) { _accountHolderName = accountHolderName; }
         AccountType accountType() const { return _accountType; }
         void setAccountType(const AccountType &accountType) { _accountType = accountType; }
-        float accountbalance() const { return _accountBalance; }       
+        float accountbalance() const { return _accountBalance; }  
+        CardPointer acccountDebitCard() { return _accountDebitCard; }     
 };
 
 int BankAccount::_counter = 9000000;

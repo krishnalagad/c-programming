@@ -2,9 +2,15 @@
 #include <limits>
 #include "BankAccount.h"
 
-BankAccount::BankAccount(std::string accountHolderName, AccountType accountType, float acountBalance)
+BankAccount::BankAccount(std::string accountHolderName, AccountType accountType, float accountBalance)
     : _accountNumber(++_counter), _accountHolderName(accountHolderName), _accountType(accountType), 
-      _accountBalance(acountBalance) {}
+      _accountBalance(accountBalance), _accountDebitCard(nullptr) {}
+
+// delegating construstor
+BankAccount::BankAccount(std::string accountHolderName, AccountType accountType, float accountBalance, 
+    CardPointer accountDebitCard):  BankAccount(accountHolderName, accountType, accountBalance) {
+        _accountDebitCard = accountDebitCard;
+}
 
 void BankAccount::depositAmount(long amount) {
     if (_accountBalance + amount > __LONG_MAX__) 
