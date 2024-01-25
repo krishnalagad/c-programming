@@ -16,6 +16,18 @@ int demo(std::string&& data) {
     return 0;
 }
 
+class MyClass {
+    public:
+        void showMessage() const {
+            std::cout << "Hello from MyClass!" << std::endl;
+        }
+};
+
+std::unique_ptr<MyClass> createObject() {
+    // Create a unique_ptr and return it as an rvalue reference
+    return std::make_unique<MyClass>();
+}
+
 int main() {
 
     std::vector<int> v1 {10, 20, 30};
@@ -30,9 +42,17 @@ int main() {
 
     std::string str = "Krishna";
     demo(std::move(str));   // illegal operation below
-    std::this_thread::sleep_for(std::chrono::seconds(20));
+    std::this_thread::sleep_for(std::chrono::seconds(1));
     str = "Lagad";
-    std::cout<<str;
+    std::cout<<str<<std::endl;
+
+    // Obtain the rvalue reference from the function
+    std::unique_ptr<MyClass>&& myObject = createObject();
+
+    // Check if the object is valid before using it
+    if (myObject) {
+        myObject->showMessage();
+    }
 
     return 0;
 }
