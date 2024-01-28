@@ -8,9 +8,25 @@ struct CityData {
     double longitude;
     double latitude;
 
-    CityData() : name(""), population(0), longitude(0.0), latitude(0.0) {}
+    CityData() : name(std::move("")), population(0), longitude(0.0), latitude(0.0) {}
     CityData(std::string name, uint64_t pop, double lon, double lat)
         : name(std::move(name)), population(pop), longitude(lon), latitude(lat) {}
+
+    // Move constructor
+    CityData(CityData&& other)
+        : name(std::move(other.name)), population(other.population),
+          longitude(other.longitude), latitude(other.latitude) {}
+
+    // Move assignment operator
+    CityData& operator=(CityData&& other) {
+        if (this != &other) {
+            name = std::move(other.name);
+            population = other.population;
+            longitude = other.longitude;
+            latitude = other.latitude;
+        }
+        return *this;
+    }
 
     bool operator<(const CityData& other) const {
         return name < other.name; 
