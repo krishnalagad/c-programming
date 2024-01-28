@@ -20,6 +20,6 @@ void BankAccount::depositAmount(long amount) {
 
 void BankAccount::withdrawAmount(long amount) {
     if (amount > _accountBalance) 
-        throw std::runtime_error("Cannot deposit an amount this large!!");
+        throw std::runtime_error("Cannot withdraw an amount this large!!");
     _accountBalance -= amount;
 }
