@@ -4,5 +4,7 @@
 int main() {
     Container data;
     createObjects(data);
+    display(data);
+    
     return 0;
 }

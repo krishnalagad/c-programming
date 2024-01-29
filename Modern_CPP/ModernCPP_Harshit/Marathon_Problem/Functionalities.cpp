@@ -34,13 +34,18 @@ void createObjects(Container& data) {
 }
 
 int getHPByCarId(std::string carId, Container& data) {
-    std::cout << "Car ID: " << carId << std::endl;
     auto it = std::find_if(std::begin(data), std::end(data), [carId](const CarPointer& car){
         return carId == car->getCarId();
     });
-    if (it !=std::end(data)) {
+    if (it != std::end(data)) {
         CarPointer c = *it;
-        return c->getCarEngine().engineHorsepower();
+        if (c) {
+            int res = c->getCarEngine().engineHorsepower();
+            std::cout << res << std::endl;
+            return res;
+        } else {
+            throw CarNotExistsException("Car found with ID " + carId + " but has a null pointer.\n");
+        }
     } else {
         throw CarNotExistsException("Car doesn't exist with ID " + carId + "\n");
     }
@@ -59,3 +64,7 @@ int getHPByCarId(std::string carId, Container& data) {
 //     // }
 //     return 0;
 // }
+
+void testFun(std::string& str) {
+    std::cout << str <<std::endl;
+}

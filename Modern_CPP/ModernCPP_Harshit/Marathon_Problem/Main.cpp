@@ -4,6 +4,7 @@
 int main() {
     Container data;
     createObjects(data);
-    std::cout << "Horsepower of car is: " << getHPByCarId("CAR2024-103", data) << std::endl;
+    std::string id = "CAR2024-103";
+    std::cout << "Horsepower of car is: " << getHPByCarId(id, data) << std::endl;
     return 0;
 }

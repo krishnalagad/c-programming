@@ -9,5 +9,6 @@ using BankPointer = std::shared_ptr<BankAccount>;
 using Container = std::vector<BankPointer>;
 
 void createObjects(Container& data);    // empty container
+void display(Container& data);
 
 #endif // FUNCTIONALITIES_H
