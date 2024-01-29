@@ -10,8 +10,14 @@
 using CarPointer = std::shared_ptr<Car>;
 using Container  = std::vector<CarPointer>;
 
+inline Engine supraEngine(EngineType::HYBRID, 900, 66);
+inline Engine mustangEngine(EngineType::HYBRID, 850, 63);
+inline Engine gtrEngine(EngineType::HYBRID, 1020, 92);
+
 void createObjects(Container& data);
 int getHPByCarId(std::string carId, Container& data);
+Container getCarsByEngineTorque(int torque, Container& data);
+void display(const Container& data);
 
 void testFun(std::string& str);
 

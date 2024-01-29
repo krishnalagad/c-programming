@@ -15,8 +15,8 @@ class Engine {
 
     public:
         Engine() = default;
-        // ~Engine() { std::cout << "Engine destroyed!! " << _engineNumber << std::endl; };
-        ~Engine() {};
+        ~Engine() { std::cout << "Engine destroyed!! " << _engineNumber << std::endl; };
+        // ~Engine() {};
 
         Engine(EngineType, int, int);
 

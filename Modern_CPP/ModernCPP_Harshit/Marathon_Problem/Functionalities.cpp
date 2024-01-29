@@ -4,9 +4,7 @@
 #include "CarNotExistsException.h"
 
 void createObjects(Container& data) {
-    Engine supraEngine = Engine(EngineType::HYBRID, 900, 660);
-    Engine mustangEngine = Engine(EngineType::HYBRID, 850, 630);
-    Engine gtrEngine = Engine(EngineType::HYBRID, 1020, 720);
+
     data.push_back(
         std::make_shared<Car>(
             "Toyota Supra",
@@ -39,15 +37,35 @@ int getHPByCarId(std::string carId, Container& data) {
     });
     if (it != std::end(data)) {
         CarPointer c = *it;
-        if (c) {
-            int res = c->getCarEngine().engineHorsepower();
-            std::cout << res << std::endl;
-            return res;
-        } else {
+        if (c) 
+            return c->getCarEngine().engineHorsepower();
+        else 
             throw CarNotExistsException("Car found with ID " + carId + " but has a null pointer.\n");
-        }
-    } else {
+    } else 
         throw CarNotExistsException("Car doesn't exist with ID " + carId + "\n");
+}
+
+Container getCarsByEngineTorque(int torque, Container& data) {
+    Container result;
+    for(CarPointer car: data) {
+        if (torque >= car->getCarEngine().engineTorque()){
+            result.push_back(car);
+        }
+    }
+    return result;
+}
+
+void display(const Container& data) {
+    for(CarPointer car: data) {
+        std::cout << "Car ID: " << car->getCarId() << std::endl;
+        std::cout << "Car Brand: " << car->getCarBrand() << std::endl;
+        std::cout << "Car Price: " << car->getCarPrice() << std::endl;
+        std::cout << "Car Type: " << (int) car->getCarType() << std::endl;
+
+        std::cout << "Engine Number: " << car->getCarEngine().engineNumber() << std::endl;
+        std::cout << "Engine Horsepower: " << car->getCarEngine().engineHorsepower() << std::endl;
+        std::cout << "Engine Torque: " << car->getCarEngine().engineTorque() << std::endl;
+        std::cout << "Engine Type: " << (int) car->getCarEngine().engineType() << std::endl;
     }
 }
 

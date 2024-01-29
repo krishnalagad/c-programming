@@ -17,8 +17,8 @@ class Car {
 
     public:
         Car() = default;
-        // ~Car() { std::cout << "Car destroyed!! " << _carId << std::endl; };
-        ~Car() {};
+        ~Car() { std::cout << "Car destroyed!! " << _carId << std::endl; };
+        // ~Car() {};
 
         Car(std::string, CarType, Engine&, float);
 
