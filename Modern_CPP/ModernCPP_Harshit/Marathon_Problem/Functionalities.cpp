@@ -1,4 +1,7 @@
+#include <algorithm>
+#include <iostream>
 #include "Functionalities.h"
+#include "CarNotExistsException.h"
 
 void createObjects(Container& data) {
     Engine supraEngine = Engine(EngineType::HYBRID, 900, 660);
@@ -29,3 +32,30 @@ void createObjects(Container& data) {
         )
     );
 }
+
+int getHPByCarId(std::string carId, Container& data) {
+    std::cout << "Car ID: " << carId << std::endl;
+    auto it = std::find_if(std::begin(data), std::end(data), [carId](const CarPointer& car){
+        return carId == car->getCarId();
+    });
+    if (it !=std::end(data)) {
+        CarPointer c = *it;
+        return c->getCarEngine().engineHorsepower();
+    } else {
+        throw CarNotExistsException("Car doesn't exist with ID " + carId + "\n");
+    }
+}
+
+// int getHPByCarId(std::string carId) {
+//     std::cout << "Car ID: " << carId << std::endl;
+//     // auto it = std::find_if(std::begin(data), std::end(data), [carId](const CarPointer& car){
+//     //     return carId == car->getCarId();
+//     // });
+//     // if (it !=std::end(data)) {
+//     //     CarPointer c = *it;
+//     //     return c->getCarEngine().engineHorsepower();
+//     // } else {
+//     //     throw CarNotExistsException("Car doesn't exist with ID " + carId + "\n");
+//     // }
+//     return 0;
+// }

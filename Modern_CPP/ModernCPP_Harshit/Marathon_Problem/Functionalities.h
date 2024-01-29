@@ -10,5 +10,6 @@ using CarPointer = std::shared_ptr<Car>;
 using Container  = std::vector<CarPointer>;
 
 void createObjects(Container& data);
+int getHPByCarId(std::string carId, Container& data);
 
 #endif // FUNCTIONALITIES_H
