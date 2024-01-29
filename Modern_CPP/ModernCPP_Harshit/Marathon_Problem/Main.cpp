@@ -8,12 +8,13 @@ int main() {
     try {
         std::string id = "CAR2024-101";
         std::cout << "Horsepower of car is: " << getHPByCarId(id, data) << std::endl;
+        getAvgHorsepowerByTypeAndPrice(EngineType::HYBRID, 80000, data);
     }
     catch(CarNotExistsException& e) {
         std::cout << e.what();
     }
     Container result = getCarsByEngineTorque(80, data);
     display(result);
-    
+
     return 0;
 }

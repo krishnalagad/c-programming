@@ -18,6 +18,8 @@ void createObjects(Container& data);
 int getHPByCarId(std::string carId, Container& data);
 Container getCarsByEngineTorque(int torque, Container& data);
 void display(const Container& data);
+void getAvgHorsepowerByTypeAndPrice(EngineType engineType, float carPrice, const Container& data);
+float getCombinedPriceOfTwoCars(CarPointer& c1, CarPointer& c2);
 
 void testFun(std::string& str);
 

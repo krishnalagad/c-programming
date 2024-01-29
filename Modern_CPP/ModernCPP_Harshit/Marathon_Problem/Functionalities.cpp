@@ -18,7 +18,7 @@ void createObjects(Container& data) {
             "Ford Mustang",
             CarType::SPORTS,
             mustangEngine,
-            80000.0f
+            90000.0f
         )
     );
     data.push_back(
@@ -26,7 +26,7 @@ void createObjects(Container& data) {
             "Nissan GTR",
             CarType::SPORTS,
             gtrEngine,
-            80000.0f
+            180000.0f
         )
     );
 }
@@ -69,6 +69,25 @@ void display(const Container& data) {
     }
 }
 
+void getAvgHorsepowerByTypeAndPrice(EngineType engineType, float carPrice, const Container& data) {
+    float sumHp = 0.0f;
+    int count = 0;
+    for (CarPointer car: data) {
+        if (car->getCarPrice() > carPrice && car->getCarEngine().engineType() == engineType) {
+            sumHp += car->getCarEngine().engineHorsepower();
+            count += 1;
+        }
+    }
+    if (count) {
+        float avg = sumHp / count;
+        std::cout << "Average of horsepower is " << avg <<std::endl;
+    } else 
+        throw CarNotExistsException("Car not found!!");
+}
+
+float getCombinedPriceOfTwoCars(CarPointer& c1, CarPointer& c2) {
+    
+}
 // int getHPByCarId(std::string carId) {
 //     std::cout << "Car ID: " << carId << std::endl;
 //     // auto it = std::find_if(std::begin(data), std::end(data), [carId](const CarPointer& car){
