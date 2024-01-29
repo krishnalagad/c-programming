@@ -56,6 +56,7 @@ Container getCarsByEngineTorque(int torque, Container& data) {
 }
 
 void display(const Container& data) {
+    std::cout << std::endl;
     for(CarPointer car: data) {
         std::cout << "Car ID: " << car->getCarId() << std::endl;
         std::cout << "Car Brand: " << car->getCarBrand() << std::endl;
@@ -66,6 +67,7 @@ void display(const Container& data) {
         std::cout << "Engine Horsepower: " << car->getCarEngine().engineHorsepower() << std::endl;
         std::cout << "Engine Torque: " << car->getCarEngine().engineTorque() << std::endl;
         std::cout << "Engine Type: " << (int) car->getCarEngine().engineType() << std::endl;
+        std::cout << std::endl;
     }
 }
 
