@@ -85,9 +85,10 @@ void getAvgHorsepowerByTypeAndPrice(EngineType engineType, float carPrice, const
         throw CarNotExistsException("Car not found!!");
 }
 
-float getCombinedPriceOfTwoCars(CarPointer& c1, CarPointer& c2) {
-    
+float getCombinedPriceOfTwoCars(const CarPointer c1, const CarPointer c2) {
+    return c1->getCarPrice() + c2->getCarPrice();
 }
+
 // int getHPByCarId(std::string carId) {
 //     std::cout << "Car ID: " << carId << std::endl;
 //     // auto it = std::find_if(std::begin(data), std::end(data), [carId](const CarPointer& car){
