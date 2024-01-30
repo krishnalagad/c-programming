@@ -21,6 +21,14 @@ class DataModel {
         void setValue(float value) { _value = value; }
 };
 
+void magic(DataModel obj) {
+    std::cout << "Magic triggered!!" << std::endl;
+}
+
+// debug with: g++ Example.cpp -g -o app
 int main() {
+    DataModel d1(101, 45.56f);
+    magic(d1);
+
     return 0;
 }
