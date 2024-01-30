@@ -10,8 +10,8 @@ int main() {
         std::cout << ex.what() << std::endl;
     }
 
-    // std::cout << std::dynamic_pointer_cast<Car>(data[0])->carType();
-    std::cout << *data.at(1) << std::endl;
+    std::cout << *std::dynamic_pointer_cast<Car>(data[1]) << std::endl;
+    // std::cout << *data.at(1) << std::endl;
 
     return 0;
 }
