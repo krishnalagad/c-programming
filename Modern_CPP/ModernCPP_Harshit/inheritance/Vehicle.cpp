@@ -13,6 +13,4 @@ Vehicle::Vehicle(std::string id, VehicleType type): Vehicle(id) { _vehicleType =
 
 Vehicle::Vehicle(std::string id, float price, VehicleType type): Vehicle(id, type) { _vehiclePrice = price; }
 
-float Vehicle::calculateRegistrationTax() {
-    return 0.0f;
-}
+float Vehicle::calculateRegistrationTax() { return 0.0f; }
