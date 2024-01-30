@@ -27,8 +27,9 @@ void magic(DataModel obj) {
 
 // debug with: g++ Example.cpp -g -o app
 int main() {
-    DataModel d1(101, 45.56f);
-    magic(d1);
+    DataModel* d1 = new DataModel(101, 45.56f);
+    magic(*d1);
+    delete d1;
 
     return 0;
 }
