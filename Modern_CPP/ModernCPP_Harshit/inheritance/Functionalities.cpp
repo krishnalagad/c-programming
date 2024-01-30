@@ -2,7 +2,7 @@
 
 void createObjects(DataContainer &data) {
     data.emplace_back(std::make_shared<Car>(CarType::SEDAN, "V101", 89000.0f, VehicleType::COMMERCIAL));
-    data.emplace_back(std::make_shared<Car>(CarType::SUV, "V102", 99000.0f, VehicleType::COMMERCIAL));
+    data.emplace_back(std::make_shared<Car>(CarType::SUV, "V102", 99000.0f, VehicleType::PRIVATE));
     data.emplace_back(std::make_shared<Car>(CarType::SEDAN, "V103", 79000.0f, VehicleType::COMMERCIAL));
 }
 

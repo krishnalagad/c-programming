@@ -11,6 +11,7 @@ int main() {
     }
 
     // std::cout << std::dynamic_pointer_cast<Car>(data[0])->carType();
+    std::cout << *data.at(1) << std::endl;
 
     return 0;
 }
