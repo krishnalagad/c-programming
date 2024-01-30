@@ -13,3 +13,4 @@ Car::Car(std::string id, float price, VehicleType type)
 : Car(id, type) {
     _price = price;
 }
+
