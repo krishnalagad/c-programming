@@ -72,6 +72,16 @@ For every data member, following things must be considered
     4) Does it need to be smartly managed? (applicable only for heap allocated members)
     5) Does the data member need to have a non-null state at the time of instantiation of the object
 
+    - Every function has a type (its signature)
+    - function can be passed as a parameter to other functions
+    - functions can be returned from other functions
+    - functions address can be captured in a variable.
+    - functions can be stored in containers
+Tools: 
+    - objdump
+    - cMake
+    - gdb
+
 OS by Galvin
 Computer Architecture by Hwang
 Computer Networking by tanenbaum
