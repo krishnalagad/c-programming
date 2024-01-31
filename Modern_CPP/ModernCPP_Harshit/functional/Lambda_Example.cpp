@@ -30,6 +30,7 @@ void operation (const std::vector<int>& data, FnType fn) {
     }
 }
 
+// FnContainer stores function wrapper and function wrapper stores address of function
 void operation (const std::vector<int>& data, FnContainer& fns) {
     for (auto& fn: fns) {
         for (int val: data) {
