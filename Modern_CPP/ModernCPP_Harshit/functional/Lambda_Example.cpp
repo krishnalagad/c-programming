@@ -45,9 +45,30 @@ void operation (const std::vector<int>& data, FnContainer& fns) {
 int main() {
     operation(std::vector<int> {12, 13, 14, 15}, [](int num) -> int { return num * num; });
 
+    /*
+        In capture clause
+        [&] means all variables in enclosing function are captured by reference       
+        [=] means all variables in enclosing function are captured by value 
+        [&n1] means only n1 variable is captured by reference       
+        [n1] means only nl is captured by value       
+        [n1, &a] : n1 by value and a by reference
+    */
     auto square = [](int num) -> int { return num * num; };
     auto cube = [](int num) -> int { return num * num * num; };
     FnContainer fns = {square, cube};
+
+    /*
+        If we accept var by value in capture clause of lambda We cant change the value of 
+        var in the lambda body, because it becomes const in lambda body to achieve functional
+        programming.
+
+        If we still want to make changes then we can make laambda function as mutable
+    */
+
+    int n1 = 10;
+    auto raw = [n1](int num) mutable{ 
+        n1 = 100;    
+    };
 
     operation(std::vector<int> {12, 13, 14, 15}, fns);
 
