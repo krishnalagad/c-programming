@@ -17,18 +17,20 @@
 //     }
 // }
 
-
 using FnType = std::function<int(int)>;
 using FnContainer = std::array<FnType, 2>;
 
-/*
-    benefit of using lamdba function
-*/
+// benefit of using lamdba function
 void operation (const std::vector<int>& data, FnType fn) {
     for (int val: data) {
         std::cout << fn(val) << std::endl;
     }
 }
+
+/* 
+    Capture clause ([]) in lambda allows me to access data which is outside the lmbda 
+    & inside the inclosing function without introducing its state to lambda.
+*/
 
 // FnContainer stores function wrapper and function wrapper stores address of function
 void operation (const std::vector<int>& data, FnContainer& fns) {
@@ -43,8 +45,8 @@ void operation (const std::vector<int>& data, FnContainer& fns) {
 int main() {
     operation(std::vector<int> {12, 13, 14, 15}, [](int num) -> int { return num * num; });
 
-    auto square = [](int num){ return num * num; };
-    auto cube = [](int num){ return num * num * num; };
+    auto square = [](int num) -> int { return num * num; };
+    auto cube = [](int num) -> int { return num * num * num; };
     FnContainer fns = {square, cube};
 
     operation(std::vector<int> {12, 13, 14, 15}, fns);
