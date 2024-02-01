@@ -23,6 +23,7 @@ void createObjects(CarPointerContainer& data, EngineContainer& engineData) {
     );
     data.emplace_back(
         std::make_shared<Car>(
+            "C102",
             "Ford Mustang",
             CarType::SPORTS,
             engineData[0],
@@ -31,6 +32,7 @@ void createObjects(CarPointerContainer& data, EngineContainer& engineData) {
     );
     data.emplace_back(
         std::make_shared<Car>(
+            "C103",
             "Nissan GTR",
             CarType::SPORTS,
             engineData[1],
@@ -63,7 +65,7 @@ CarPointerContainer getCarsByEngineTorque(int torque, CarPointerContainer& data)
 
     CarPointerContainer result;
     for(CarPointer car: data) {
-        if (torque >= car->carEngine().get().engineTorque()){
+        if (torque <= car->carEngine().get().engineTorque()){
             result.emplace_back(car);
         }
     }
@@ -92,7 +94,7 @@ void display(const CarPointerContainer& data) {
 void getAvgHorsepowerByTypeAndPrice(EngineType engineType, float carPrice, const CarPointerContainer& data) {
     if (data.empty())
         throw CarNotExistsException("Car container is empty!!\n");
-        
+
     float sumHp = 0.0f;
     int count = 0;
     for (CarPointer car: data) {

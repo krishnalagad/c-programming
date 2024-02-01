@@ -5,13 +5,16 @@ class CarNotExistsException: public std::exception {
         char* _message;
     public:
         CarNotExistsException() = delete;
-        explicit CarNotExistsException(const char* message) { strcpy(_message, message); }
+        explicit CarNotExistsException(const char* message) { 
+            _message = new char[strlen(message) + 1];
+            strcpy(_message, message); 
+        }
         CarNotExistsException(const CarNotExistsException&) = default;
-        CarNotExistsException(CarNotExistsException&&) = delete;
+        CarNotExistsException(CarNotExistsException&&) = default;
         CarNotExistsException& operator=(const CarNotExistsException&) = delete;
         CarNotExistsException& operator=(CarNotExistsException&&) = delete;
-        ~CarNotExistsException() = default;
+        ~CarNotExistsException() { delete []_message; };
 
-        virtual const char* what() { return this->_message; }
+        virtual char* what()  { return _message; }
         
 };

@@ -16,9 +16,9 @@ class Engine {
     public:
         Engine() = default;
         Engine(const Engine&) = default;
-        Engine(Engine&&) = delete;
+        Engine(Engine&&) = default;
         Engine& operator=(const Engine&) = delete;
-        Engine& operator=(Engine&&) = delete;
+        Engine& operator=(Engine&&) = default;
         ~Engine() { std::cout << "Engine destroyed!! " << _engineNumber << std::endl; };
         // ~Engine() {};
 

@@ -3,6 +3,7 @@
 
 #include <string>
 #include <iostream>
+#include <functional>
 #include "Engine.h"
 #include "CarType.h"
 
@@ -21,9 +22,9 @@ class Car {
     public:
         Car() = delete;
         Car(const Car&) = default;
-        Car(Car&&) = delete;
+        Car(Car&&) = default;
         Car& operator=(const Car&) = delete;
-        Car& operator=(Car&&) = delete;
+        Car& operator=(Car&&) = default;
         ~Car() { std::cout << "Car destroyed!! " << _carId << std::endl; };
         // ~Car() {};
 
@@ -45,7 +46,7 @@ class Car {
         float getCarPrice() const { return _carPrice; }
         void setCarPrice(float carPrice_) { _carPrice = carPrice_; }
 
-        std::reference_wrapper<Engine> carEngine() const { return _carEngine; }
+        std::reference_wrapper<Engine> carEngine() { return _carEngine; }
         void setCarEngine(const std::reference_wrapper<Engine> &carEngine) { _carEngine = carEngine; }
 
         friend std::ostream &operator<<(std::ostream &os, const Car &rhs);
