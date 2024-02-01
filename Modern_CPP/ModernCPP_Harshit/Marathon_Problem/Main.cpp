@@ -3,7 +3,7 @@
 #include "CarNotExistsException.h"
 
 int main() {
-    Container data;
+    CarPointerContainer data;
     createObjects(data);
     try {
         std::string id = "CAR2024-101";
@@ -14,7 +14,7 @@ int main() {
     catch(CarNotExistsException& e) {
         std::cout << e.what();
     }
-    Container result = getCarsByEngineTorque(80, data);
+    CarPointerContainer result = getCarsByEngineTorque(80, data);
     display(result);
 
     return 0;

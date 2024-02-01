@@ -3,59 +3,71 @@
 #include "Functionalities.h"
 #include "CarNotExistsException.h"
 
-void createObjects(Container& data) {
+void createObjects(CarPointerContainer& data, EngineContainer& engineData) {
 
-    data.push_back(
+    engineData.emplace_back(
+        Engine("E101", EngineType::ICT, 400, 111)
+    );
+    engineData.emplace_back(
+        Engine("E102", EngineType::HYBRID, 500, 161)
+    );
+
+    data.emplace_back(
         std::make_shared<Car>(
+            "C101",
             "Toyota Supra",
             CarType::SPORTS,
-            supraEngine,
+            engineData[1],
             80000.0f
         )
     );
-    data.push_back(
+    data.emplace_back(
         std::make_shared<Car>(
             "Ford Mustang",
             CarType::SPORTS,
-            mustangEngine,
+            engineData[0],
             90000.0f
         )
     );
-    data.push_back(
+    data.emplace_back(
         std::make_shared<Car>(
             "Nissan GTR",
             CarType::SPORTS,
-            gtrEngine,
+            engineData[1],
             180000.0f
         )
     );
 }
 
-int getHPByCarId(std::string carId, Container& data) {
+int getHPByCarId(std::string carId, CarPointerContainer& data) {
+    if (data.empty())
+        throw CarNotExistsException("Car container is empty!!\n");
+
     auto it = std::find_if(std::begin(data), std::end(data), [carId](const CarPointer& car){
         return carId == car->getCarId();
     });
+    
     if (it != std::end(data)) {
         CarPointer c = *it;
         if (c) 
-            return c->getCarEngine().engineHorsepower();
+            return c->carEngine().get().engineHorsepower();
         else 
-            throw CarNotExistsException("Car found with ID " + carId + " but has a null pointer.\n");
+            throw CarNotExistsException("Car found with ID " + carId + " but has a empty data.\n");
     } else 
         throw CarNotExistsException("Car doesn't exist with ID " + carId + "\n");
 }
 
-Container getCarsByEngineTorque(int torque, Container& data) {
-    Container result;
+CarPointerContainer getCarsByEngineTorque(int torque, CarPointerContainer& data) {
+    CarPointerContainer result;
     for(CarPointer car: data) {
-        if (torque >= car->getCarEngine().engineTorque()){
-            result.push_back(car);
+        if (torque >= car->carEngine().get().engineTorque()){
+            result.emplace_back(car);
         }
     }
     return result;
 }
 
-void display(const Container& data) {
+void display(const CarPointerContainer& data) {
     std::cout << std::endl;
     for(CarPointer car: data) {
         std::cout << "Car ID: " << car->getCarId() << std::endl;
@@ -71,7 +83,7 @@ void display(const Container& data) {
     }
 }
 
-void getAvgHorsepowerByTypeAndPrice(EngineType engineType, float carPrice, const Container& data) {
+void getAvgHorsepowerByTypeAndPrice(EngineType engineType, float carPrice, const CarPointerContainer& data) {
     float sumHp = 0.0f;
     int count = 0;
     for (CarPointer car: data) {

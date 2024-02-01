@@ -8,17 +8,18 @@
 #include "Car.h"
 
 using CarPointer = std::shared_ptr<Car>;
-using Container  = std::vector<CarPointer>;
+using CarPointerContainer  = std::vector<CarPointer>;
+using EngineContainer = std::vector<Engine>;
 
-inline Engine supraEngine(EngineType::HYBRID, 900, 66);
-inline Engine mustangEngine(EngineType::HYBRID, 850, 63);
-inline Engine gtrEngine(EngineType::HYBRID, 1020, 92);
+// inline Engine supraEngine(EngineType::HYBRID, 900, 66);
+// inline Engine mustangEngine(EngineType::HYBRID, 850, 63);
+// inline Engine gtrEngine(EngineType::HYBRID, 1020, 92);
 
-void createObjects(Container& data);
-int getHPByCarId(std::string carId, Container& data);
-Container getCarsByEngineTorque(int torque, Container& data);
-void display(const Container& data);
-void getAvgHorsepowerByTypeAndPrice(EngineType engineType, float carPrice, const Container& data);
+void createObjects(CarPointerContainer& data, EngineContainer& engine);
+int getHPByCarId(std::string carId, CarPointerContainer& data);
+CarPointerContainer getCarsByEngineTorque(int torque, CarPointerContainer& data);
+void display(const CarPointerContainer& data);
+void getAvgHorsepowerByTypeAndPrice(EngineType engineType, float carPrice, const CarPointerContainer& data);
 float getCombinedPriceOfTwoCars(CarPointer c1, CarPointer c2);
 
 void testFun(std::string& str);
