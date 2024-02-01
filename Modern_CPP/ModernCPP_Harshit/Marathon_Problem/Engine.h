@@ -7,7 +7,7 @@
 
 class Engine {
     private:
-        static int _counter;
+        // static int _counter;
         std::string _engineNumber {"XXXXXX"};
         EngineType _engineType {EngineType::ICT};
         int _engineHorsepower {600};
@@ -15,10 +15,15 @@ class Engine {
 
     public:
         Engine() = default;
+        Engine(const Engine&) = default;
+        Engine(Engine&&) = delete;
+        Engine& operator=(const Engine&) = delete;
+        Engine& operator=(Engine&&) = delete;
         ~Engine() { std::cout << "Engine destroyed!! " << _engineNumber << std::endl; };
         // ~Engine() {};
 
-        Engine(EngineType, int, int);
+        // Engine(EngineType, int, int);
+        Engine(std::string engineNumber, EngineType engineType, int engineHp, int engineTorque);
 
         std::string engineNumber() const { return _engineNumber; }
         void setEngineNumber(const std::string &engineNumber) { _engineNumber = engineNumber; }
@@ -31,8 +36,10 @@ class Engine {
 
         int engineTorque() const { return _engineTorque; }
         void setEngineTorque(int engineTorque) { _engineTorque = engineTorque; }
+
+        friend std::ostream &operator<<(std::ostream &os, const Engine &rhs);
 };
 
-inline int Engine::_counter = 100;
+// inline int Engine::_counter = 100;
 
 #endif // ENGINE_H
