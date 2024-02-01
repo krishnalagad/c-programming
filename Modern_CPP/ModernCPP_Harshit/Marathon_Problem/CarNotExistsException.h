@@ -1,11 +1,17 @@
-#include <iostream>
+#include <cstring>
 
 class CarNotExistsException: public std::exception {
     private:
-        std::string _message;
+        char* _message;
     public:
-        CarNotExistsException(std::string message): _message(message) {}
-        CarNotExistsException(): _message("Car not found!!") {}
-        std::string what() { return this->_message; }
-        ~CarNotExistsException() {}
+        CarNotExistsException() = delete;
+        explicit CarNotExistsException(const char* message) { strcpy(_message, message); }
+        CarNotExistsException(const CarNotExistsException&) = default;
+        CarNotExistsException(CarNotExistsException&&) = delete;
+        CarNotExistsException& operator=(const CarNotExistsException&) = delete;
+        CarNotExistsException& operator=(CarNotExistsException&&) = delete;
+        ~CarNotExistsException() = default;
+
+        virtual const char* what() { return this->_message; }
+        
 };

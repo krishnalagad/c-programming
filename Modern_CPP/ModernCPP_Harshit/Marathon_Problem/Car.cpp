@@ -6,7 +6,8 @@
 //     : _carId("CAR2024-" + std::to_string(++_counter)), _carBrand(carBrand), _carType(carType), _carEngine(carEngine), 
 //     _carPrice(carPrice) {}
 
-Car::Car(std::string id, std::string brand, CarType carType, RefType ref, float price) {}
+Car::Car(std::string id, std::string brand, CarType carType, RefType ref, float price)
+    : _carId(id), _carBrand(brand), _carType(carType),  {}
 
 std::ostream &operator<<(std::ostream &os, const Car &rhs) {
     os << "_carId: " << rhs._carId

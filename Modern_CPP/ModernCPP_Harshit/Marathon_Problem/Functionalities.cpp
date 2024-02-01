@@ -46,18 +46,21 @@ int getHPByCarId(std::string carId, CarPointerContainer& data) {
     auto it = std::find_if(std::begin(data), std::end(data), [carId](const CarPointer& car){
         return carId == car->getCarId();
     });
-    
+
     if (it != std::end(data)) {
         CarPointer c = *it;
         if (c) 
             return c->carEngine().get().engineHorsepower();
         else 
-            throw CarNotExistsException("Car found with ID " + carId + " but has a empty data.\n");
+            throw CarNotExistsException("Car found with ID  but has a empty data.\n");
     } else 
-        throw CarNotExistsException("Car doesn't exist with ID " + carId + "\n");
+        throw CarNotExistsException("Car doesn't exist with ID \n");
 }
 
 CarPointerContainer getCarsByEngineTorque(int torque, CarPointerContainer& data) {
+    if (data.empty())
+        throw CarNotExistsException("Car container is empty!!\n");
+
     CarPointerContainer result;
     for(CarPointer car: data) {
         if (torque >= car->carEngine().get().engineTorque()){
@@ -68,6 +71,9 @@ CarPointerContainer getCarsByEngineTorque(int torque, CarPointerContainer& data)
 }
 
 void display(const CarPointerContainer& data) {
+    if (data.empty())
+        throw CarNotExistsException("Car container is empty!!\n");
+
     std::cout << std::endl;
     for(CarPointer car: data) {
         std::cout << "Car ID: " << car->getCarId() << std::endl;
@@ -75,20 +81,23 @@ void display(const CarPointerContainer& data) {
         std::cout << "Car Price: " << car->getCarPrice() << std::endl;
         std::cout << "Car Type: " << (int) car->getCarType() << std::endl;
 
-        std::cout << "Engine Number: " << car->getCarEngine().engineNumber() << std::endl;
-        std::cout << "Engine Horsepower: " << car->getCarEngine().engineHorsepower() << std::endl;
-        std::cout << "Engine Torque: " << car->getCarEngine().engineTorque() << std::endl;
-        std::cout << "Engine Type: " << (int) car->getCarEngine().engineType() << std::endl;
+        std::cout << "Engine Number: " << car->carEngine().get().engineNumber() << std::endl;
+        std::cout << "Engine Horsepower: " << car->carEngine().get().engineHorsepower() << std::endl;
+        std::cout << "Engine Torque: " << car->carEngine().get().engineTorque() << std::endl;
+        std::cout << "Engine Type: " << (int) car->carEngine().get().engineType() << std::endl;
         std::cout << std::endl;
     }
 }
 
 void getAvgHorsepowerByTypeAndPrice(EngineType engineType, float carPrice, const CarPointerContainer& data) {
+    if (data.empty())
+        throw CarNotExistsException("Car container is empty!!\n");
+        
     float sumHp = 0.0f;
     int count = 0;
     for (CarPointer car: data) {
-        if (car->getCarPrice() > carPrice && car->getCarEngine().engineType() == engineType) {
-            sumHp += car->getCarEngine().engineHorsepower();
+        if (car->getCarPrice() > carPrice && car->carEngine().get().engineType() == engineType) {
+            sumHp += car->carEngine().get().engineHorsepower();
             count += 1;
         }
     }
