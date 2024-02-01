@@ -19,8 +19,8 @@ class Engine {
         Engine(Engine&&) = default;
         Engine& operator=(const Engine&) = delete;
         Engine& operator=(Engine&&) = default;
-        ~Engine() { std::cout << "Engine destroyed!! " << _engineNumber << std::endl; };
-        // ~Engine() {};
+        // ~Engine() { std::cout << "Engine destroyed!! " << _engineNumber << std::endl; };
+        ~Engine() = default;
 
         // Engine(EngineType, int, int);
         Engine(std::string engineNumber, EngineType engineType, int engineHp, int engineTorque);

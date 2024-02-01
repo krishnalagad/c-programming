@@ -25,8 +25,8 @@ class Car {
         Car(Car&&) = default;
         Car& operator=(const Car&) = delete;
         Car& operator=(Car&&) = default;
-        ~Car() { std::cout << "Car destroyed!! " << _carId << std::endl; };
-        // ~Car() {};
+        // ~Car() { std::cout << "Car destroyed!! " << _carId << std::endl; };
+        ~Car() = default;
 
         // Car(std::string, CarType, Engine&, float);
         Car(std::string id, std::string brand, CarType carType, RefType ref, float price);
