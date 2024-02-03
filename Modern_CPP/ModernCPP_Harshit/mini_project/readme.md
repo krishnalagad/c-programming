@@ -11,3 +11,7 @@ To resolve unmet depedencies problem :
 ```sudo apt --fix-broken install```
 To resolve Unable to fetch some archives : 
 ```sudo apt-get update```
+To install curl:
+```sudo apt install url```
+To install libcurl4 library
+```sudo apt install libcurl4-openssl-dev```
