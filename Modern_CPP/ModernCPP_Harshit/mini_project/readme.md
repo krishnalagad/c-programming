@@ -6,3 +6,8 @@ API: Is is a way to accesss a functionality of some system
         - PUT : update data
         - DELETE : remove data
         ```
+
+To resolve unmet depedencies problem : 
+```sudo apt --fix-broken install```
+To resolve Unable to fetch some archives : 
+```sudo apt-get update```
