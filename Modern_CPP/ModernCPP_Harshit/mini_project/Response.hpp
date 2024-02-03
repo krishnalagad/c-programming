@@ -15,7 +15,7 @@ class Response {
         Response(Response&&) = delete;
         Response& operator=(const Response&) = delete;
         Response& operator=(Response&&) = delete;
-        ~Response() = default;
+        ~Response() {_responseString.clear();};
 
         Response(std::string response, long statusCode, double timeElapsed);
 

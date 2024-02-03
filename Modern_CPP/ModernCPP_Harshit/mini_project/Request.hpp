@@ -19,9 +19,11 @@ class Request final {
         Request(Request&&) = delete;
         Request& operator=(const Request&) = delete;
         Request& operator=(Request&&) = delete;
-        ~Request() = default;
+        ~Request() {
+            curl_easy_cleanup(_curlSession.get());
+        }
 
-        Request(std::string url, std::shared_ptr<CURL> session);
+        Request(std::string url);
 
         std::string apiEndPointUrl() const { return _apiEndPointUrl; }
 
