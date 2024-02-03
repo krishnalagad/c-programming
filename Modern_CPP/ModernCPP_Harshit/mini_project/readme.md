@@ -8,7 +8,7 @@ API: Is is a way to accesss a functionality of some system
         ```
 
 To resolve unmet depedencies problem : 
-```sudo apt --fix-broken install```  return
+```sudo apt --fix-broken install```<br>
 To resolve Unable to fetch some archives : 
 ```sudo apt-get update```
 To install curl:
