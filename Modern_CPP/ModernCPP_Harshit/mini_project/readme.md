@@ -1,11 +1,9 @@
 API: Is is a way to accesss a functionality of some system
     REST API: Representational State Transfer
-        ```
-        - GET : feth data<br>
-        - POST : submit and save data <br>
-        - PUT : update data<br>
-        - DELETE : remove data<br>
-        ```
+        ```- GET : feth data```<br>
+        ```- POST : submit and save data```<br>
+        ```- PUT : update data```<br>
+        ```- DELETE : remove data```<br>
 
 To resolve unmet depedencies problem : 
 ```sudo apt --fix-broken install```<br>
