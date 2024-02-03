@@ -1,5 +1,5 @@
-API: Is is a way to accesss a functionality of some system
-    REST API: Representational State Transfer
+API: Is is a way to accesss a functionality of some system<br>
+    REST API: Representational State Transfer<br>
         ```- GET : feth data```<br>
         ```- POST : submit and save data```<br>
         ```- PUT : update data```<br>
