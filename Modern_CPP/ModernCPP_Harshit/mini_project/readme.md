@@ -10,6 +10,6 @@ To resolve unmet depedencies problem :
 To resolve Unable to fetch some archives : 
 ```sudo apt-get update```<br>
 To install curl:
-```sudo apt install url```<br>
+```sudo apt install curl```<br>
 To install libcurl4 library
 ```sudo apt install libcurl4-openssl-dev```<br>
