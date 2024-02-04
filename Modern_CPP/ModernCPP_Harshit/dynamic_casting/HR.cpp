@@ -9,7 +9,7 @@ std::ostream &operator<<(std::ostream &os, const HR &rhs) {
 }
 
 HR::HR(int id, std::string name, float salary, int hrTeamSize, HrSpecialization specialization)
-    : Employee(id, name, salary) {}
+    : Employee(id, name, salary), __hrTeamSize(hrTeamSize), _hrSpecialization(specialization) {}
 
 float HR::calculateTax() {
     return 0.1f * eSalary();
