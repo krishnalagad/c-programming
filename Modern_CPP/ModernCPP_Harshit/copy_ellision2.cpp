@@ -49,6 +49,7 @@ int main() {
         move constuctor will get called for this statement, now accessing e1 would be illigal
     */
     Employee e2 = std::move(e1);
+    
     // Employee e2 = e1;   // copy constructor will get called
 
     e2 = Employee(111, "Lagad");    // move assignment will get called here
