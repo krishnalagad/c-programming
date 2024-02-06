@@ -31,7 +31,7 @@ class Employee {
 };
 
 Employee magic(int id, std::string name) {
-    std::cout << "Middle man fuction called!!" << std::endl;
+    std::cout << "Middle man has fuction called!!" << std::endl;
     Employee e(id, name);
     return e;
 }
@@ -42,6 +42,7 @@ Employee magic(int id, std::string name) {
 */
 int main() {
     Employee e1 = magic(101, "Krishna");    // Employee e1 is assigned a rvalue
+    std::cout << "Address E1: " << &e1 <<std::endl;
 
     /*
         We are constructing a new object with identifier name e2 from already existing object e1,
@@ -49,11 +50,15 @@ int main() {
         move constuctor will get called for this statement, now accessing e1 would be illigal
     */
     Employee e2 = std::move(e1);
-    
+    std::cout << "Address E2: " << &e2 <<std::endl;
+
     // Employee e2 = e1;   // copy constructor will get called
 
     e2 = Employee(111, "Lagad");    // move assignment will get called here
-    e2 = e1;    // copy assignment will get called here
+    std::cout << "Address E2: " << &e2 <<std::endl;
+
+    e1 = e2;   // copy assignment will get called here
+    std::cout << "Address E1: " << &e1 <<std::endl;
 
     return 0;
 }
