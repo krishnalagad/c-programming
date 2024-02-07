@@ -26,6 +26,11 @@ float averageOfNValues(std::future<int>& ft) {
 int main() {
     std::promise<int> pr;
     std::future<int> ft = pr.get_future();
+    /*
+        any param we pass to std::async(), std::bind() or std::thread() with a function pointer
+        such that param must be received by the function as reference, you must 
+        pass such a param by using std::ref()
+    */
     std::future<float> result = std::async(std::launch::async, averageOfNValues, std::ref(ft));
 
     int n {0};
@@ -39,11 +44,11 @@ int main() {
 }
 
 /*
-    PARALLEL Execution of threads using async programming
+    PARALLEL Execution of threads using async programming: Pictorial representation
 
 
-     MAIN                                                                                                                       set value                          waiting for other 
-    Thread                                                                                                                      in promise                         thread to complete                    
+     MAIN                                                                                                                       set value                               waiting for other 
+    Thread                                                                                                                      in promise                              thread to complete                    
 -------------->Future and Promise objects created---------->Async thread launched---------->Value created-------->USER INPUT-------------------> Go to avg thread------------------------------->Print result in main thread
 
 

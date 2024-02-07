@@ -93,11 +93,14 @@ If we accept var by value in capture clause of lambda We cant change the value o
         var in the lambda body, because it becomes const in lambda body to achieve functional
         programming.
 
-        If we still want to make changes then we can make laambda function as mutable   
+        If we still want to make changes then we can make lambda function as mutable   
 
 SOC (System on Chip)
     - core : one available working node in the microprocessor
     - thread : set of instructions to be executed
+
+&x : If there is no data type to the left of &x then it is pointer.
+int& x : This is reference to int.
 
 OS by Galvin
 Computer Architecture by Hwang
