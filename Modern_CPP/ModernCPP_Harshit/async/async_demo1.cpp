@@ -28,7 +28,7 @@ int main() {
     std::future<int> ft = pr.get_future();
     std::future<float> result = std::async(std::launch::async, averageOfNValues, std::ref(ft));
 
-    int n;
+    int n {0};
     std::cin >> n;
 
     pr.set_value(n);
@@ -37,3 +37,18 @@ int main() {
 
     return 0;
 }
+
+/*
+    PARALLEL Execution of threads using async programming
+
+
+     MAIN                                                                                                                       set value                          waiting for other 
+    Thread                                                                                                                      in promise                         thread to complete                    
+-------------->Future and Promise objects created---------->Async thread launched---------->Value created-------->USER INPUT-------------------> Go to avg thread------------------------------->Print result in main thread
+
+
+                                                            averageOfNValues                                               WAITING                                                   cal avg
+                                                            -------------------> Vector creation--------->count variable------------ START_NOW -----------> check/throw Exception--------------->send result signal 
+                                                                                                                                                                                                  to Main thread
+
+*/
