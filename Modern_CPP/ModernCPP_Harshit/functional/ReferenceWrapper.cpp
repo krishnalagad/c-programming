@@ -16,7 +16,7 @@ int main() {
     Demo d1(10);
 
     /*
-        reference_wrapper eliminates the inconvinience causes by noromal wrapper:
+        reference_wrapper eliminates the inconvinience causes by normal wrapper:
         - normal ref dont have memory, but reference_wrapper has memory.
         - normal ref shouldn't assign to other ref var, but reference_wrapper should.
         - normal ref dont get added in container, but reference_wrapper can get added.
