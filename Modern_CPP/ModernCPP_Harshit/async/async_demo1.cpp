@@ -53,7 +53,7 @@ int main() {
 
 
                                                             averageOfNValues                                               WAITING                                                   cal avg
-                                                            -------------------> Vector creation--------->count variable------------ START_NOW -----------> check/throw Exception--------------->send result signal 
+                                                            -------------------> Vector creation--------->count variable------------> START_NOW -----------> check/throw Exception--------------->send result signal 
                                                                                                                                                                                                   to Main thread
 
 */
