@@ -54,19 +54,21 @@ FnType4 getTotalSeats;
 // Implementation of lambda functions
 void makeLambda() {
     // Implementation of lambda function getAirplanes
-    getAirplanes = [](FlightPointerContainer& data, FlightOperatorType& type) -> AirplaneContainer {
+    getAirplanes = [](FlightPointerContainer& data, FlightOperatorType type) -> AirplaneContainer {
         if (data.empty())
             throw CustomMessageException("Data container is empty");
 
         AirplaneContainer result;
-        for (const auto& ptr : data) {
+        for (const FlightPointer& ptr : data) {
             if (type == ptr->flightType()) {
-                result.push_back(ptr.get()->flightassociatePlane());
+                Airplane plane = ptr->flightassociatePlane().get();
+                std::cout << plane;
+                result.push_back(plane);
             }
         }
-
         return result;
     };
+
 
     // Implementation of lambda function getPlane
     getPlane = [](AirplaneContainer& data) -> AirplaneType {
@@ -117,7 +119,7 @@ void makeLambda() {
     Flight class  and returns optional of AirplaneContainer where AirplaneContainer is vector 
     of Airplanes.
 */
-AirplaneContainer getAirplanesWithMatchingOperator(FlightPointerContainer& data, FlightOperatorType type){
-    AirplaneContainer result =  getAirplanes(data, type);
-    return result;
-}
+// AirplaneContainer getAirplanesWithMatchingOperator(FlightPointerContainer& data, FlightOperatorType type){
+//     AirplaneContainer result =  getAirplanes(data, type);
+//     return result;
+// }
