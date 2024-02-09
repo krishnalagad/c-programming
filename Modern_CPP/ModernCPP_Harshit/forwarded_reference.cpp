@@ -28,7 +28,10 @@ inline std::ostream &operator<<(std::ostream &os, const DataModel &rhs) {
             os << data << " ";
     return os;
 }
-
+/*
+    T : DatModel
+    Args... : is for all other params
+*/
 template<typename T, typename... Args>
 T relay(Args&&... args) {
     return T(std::forward<Args>(args)...);
@@ -36,6 +39,11 @@ T relay(Args&&... args) {
 
 /*
     g++ forwarded_reference.cpp -g -o app && time ./app && rm app
+
+    - Main() is original source of data.
+    - relay() is the middleman (relaying or forwarding function)
+    - Constructor is the actual destination function where parameters should
+      arrive as they are sent from main() without any changes.
 */
         
 int main() {
@@ -44,7 +52,6 @@ int main() {
     std::string grade = "A+";
 
     DataModel data = relay<DataModel>(n1, name, grade, std::vector<int> {10, 20, 30});
-
     std::cout << data <<std::endl;
 
     return 0;
