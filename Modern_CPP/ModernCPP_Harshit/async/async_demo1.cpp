@@ -47,7 +47,7 @@ int main() {
     PARALLEL Execution of threads using async programming: Pictorial representation
 
 
-     MAIN                                                                                                                       set value                               waiting for other 
+     MAIN                                                                                                                       set value                               WAITING for other 
     Thread                                                                                                                      in promise                              thread to complete                    
 -------------->Future and Promise objects created---------->Async thread launched---------->Value created-------->USER INPUT-------------------> Go to avg thread------------------------------->Print result in main thread
 
