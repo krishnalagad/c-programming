@@ -51,6 +51,8 @@ int main() {
     std::string name = "Krisshna";
     std::string grade = "A+";
 
+    DataModel d1();
+
     DataModel data = relay<DataModel>(n1, name, grade, std::vector<int> {10, 20, 30});
     std::cout << data <<std::endl;
 

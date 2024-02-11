@@ -12,7 +12,7 @@ void calculateSquare() {
     std::unique_lock<std::mutex> lk(mt);
     cv.wait(lk, [](){ return flag; });
     // lk is unlocked. t1 thread goes to sleep
-    std::cout << amount * amount << std::endl;
+    std::cout << "Square of " << amount << " is " << amount * amount << std::endl;
 }
 
 /*
@@ -23,9 +23,18 @@ int main() {
     std::thread t1(calculateSquare);
     int data {0};
     std::cin >> amount;
+
+    std::cout <<"\nEnter you name: ";
+    std::string name;
+    std::getchar();
+    std::getline(std::cin, name);
+    std::cout << "Your name is: " << name << std::endl;
+
     flag = true;
     cv.notify_one();
     t1.join();
+
+    std::cout << "Length of you name is: " << name.length() << std::endl;
 
     return 0;
 }
