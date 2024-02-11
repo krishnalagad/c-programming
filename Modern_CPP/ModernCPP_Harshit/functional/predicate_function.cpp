@@ -43,7 +43,7 @@ double averageSalaryByName(const std::vector<Employee>& employees, std::function
 }
 
 /*
-    CLient code:
+    Client code:
         g++ predicate_function.cpp -g -o app && time ./app && rm app
 */
 int main() {
