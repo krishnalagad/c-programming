@@ -25,7 +25,8 @@ class Employee {
 };
 
 // Function to calculate the average salary of employees with a matching name
-double averageSalaryByName(const std::vector<Employee>& employees, std::function<bool(const Employee&, const std::string&)> predicate, const std::string& name) {
+double averageSalaryByName(const std::vector<Employee>& employees, 
+                            std::function<bool(const Employee&, const std::string&)> predicate, const std::string& name) {
     double sum = 0.0;
     int count = 0;
 

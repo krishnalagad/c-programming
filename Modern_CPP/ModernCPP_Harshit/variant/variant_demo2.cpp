@@ -17,10 +17,8 @@ class BusinessOwner {
     public:
         BusinessOwner() = default;
         void display() { std::cout << "BusinessOwner siuuuu!!" << std::endl; }
-        ~BusinessOwner() { std::cout << "Businness Object destroyed!!" << std::endl; }
+        ~BusinessOwner() { std::cout << "Business Object destroyed!!" << std::endl; }
 };
-
-
 
 /*
     g++ variant_demo2.cpp -o app && time ./app && rm app
