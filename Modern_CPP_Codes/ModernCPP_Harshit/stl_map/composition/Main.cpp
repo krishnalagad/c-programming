@@ -3,7 +3,6 @@
 #include <array>
 #include <future>
 #include "Functionalities.hpp"
-
 /*
     Client code:
         g++ Main.cpp Functionalities.cpp DebitCard.cpp BankAccount.cpp -g -o app && time ./app && rm app
@@ -12,8 +11,6 @@
 int main() {
     MapContainer data;
     AccountContainer accounts;
-
-    // std::array<std::thread, 5> threradsArray;
 
     std::future<void> r1 = std::async(std::launch::async, createObjects, std::ref(accounts), std::ref(data));
     // createObjects(accounts, data);
@@ -35,7 +32,6 @@ int main() {
         std::future<std::optional<float>> r5 = std::async(std::launch::async, findBalanceById, std::ref(data), 9000001);
         std::optional<float> result = r5.get();
 
-
         std::cout << "\nTotal balance: " << tot << std::endl;
         std::cout << "Count of above 50000.0f amount: " << count << std::endl;
         if ( flag)
@@ -51,7 +47,6 @@ int main() {
     } catch(std::runtime_error& e) {
         std::cerr << e.what() << '\n';
     }
-    
     
     return 0;
 }
