@@ -36,12 +36,12 @@ bool isAnyAccountWithNoCard(const Container& data);
 /* Function signature: takes constant lvalue reference of Container where Container is std vector 
 of BankPointer and BankPointer is shared ptr of BankAccount class and returns unsigned short
 Description: find the CVV Number of account with maximum balance. */
-unsigned short findMaxBalanceCvvNumber(const Container& data);
+std::optional<unsigned short> findMaxBalanceCvvNumber(const Container& data);
 
 /* Function signature: takes constant lvalue reference of Container where Container is std vector 
 of BankPointer and BankPointer is shared ptr of BankAccount class and returns string value
 Description: find the expiry of account with min balance */
-std::string findMinBalanceExpiry(const Container& data);
+std::optional<std::string> findMinBalanceExpiry(const Container& data);
 
 
 CardContainer getDebitCardPointers(const Container& data);

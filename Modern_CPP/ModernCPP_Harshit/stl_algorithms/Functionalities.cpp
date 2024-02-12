@@ -7,7 +7,7 @@ void createObjects(Container &data) {
         std::make_shared<BankAccount>(
             "Krishna",
             AccountType::SAVING,
-            9087.09f,
+            90087.09f,
             std::make_shared<DebitCard>(
                 000,
                 11234124512L,
@@ -67,23 +67,29 @@ bool isAnyAccountWithNoCard(const Container &data) {
     return ans;
 }
 
-unsigned short findMaxBalanceCvvNumber(const Container &data) {
+std::optional<unsigned short> findMaxBalanceCvvNumber(const Container &data) {
     if (data.empty()) 
         throw std::runtime_error("Empty container!!");
     
     auto itr = std::max_element(data.begin(), data.end(), [](const BankPointer& ptr1, const BankPointer& ptr2){
         return ptr1->accountbalance() > ptr2->accountbalance();
     });
+
+    if ((*itr)->acccountDebitCard() == nullptr)
+        return std::nullopt;
     return (*itr)->acccountDebitCard()->cvv();
 }
 
-std::string findMinBalanceExpiry(const Container &data) {
+std::optional<std::string> findMinBalanceExpiry(const Container &data) {
     if (data.empty()) 
         throw std::runtime_error("Empty container!!");
     
     auto itr = std::min_element(data.begin(), data.end(), [](const BankPointer& ptr1, const BankPointer& ptr2){
         return ptr1->accountbalance() < ptr2->accountbalance();
     });
+
+    if((*itr)->acccountDebitCard() == nullptr)
+        return std::nullopt;
     return (*itr)->acccountDebitCard()->expiryDate();
 }
 
