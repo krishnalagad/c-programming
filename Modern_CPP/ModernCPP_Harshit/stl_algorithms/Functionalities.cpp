@@ -110,12 +110,15 @@ std::optional<CardContainer> getNonNullDebitCardPointers(const Container &data) 
     Container temp(data.size());
 
     std::copy_if(data.begin(), data.end(), temp.begin(), [](const BankPointer& ptr){
-        ptr->acccountDebitCard() != nullptr;
+        return ptr->acccountDebitCard() != nullptr;
     });
 
     std::for_each(temp.begin(), temp.end(), [&result](const BankPointer& ptr){
         result.emplace_back(ptr->acccountDebitCard());
     });
+
+    if (result.empty())
+        return std::nullopt;
 
     return result;
 }
@@ -132,6 +135,13 @@ std::optional<Container> findMatchingAccount(const Container &data) {
 
     std::size_t newSize = std::distance(result.begin(), itr);
     result.resize(newSize);
+
+    if (result.empty())
+        return std::nullopt;
+
+    // std::for_each(temp.begin(), temp.end(), [&result](const BankPointer& ptr){
+    //     result.emplace_back(ptr->acccountDebitCard());
+    // });
     
     return result;
 }
