@@ -25,6 +25,8 @@ class DebitCard {
         long cardNumber() const { return _cardNumber; }
         const std::string& expiryDate() const { return _expiryDate; }     // return type is rvalue ref and acctually returning lvalue, so use one & only
         DebitCardType cardType() const { return _cardType; }
+
+        friend std::ostream &operator<<(std::ostream &os, const DebitCard &rhs);
 };
 
 #endif // DEBITCARD_H

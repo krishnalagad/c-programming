@@ -47,4 +47,6 @@ std::string findMinBalanceExpiry(const Container& data);
 CardContainer getDebitCardPointers(const Container& data);
 std::optional<CardContainer> getNonNullDebitCardPointers(const Container& data);
 
+std::optional<Container> findMatchingAccount(const Container& data);
+
 #endif // FUNCTIONALITIES_H

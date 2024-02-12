@@ -90,12 +90,48 @@ std::string findMinBalanceExpiry(const Container &data) {
 CardContainer getDebitCardPointers(const Container &data) {
     if (data.empty()) 
         throw std::runtime_error("Empty container!!");
-    
+
     CardContainer result(data.size());
-    
-    return CardContainer();
+    Container temp(data.size());
+
+    std::copy(data.begin(), data.end(), temp.begin());
+    std::for_each(temp.begin(), temp.end(), [&result](const BankPointer& ptr){
+        result.push_back(ptr->acccountDebitCard());
+    });
+
+    return result;
 }
 
 std::optional<CardContainer> getNonNullDebitCardPointers(const Container &data) {
-    return std::optional<CardContainer>();
+    if (data.empty()) 
+        throw std::runtime_error("Empty container!!");
+    
+    CardContainer result(data.size());
+    Container temp(data.size());
+
+    std::copy_if(data.begin(), data.end(), temp.begin(), [](const BankPointer& ptr){
+        ptr->acccountDebitCard() != nullptr;
+    });
+
+    std::for_each(temp.begin(), temp.end(), [&result](const BankPointer& ptr){
+        result.emplace_back(ptr->acccountDebitCard());
+    });
+
+    return result;
+}
+
+std::optional<Container> findMatchingAccount(const Container &data) {
+    if (data.empty()) 
+        throw std::runtime_error("Empty container!!");
+
+    Container result(data.size());
+    // copy_if() returns iterator to the last copied element
+    auto itr = std::copy_if(data.begin(), data.end(), result.begin(), [](const BankPointer& ptr){
+        return (ptr->accountbalance() > 30000) && (ptr->acccountDebitCard() != nullptr);
+    });
+
+    std::size_t newSize = std::distance(result.begin(), itr);
+    result.resize(newSize);
+    
+    return result;
 }

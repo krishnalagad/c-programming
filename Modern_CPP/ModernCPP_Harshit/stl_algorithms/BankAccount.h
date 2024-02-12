@@ -3,6 +3,7 @@
 
 #include <string>
 #include <memory>
+#include <ostream>
 #include "AccountType.h"
 #include "DebitCard.h"
 
@@ -42,6 +43,8 @@ class BankAccount {
         void setAccountType(const AccountType &accountType) { _accountType = accountType; }
         float accountbalance() const { return _accountBalance; }  
         CardPointer acccountDebitCard() { return _accountDebitCard; }     
+
+        friend std::ostream &operator<<(std::ostream &os, const BankAccount &rhs);
 };
 
 inline int BankAccount::_counter = 9000000;
