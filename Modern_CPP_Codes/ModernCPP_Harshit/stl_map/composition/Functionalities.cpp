@@ -15,6 +15,9 @@ void createObjects(AccountContainer& accounts, MapContainer& data) {
     accounts.emplace_back(std::make_shared<BankAccount>(
             "Kaveri", AccountType::CURRENT, 34000.0f, std::make_shared<DebitCard>(
                 897, 930284789L, "03/25", DebitCardType::RUPAY)));
+    
+    accounts.emplace_back(std::make_shared<BankAccount>(
+            "Aakanksha", AccountType::PENSION, 54000.0f));
 
     data.emplace(
         std::make_pair<unsigned long, AccountPointer>(      // make_pair() requires rvalue of its params
@@ -29,6 +32,11 @@ void createObjects(AccountContainer& accounts, MapContainer& data) {
     data.emplace(
         std::make_pair<unsigned long, AccountPointer>(      // make_pair() requires rvalue of its params
             accounts[2]->accountNumber(), std::move(accounts[2])
+        )
+    );
+    data.emplace(
+        std::make_pair<unsigned long, AccountPointer>(
+            accounts[3]->accountNumber(), std::move(accounts[3])
         )
     );
     

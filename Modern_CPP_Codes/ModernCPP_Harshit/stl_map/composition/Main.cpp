@@ -44,6 +44,7 @@ int main() {
         else    
             std::cerr << "No such account exist !!" << std::endl;
 
+        std::cout << "\n";
     } catch(std::runtime_error& e) {
         std::cerr << e.what() << '\n';
     }
