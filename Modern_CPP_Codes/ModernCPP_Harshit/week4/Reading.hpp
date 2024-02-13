@@ -21,17 +21,15 @@ class Reading {
 
         friend std::ostream &operator<<(std::ostream &os, const Reading &rhs);
 
-        bool operator<(const Reading& rhs) {
-            return _readingValue < rhs._readingValue;
-        }
+        bool operator<(const Reading& rhs) { return _readingValue < rhs._readingValue; }
 };
+
+Reading::Reading(ReadingType type, float value): _readingType(type), _readingValue(value) {}
 
 inline std::ostream &operator<<(std::ostream &os, const Reading &rhs) {
     os << "_readingType: " << static_cast<int> (rhs._readingType)
        << " _readingValue: " << rhs._readingValue;
     return os;
 }
-
-Reading::Reading(ReadingType type, float value): _readingType(type), _readingValue(value) {}
 
 #endif // READING_HPP
