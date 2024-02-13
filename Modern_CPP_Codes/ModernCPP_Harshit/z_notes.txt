@@ -4,7 +4,8 @@
     : you can explicitly specify what is enabled vs disabled
 
 2) constructor delegation
-    : transfer control from one constructor another of the same class to use "chaining of constructors" to fully construct an object. It can avoid duplicated initialization code.
+    : transfer control from one constructor another of the same class to use "chaining of constructors" 
+        to fully construct an object. It can avoid duplicated initialization code.
 
 3) explicit keyword
     : prevents a constructor with 1 "unknown/non-default" parameter to be used for an implicit type conversion.
@@ -145,6 +146,53 @@ Category 6: count family
 Category 7: for each adaptor
     a) std::for_each : takes input iterator and a function object. Applies function obj on 
             each input item seperately, one by one in sequence.
+
+scenario 1: I have a main program which includes a function that can be executed parallel to main or concurrent to 
+            main without any dependency on main since there is no write to shared memory, use std::thread with no 
+            synchronization primitive
+
+main ---------------- /////
+                    \
+                    \
+                    \  launching std::thread with square function and
+                    \   vector as argument
+                    ----------------------------t1
+                    square of numbers in an array
+
+scenario 2: I have two functions to be executed. Both of them are independent of each other. 
+            They can be executed simultaneously. They both write to a shared memory.
+
+            for e.g: Main and t1 calculating square and cube of numbers respectively and printing it on the console
+                     since there is no write to shared memory, use std::thread with a synchronization primitive
+
+scenario 3: creating and managing multiple threads
+            use a container like array or list to create a container of threads
+            synchronization may or may not be required
+
+
+scenario 4: Function to be executed in thread returns a value
+            use std::future<T> as result value and launch thread with std::move
+
+scenario 5: I want to start a thread for a function that requires input, but can process some 
+            commands even before input becomes available i.e. we can execute some part of the function without involving input parameter
+
+            5(a) function returns nothing(void)
+                - use future and promise model to send input to the function
+            5(b) function returns some value    
+                - use future and promise model to send input to the function
+                Also use std::future<T> as return result value. where T is type of return
+
+scenario 6: One section of my program performs an action which generates data values. 
+            These values maybe stored in some container/memory location.
+            I want to execute some function to consume/operate on generated values but I have certain expectations/limitations
+
+            A) CONSUMPTION SHOULD BE TRIGGERED ONLY WHEN A VALUE BECOMES AVAILABLE
+            B) DATA TO BE CONSUMED/PROCESSED SHALL NOT BE PROVIDED AS INPUT, SINCE
+                i) Values are generated periodically
+                ii) values are generated but maintained outside of the consumer
+            Here use condition variable concept
+
+
 
 
 OS by Galvin
