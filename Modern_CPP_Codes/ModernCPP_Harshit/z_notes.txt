@@ -148,8 +148,8 @@ Category 7: for each adaptor
             each input item seperately, one by one in sequence.
 
 scenario 1: I have a main program which includes a function that can be executed parallel to main or concurrent to 
-            main without any dependency on main since there is no write to shared memory, use std::thread with no 
-            synchronization primitive
+            main without any dependency on main since there is no write to shared memory, 
+            use std::thread with no synchronization primitive
 
 main ---------------- /////
                     \
