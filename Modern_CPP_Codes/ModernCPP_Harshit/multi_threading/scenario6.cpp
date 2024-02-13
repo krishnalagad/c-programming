@@ -1,7 +1,8 @@
 /*
     scenario 6: One section of my program performs an action which generates data values. 
             These values maybe stored in some container/memory location.
-            I want to execute some function to consume/operate on generated values but I have certain expectations/limitations
+            I want to execute some function to consume/operate on generated values but I 
+            have certain expectations/limitations
 
             A) CONSUMPTION SHOULD BE TRIGGERED ONLY WHEN A VALUE BECOMES AVAILABLE
             B) DATA TO BE CONSUMED/PROCESSED SHALL NOT BE PROVIDED AS INPUT, SINCE
