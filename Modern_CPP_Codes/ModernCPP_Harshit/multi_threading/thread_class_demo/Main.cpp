@@ -4,7 +4,7 @@
     g++ ThreadOperation.cpp Main.cpp Functionalities.cpp -lpthread -g -o app && time ./app && rm app
 */
 int main() {
-    ThreadOperation obj1(10);
+    ThreadOperation obj1(100);
     std::thread t1(&ThreadOperation::square, &obj1);
     std::thread t2(&ThreadOperation::cube, &obj1);
     std::thread t3(&ThreadOperation::produceValueForCube, &obj1);
