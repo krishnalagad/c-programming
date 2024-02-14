@@ -22,9 +22,6 @@ void ThreadOperation::produceValueForCube() {
 }
 
 void ThreadOperation::cube() {
-    // std::lock_guard<std::mutex> lk(mt);
-    // std::cout << "Cube: " << _value * _value * _value << std::endl;
-
     std::unique_lock<std::mutex> lk(mt);
     cv.wait(lk, [&](){ return _cubeValAvailable; });
     std::cout << "Cube: " << _cubeVal * _cubeVal * _cubeVal << "\n";
