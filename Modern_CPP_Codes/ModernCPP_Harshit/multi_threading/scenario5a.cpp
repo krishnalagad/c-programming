@@ -1,6 +1,7 @@
 /*
     scenario 5: I want to start a thread for a function that requires input, but can process some 
-                commands even before input becomes available i.e. we can execute some part of the function without involving input parameter
+                commands even before input becomes available i.e. we can execute some part of the 
+                function without involving input parameter
 
                 5(a) function returns nothing(void)
                     - use future and promise model to send input to the function
