@@ -24,5 +24,8 @@ Employee getEmployeeById(const std::vector<Employee>& employees, int id);
 // Function to get specific data of an employee by id
 int getSpecificEmployeeData(const std::vector<Employee>& employees, int id);
 
+// std::variant<int, int> getSpecificEmployeeData(const std::vector<Employee>& employees, int id);
+
+
 
 #endif // FUNCTIONALITIES_HPP

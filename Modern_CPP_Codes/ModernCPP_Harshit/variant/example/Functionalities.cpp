@@ -55,3 +55,16 @@ int getSpecificEmployeeData(const std::vector<Employee>& employees, int id) {
         return -1; 
     }
 }
+
+// std::variant<int, int> getSpecificEmployeeData(const std::vector<Employee>& employees, int id) {
+//     Employee emp = getEmployeeById(employees, id);
+//     if (std::holds_alternative<HR>(emp.getEmpTypeData())) {
+//         auto hrData = std::get<HR>(emp.getEmpTypeData());
+//         return std::variant<int, int>(hrData.getPendingInterviews(), int(-1));
+//     } else if (std::holds_alternative<Developer>(emp.getEmpTypeData())) {
+//         auto devData = std::get<Developer>(emp.getEmpTypeData());
+//         return std::variant<int, int>(int(-1), devData.getTasksAssigned());
+//     } else {
+//         return -1; // Returning -1 if the employee type is neither HR nor Developer
+//     }
+// }
