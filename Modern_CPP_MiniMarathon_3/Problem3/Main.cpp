@@ -1,4 +1,5 @@
 #include "Functionalities.hpp"
+#include "CarType.hpp"
 #include <future>
 
 /*
@@ -19,11 +20,23 @@ int main() {
         std::string result = res ? "Yeahhhh!!" : "NOOO!!!";
         std::cout << "Is Fuel tank capacity above 30: " << result << std::endl;
 
+        std::cout << "\n";
+        std::future<std::optional<CarVariantContainer>> r7 = std::async(std::launch::async, getFirstNCarsBasedOnType, 
+                                                                std::ref(data), CarType::EvCar_Type, 2);
+        std::optional<CarVariantContainer> cvc = r7.get();
+        if (cvc.has_value()) {
+            CarVariantContainer container = cvc.value();
+            for (const CarVariant& v: container) {
+                std::cout << *std::get<EvCarPointer>(v).get();
+            }
+        }
+
         // functionality to print count of all the EvCar instances
+        std::cout << "\n";
         std::future<void> r3 = std::async(std::launch::async, printCountOfEvCarInstances, std::ref(data));
         r3.get();
 
-        std::future<std::string> r4 = std::async(std::launch::async, getChassisTypeById, std::ref(data), 101);
+        std::future<std::string> r4 = std::async(std::launch::async, getChassisTypeById, std::ref(data), 103);
         std::string resStr = r4.get();
         std::cout << "Chassis Type of EvCar of given ID is: " << resStr << std::endl;
 

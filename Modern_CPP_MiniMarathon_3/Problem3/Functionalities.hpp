@@ -6,6 +6,7 @@
 #include <variant>
 #include <optional>
 #include <algorithm>
+#include <numeric>
 #include "EvCar.hpp"
 #include "ICECar.hpp"
 #include "CustomMessageException.hpp"
@@ -30,7 +31,7 @@ void createObjects(CarVariantContainer& data);
     of CarVariant and CarVariant is std::variant of shared pointers of EvCar class and ICECar class
     and returns std::optional of CarVariantContainer
 */
-std::optional<CarVariantContainer> getFirstNCarsBasedOnType(const CarVariantContainer& data, CarType& type, int n);
+std::optional<CarVariantContainer> getFirstNCarsBasedOnType(const CarVariantContainer& data, CarType type, int n);
 
 /*
     Function takes constant lvalue reference of CarVariantContainer where CarVariantContainer is std::vector 
