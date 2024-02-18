@@ -16,20 +16,22 @@ using TrainPointerContainer = std::vector<TrainPointer>;
 void createObjects(TrainPointerContainer& data);
 
 /*
-    Function takes constant lvalue reference of TrainPointerContainer where Container is std::vector of traingPointer
-    and TrainPointer is shared pointer of class Train and returns optional of intger.
+    Function takes constant lvalue reference of TrainPointerContainer where Container is std::vector 
+    of traingPointer and TrainPointer is shared pointer of class Train and returns optional of intger.
 */
 std::optional<int> getCountOfTrainsWith3TicketsBooked(const TrainPointerContainer& data);
 
 /*
-    Function takes lvalue reference of TrainPointerContainer, integer where Container is std::vector of traingPointer
-    and TrainPointer is shared pointer of class Train and returns optional of TrainPointerContainer.
+    Function takes lvalue reference of TrainPointerContainer, integer where Container is std::vector 
+    of traingPointer and TrainPointer is shared pointer of class Train and returns optional of 
+    TrainPointerContainer.
 */
 std::optional<TrainPointerContainer> getTrainsWithin3Hours(const TrainPointerContainer& data, int time);
 
 /*
-    Function takes constant lvalue reference of TrainPointerContainer, string  where Container is std::vector of traingPointer
-    and TrainPointer is shared pointer of class Train and returns optional of float.
+    Function takes constant lvalue reference of TrainPointerContainer, string  where Container 
+    is std::vector of traingPointer and TrainPointer is shared pointer of class Train and returns 
+    optional of float.
 */
 std::optional<float> getTotalPriceOfAllTickets(const TrainPointerContainer& data, std::string num);
 

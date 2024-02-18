@@ -56,7 +56,6 @@ std::optional<TrainPointerContainer> getTrainsWithin3Hours(const TrainPointerCon
         throw CustomMessageException("Data container is empty!!");
     
     TrainPointerContainer result;
-
     for (const TrainPointer& ptr: data) {
         if ((ptr->trainDepartureHours() - time == 1) || (ptr->trainDepartureHours() - time == 2) || (
             ptr->trainDepartureHours() - time == 3)) {
@@ -83,6 +82,7 @@ std::optional<float> getTotalPriceOfAllTickets(const TrainPointerContainer &data
         TrainPointer train = *pos;
         if (train->trainBookedTickets().empty()) 
             throw RecordNotFoundException("Train ticket container is empty!!");
+
         for(const TrainTicketPointer ticketPtr: train->trainBookedTickets()) {
             total += ticketPtr->ticketPrice();
         }
