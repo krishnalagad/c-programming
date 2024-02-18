@@ -17,12 +17,12 @@ int main(){
 
     std::future<void> ft = std::async(std::launch::async, generateAndDisplayIntegers, std::ref(pr));
 
+    int num = 5;
+    pr.set_value(num);
+
     for (std::thread& th : threads)
         if (th.joinable()) 
             th.join();
-
-    int num = 5;
-    pr.set_value(num);
     
     return 0;
 }

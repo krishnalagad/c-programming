@@ -1,7 +1,7 @@
 #include "Functionalities.hpp"
 
 void printSumOfNNumbers(int n) {
-    int tot = (n * (n - 1)) / 2;
+    int tot = (n * (n + 1)) / 2;
     std::cout << "Sum of first " << n << " positive numbers is: " << tot << std::endl;
 }
 
@@ -27,6 +27,7 @@ void generateAndDisplayIntegers(std::promise<int>& promise) {
     std::cout << "\nArray Elements: ";
     for (int i = 0; i < 5; i++)
         std::cout << arr[i] << "  ";
+    std::cout << "\n";
 }
 
 void generateAndStoreSquares(std::array<int, 5>& arr) {
