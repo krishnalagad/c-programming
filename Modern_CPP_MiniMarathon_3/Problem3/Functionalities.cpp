@@ -220,5 +220,7 @@ std::optional<CarVariantContainer> removeFewObjectsAndGetContainer(const CarVari
     });
 
     result.resize(std::distance(result.begin(), newEnd));
+    if (result.empty())
+        return std::nullopt;
     return result;
 }
