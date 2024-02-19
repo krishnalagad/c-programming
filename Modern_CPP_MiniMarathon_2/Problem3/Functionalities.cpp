@@ -9,10 +9,8 @@
     and returns void
 */
 
-void createObjects(CarPointerContainer &data)
-{
+void createObjects(CarPointerContainer &data) {
     /*
-
         2 objects of EV on heap
     */
     data.push_back(

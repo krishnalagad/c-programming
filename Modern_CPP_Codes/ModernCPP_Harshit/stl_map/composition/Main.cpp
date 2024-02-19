@@ -34,7 +34,7 @@ int main() {
 
         std::cout << "\nTotal balance: " << tot << std::endl;
         std::cout << "Count of above 50000.0f amount: " << count << std::endl;
-        if ( flag)
+        if (flag)
             std::cout << "At least one account exists with no debit card!!" << std::endl;
         else    
             std::cout << "No such account exist !!" << std::endl;
