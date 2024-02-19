@@ -11,7 +11,6 @@ struct LessEqualComparator {
 /*
     g++ priority_queue.cpp -g -o app && time ./app && rm app
 */
-
 int main() {
     std::vector<int> data {990, 560, 10, 20, 30, 10, 20};
     std::priority_queue<int, std::vector<int>, LessEqualComparator> pq(data.begin(), data.end());

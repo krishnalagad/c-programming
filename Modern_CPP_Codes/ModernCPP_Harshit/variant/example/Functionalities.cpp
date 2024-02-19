@@ -7,8 +7,7 @@ void createObjects(Container &data) {
     data.push_back(Employee (4, "Jane", 70000.0, HR("Recruitment", 3)));
 }
 
-std::vector<Employee> getDevelopers(const std::vector<Employee> &employees)
-{
+std::vector<Employee> getDevelopers(const std::vector<Employee> &employees) {
     std::vector<Employee> developers;
     for (const auto& emp : employees) {
         if (std::holds_alternative<Developer>(emp.getEmpTypeData())) {

@@ -210,8 +210,8 @@ std::optional<CarVariantContainer> removeFewObjectsAndGetContainer(const CarVari
     if (data.empty()) 
         throw CustomMessageException("Data container is empty!!");
     
-    CarVariantContainer result;
-    std::copy(data.begin(), data.end(), result.begin());
+    CarVariantContainer result(data.size());
+    std::copy(data.begin(), data.end(), result.begin()); // Using std::back_inserter to dynamically grow result
     if (result.empty())
         throw RecordNotFoundException("Result container is empty, Copy failed!!");
 
