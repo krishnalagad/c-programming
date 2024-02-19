@@ -68,4 +68,11 @@ float getTotalBatteryCapacityOfEvCars(const CarVariantContainer& data);
 */
 void printDataOfCarObject(const CarVariantContainer& data, int n);
 
+/*
+    Function takes constant lvalue reference of CarVariantContainer, integer n where CarVariantContainer is std::vector 
+    of CarVariant and CarVariant is std::variant of shared pointers of EvCar class and ICECar class
+    and returns std::optional of CarVariantContainer 
+*/
+std::optional<CarVariantContainer> removeFewObjectsAndGetContainer(const CarVariantContainer& data);
+
 #endif // FUNCTIONALITIES_HPP

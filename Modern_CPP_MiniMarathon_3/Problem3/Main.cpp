@@ -48,6 +48,17 @@ int main() {
         std::future<void> r6 = std::async(std::launch::async, printDataOfCarObject, std::ref(data), 3);
         r6.get();
 
+        std::cout << "\n";
+        std::future<std::optional<CarVariantContainer>> r8 = std::async(std::launch::async, removeFewObjectsAndGetContainer, 
+                                                                        std::ref(data));
+        std::optional<CarVariantContainer> carResult = r8.get();
+        if (carResult.has_value()) {
+            CarVariantContainer container = carResult.value();
+            for (const CarVariant& v: container) {
+                std::cout << *std::get<EvCarPointer>(v).get();
+            }
+        }
+
     } catch(CustomMessageException& e) {
         std::cerr << e.what() << '\n';
     } catch(RecordNotFoundException& e) {

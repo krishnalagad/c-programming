@@ -109,7 +109,7 @@ std::optional<CarVariantContainer> getFirstNCarsBasedOnType(const CarVariantCont
 //     std::cout << "The count of EvCar in the container is: " << count << std::endl;
 // }
 
-// Implementatio of method using std algorithm: std::count_if()
+// Implementation of method using std algorithm: std::count_if()
 void printCountOfEvCarInstances(const CarVariantContainer &data) {
     if (data.empty()) 
         throw CustomMessageException("Container is empty!!");
@@ -204,4 +204,21 @@ void printDataOfCarObject(const CarVariantContainer &data, int n) {
         ICECarPointer ptr = std::get<ICECarPointer>(data.at(n));
         std::cout << *ptr;
     }
+}
+
+std::optional<CarVariantContainer> removeFewObjectsAndGetContainer(const CarVariantContainer &data) {
+    if (data.empty()) 
+        throw CustomMessageException("Data container is empty!!");
+    
+    CarVariantContainer result;
+    std::copy(data.begin(), data.end(), result.begin());
+    if (result.empty())
+        throw RecordNotFoundException("Result container is empty, Copy failed!!");
+
+    auto newEnd = std::remove_if(result.begin(), result.end(), [](const CarVariant& v){
+        return std::holds_alternative<ICECarPointer>(v);
+    });
+
+    result.resize(std::distance(result.begin(), newEnd));
+    return result;
 }
