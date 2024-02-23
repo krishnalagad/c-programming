@@ -48,7 +48,7 @@ T relay(Args&&... args) {
         
 int main() {
     int n1 = 10;
-    std::string name = "Krisshna";
+    std::string name = "Krishna";
     std::string grade = "A+";
 
     DataModel d1();
