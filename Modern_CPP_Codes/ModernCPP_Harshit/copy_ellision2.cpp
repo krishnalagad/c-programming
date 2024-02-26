@@ -37,8 +37,8 @@ Employee magic(int id, std::string name) {
 }
 
 /*
-    g++ copy_ellision.cpp -g -o app && ./app && rm app
-    g++ copy_ellision.cpp -fno-elide-constructors -g -o app && ./app && rm app    // to turn off the optimization
+    g++ copy_ellision2.cpp -g -o app && ./app && rm app
+    g++ copy_ellision2.cpp -fno-elide-constructors -g -o app && ./app && rm app    // to turn off the optimization
 */
 int main() {
     Employee e1 = magic(101, "Krishna");    // Employee e1 is assigned a rvalue
@@ -59,6 +59,10 @@ int main() {
 
     e1 = e2;   // copy assignment will get called here
     std::cout << "Address E1: " << &e1 <<std::endl;
+
+    std::cout << "\n";
+    const volatile int a = 10;
+    std::cout << "a: " << a << std::endl;
 
     return 0;
 }
