@@ -28,6 +28,7 @@ inline std::ostream &operator<<(std::ostream &os, const DataModel &rhs) {
             os << data << " ";
     return os;
 }
+
 /*
     T : DatModel
     Args... : is for all other params
@@ -44,8 +45,7 @@ T relay(Args&&... args) {
     - relay() is the middleman (relaying or forwarding function)
     - Constructor is the actual destination function where parameters should
       arrive as they are sent from main() without any changes.
-*/
-        
+*/      
 int main() {
     int n1 = 10;
     std::string name = "Krishna";
