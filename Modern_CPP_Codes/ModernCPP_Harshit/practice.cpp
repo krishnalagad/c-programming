@@ -4,7 +4,7 @@
 void pattern() {
     for (int i = 0; i < 100; i++) {
         if (i % 2 == 0) 
-            std::cout << "\nIfPart: " << i << " -->SQUARE-->" << i * i << std::endl;
+            std::cout << "\nIfPart: " << i << " -->SQUARE--> " << i * i << std::endl;
         else 
             std::cout << "\nElsePart: " << i << "\n";
             int temp = 0;
