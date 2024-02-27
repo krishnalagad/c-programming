@@ -21,7 +21,8 @@ void pattern() {
 }
 
 /*
-    g++ practice.cpp -lpthread -o app && time ./app > output.txt && rm app
+    g++ practice.cpp -lpthread -o app && time ./app > output.txt && cat output.txt && rm app && rm output.txt
+    g++ practice.cpp -lpthread -o app && time ./app && rm app
     gcc practice.c -o app && time ./app && rm app
 */
 int main(int argc, char const *argv[]) {
