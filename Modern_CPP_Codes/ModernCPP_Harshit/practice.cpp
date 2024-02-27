@@ -16,10 +16,9 @@ void pattern() {
                 std::cout << j << " --> CUBE --> " << j * j * j << " |" << " ";
                 temp += 1;
             }  
-        }          
+        }
     }
 }
-
 /*
     g++ practice.cpp -lpthread -o app && time ./app > output.txt && cat output.txt && rm app && rm output.txt
     g++ practice.cpp -lpthread -o app && time ./app && rm app
