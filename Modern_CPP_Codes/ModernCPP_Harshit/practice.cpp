@@ -2,25 +2,26 @@
 #include <thread>
 
 void pattern() {
-    for (int i = 0; i < 100; i++) {
+    for (long i = 0; i < 100; i++) {
         if (i % 2 == 0) 
-            std::cout << "\nIfPart: " << i << " -->SQUARE--> " << i * i << std::endl;
-        else 
+            std::cout << "\n\nIfPart: " << i << " --> SQUARE --> " << i * i << "" << std::endl;
+        else {
             std::cout << "\nElsePart: " << i << "\n";
             int temp = 0;
-            for (int j = 0; j < 100; j++) {
-                if (temp > 5) {
+            for (long j = 0; j < 100; j++) {
+                if (temp > 4) {
                     temp = 0;
                     std::cout << std::endl;
                 }
-                std::cout << j << " -->CUBE--> " << j * j * j << "  ";
+                std::cout << j << " --> CUBE --> " << j * j * j << " |" << " ";
                 temp += 1;
-            }            
+            }  
+        }          
     }
 }
 
 /*
-    g++ practice.cpp -lpthread -o app && time ./app && rm app
+    g++ practice.cpp -lpthread -o app && time ./app > output.txt && rm app
     gcc practice.c -o app && time ./app && rm app
 */
 int main(int argc, char const *argv[]) {
