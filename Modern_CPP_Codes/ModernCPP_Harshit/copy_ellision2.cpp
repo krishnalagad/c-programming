@@ -35,7 +35,6 @@ Employee magic(int id, std::string name) {
     Employee e(id, name);
     return e;
 }
-
 /*
     g++ copy_ellision2.cpp -g -o app && ./app && rm app
     g++ copy_ellision2.cpp -fno-elide-constructors -g -o app && ./app && rm app    // to turn off the optimization
