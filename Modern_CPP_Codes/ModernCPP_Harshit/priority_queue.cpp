@@ -7,7 +7,6 @@ struct LessEqualComparator {
         return a <= b;
     }
 };
-
 /*
     g++ priority_queue.cpp -g -o app && time ./app && rm app
 */
