@@ -1,0 +1,201 @@
+                                ****** NOTES *****
+
+1) defaulted & deleted member functions
+    : you can explicitly specify what is enabled vs disabled
+
+2) constructor delegation
+    : transfer control from one constructor another of the same class to use "chaining of constructors" 
+        to fully construct an object. It can avoid duplicated initialization code.
+
+3) explicit keyword
+    : prevents a constructor with 1 "unknown/non-default" parameter to be used for an implicit type conversion.
+
+4) Introduction to smart pointers
+    : scope based resource management for handling pointer deallocation "smartly".
+
+5) using keyword
+    : creates an alternate name/alias for some type.
+
+6) auto keyword
+    : allows for inferring or deducing type of a variable based on initial value.
+
+7) uniform initialization
+    : one common syntactical way of initializing everything.
+
+8) nullptr
+    : replacement of NULL macro with a proper type (std::nullptr_t)
+
+lvalues: values that are in the RAM (have a fixed location) aka have an adress
+         lvalues have a name given by us
+
+rvalues: temporary value (result of an expression or displacement).
+          rvalues dont have a fixed address (We cant go to their location in RAM and find value )
+
+Intention:
+ 
+1) Both Accepted:
+    a) Lvalues accepted by copy, rvalues must be assigned e.g Magic(int n1);
+    b) Lvalue by reference, rvaules must be assigned e.g: Magic(const int& n1)
+ 
+2) Only value by reference: 
+        e.g: Magic(int& n1)
+ 
+3) Only rvalues by assignment 
+        e.g: Magic(int&& n1)
+
+- For every STL container, actual data is stored in heap, only start and end ptr are stored on stack
+  regardless of the size.
+
+- Inheritance:  To perform generalization or specialization in code we can use inheritance.
+                To provide logic to the subtypes or to make universal logic for all subtypes.
+- Polymorphism: Doing a action in a code more than one way is Polymorphism.
+                Object init (Constructor overloading), cal taxes differently (Function overloading)
+- Association:  Alpha uses functionalities from Beta
+                                OR
+                Beta uses functionalities from Alpha
+- Composition:  Alpha is instantiated by using one or more instances of Beta. Instance of alpha 
+                controls the life of instance/s of Beta
+                                                OR
+                Beta is instantiated by using one or more instances of Alpha. Instance of Beta 
+                controls the life of instance/s of Alpha
+- Aggregation:  Alpha is instantiated by using one or more instances of Beta. Instance of alpha 
+                does not control the lifetime of instance/s of Beta
+                                                OR
+                Beta is instantiated by using one or more instances of Alpha. Instance of Beta does 
+                not control the lifetime of instance/s of Alpha
+
+For every data member, following things must be considered
+ 
+    1) Is it supposed to be mutable or immutable?
+        - Does it need to auto-increment based on previous value ?
+    2) Should be accepted by value, by lvalue reference or rvalue reference or both?
+    3) Is it stack allocated or heap allocated? (or maybe both partially?)
+    4) Does it need to be smartly managed? (applicable only for heap allocated members)
+    5) Does the data member need to have a non-null state at the time of instantiation of the object
+
+    - Every function has a type (its signature)
+    - function can be passed as a parameter to other functions
+    - functions can be returned from other functions
+    - functions address can be captured in a variable.
+    - functions can be stored in containers
+Tools: 
+    - objdump
+    - cMake
+    - gdb
+
+In capture clause
+        [&] means all variables in enclosing function are captured by reference       
+        [=] means all variables in enclosing function are captured by value 
+        [&n1] means only n1 variable is captured by reference       
+        [n1] means only nl is captured by value       
+        [n1, &a] : n1 by value and a by reference
+
+If we accept var by value in capture clause of lambda We cant change the value of 
+        var in the lambda body, because it becomes const in lambda body to achieve functional
+        programming.
+
+        If we still want to make changes then we can make lambda function as mutable   
+
+SOC (System on Chip)
+    - core : one available working node in the microprocessor
+    - thread : set of instructions to be executed
+
+&x : If there is no data type to the left of &x then it is pointer.
+int& x : This is reference to int.
+
+Caegory 1: std::any_of, std::all_of, std::none_of
+    Input parameters: iterators for input container and a predicate function
+    return boolean
+ 
+    a) any of the element satisfies condition (any_of) 
+    b) all of the elements satisfy condition (all_of)
+    c) none of the elements satisfy condition (all_of)
+ 
+Caegory 2: min & max computation
+    
+    a) std::max: takes iterators to input and a comparator. returns first occurence of max value
+    b) std::min: takes iterators to input and a comparator. returns first occurence of min value 
+    c) std::min_element: takes iterators to input and a comparator. returnsliterator to first occurence of min value
+    d) std::max_element: takes iterators to input and a comparator. returns iterator to first occurence of max value
+ 
+Category 3: sorting of elements
+ 
+    std::sort :
+        takes input iterators to input and a comparator. returns void
+    
+    Note: a) only applicable on random access iterators (containers that are accessed via positions 
+            b) it performs in place sorting (sante original containen, not a copy of elenetns)
+
+Category 4: accumulate
+    std::accumulate :
+        takes inputiterator to input and binar operation fucntion, returns the final answer
+    Note: 
+        Binary function has to be type of   
+            answer upto curent point, one item from the container as inputs
+            output should be binary operator applied between 2 arguments
+
+Category 5: find family 
+    a) find_if: iterators for input container and a predicate function 
+            return ioterator to the first element found that matches the condition 
+            else returns input.end iterator
+
+Category 6: count family
+    a) count_if : iterates for input container and a predicate function 
+            returns count of element matching condition.
+
+Category 7: for each adaptor
+    a) std::for_each : takes input iterator and a function object. Applies function obj on 
+            each input item seperately, one by one in sequence.
+
+scenario 1: I have a main program which includes a function that can be executed parallel to main or concurrent to 
+            main without any dependency on main since there is no write to shared memory, 
+            use std::thread with no synchronization primitive
+
+main ---------------- /////
+                    \
+                    \
+                    \  launching std::thread with square function and
+                    \   vector as argument
+                    ----------------------------t1
+                    square of numbers in an array
+
+scenario 2: I have two functions to be executed. Both of them are independent of each other. 
+            They can be executed simultaneously. They both write to a shared memory.
+
+            for e.g: Main and t1 calculating square and cube of numbers respectively and printing it on the console
+                     since there is no write to shared memory, use std::thread with a synchronization primitive
+
+scenario 3: creating and managing multiple threads
+            use a container like array or list to create a container of threads
+            synchronization may or may not be required
+
+
+scenario 4: Function to be executed in thread returns a value
+            use std::future<T> as return value and launch thread with std::async
+
+scenario 5: I want to start a thread for a function that requires input, but can process some 
+            commands even before input becomes available i.e. we can execute some part of the function without involving input parameter
+
+            5(a) function returns nothing(void)
+                - use future and promise model to send input to the function
+            5(b) function returns some value    
+                - use future and promise model to send input to the function
+                Also use std::future<T> as return result value. where T is type of return
+
+scenario 6: One section of my program performs an action which generates data values. 
+            These values maybe stored in some container/memory location.
+            I want to execute some function to consume/operate on generated values but I have certain expectations/limitations
+
+            A) CONSUMPTION SHOULD BE TRIGGERED ONLY WHEN A VALUE BECOMES AVAILABLE
+            B) DATA TO BE CONSUMED/PROCESSED SHALL NOT BE PROVIDED AS INPUT, SINCE
+                i) Values are generated periodically
+                ii) values are generated but maintained outside of the consumer
+            Here use condition variable concept
+
+
+
+
+OS by Galvin
+Computer Architecture by Hwang
+Computer Networking by tanenbaum
+Effective Modern C++ by Scott Mears
