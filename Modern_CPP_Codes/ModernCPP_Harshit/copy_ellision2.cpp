@@ -7,12 +7,8 @@ class Employee {
     public:
         Employee() = delete;
         Employee(int id, std::string name): _eId(id), _eName(name) {}
-        Employee(const Employee&) {
-            std::cout << "copy constructor called!!" << std::endl;
-        }
-        Employee(Employee&&) {
-            std::cout << "move constructor called!!" << std::endl;
-        }
+        Employee(const Employee&) { std::cout << "copy constructor called!!" << std::endl; }
+        Employee(Employee&&) { std::cout << "move constructor called!!" << std::endl; }
         Employee& operator=(const Employee&) {
             std::cout << "copy assignment called!!" << std::endl;
             return *this;
