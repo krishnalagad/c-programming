@@ -4,7 +4,7 @@
     : you can explicitly specify what is enabled vs disabled
 
 2) constructor delegation
-    : transfer control from one constructor another of the same class to use "chaining of constructors" 
+    : transfer control from one constructor to another of the same class to use "chaining of constructors" 
         to fully construct an object. It can avoid duplicated initialization code.
 
 3) explicit keyword
