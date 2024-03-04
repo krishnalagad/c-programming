@@ -49,7 +49,7 @@ Intention:
 - Inheritance:  To perform generalization or specialization in code we can use inheritance.
                 To provide logic to the subtypes or to make universal logic for all subtypes.
 - Polymorphism: Doing a action in a code more than one way is Polymorphism.
-                Object init (Constructor overloading), cal taxes differently (Function overloading)
+                Object init (Constructor overloading), call taxes differently (Function overloading)
 - Association:  Alpha uses functionalities from Beta
                                 OR
                 Beta uses functionalities from Alpha
@@ -115,7 +115,7 @@ Caegory 2: min & max computation
     
     a) std::max: takes iterators to input and a comparator. returns first occurence of max value
     b) std::min: takes iterators to input and a comparator. returns first occurence of min value 
-    c) std::min_element: takes iterators to input and a comparator. returnsliterator to first occurence of min value
+    c) std::min_element: takes iterators to input and a comparator. returns iterator to first occurence of min value
     d) std::max_element: takes iterators to input and a comparator. returns iterator to first occurence of max value
  
 Category 3: sorting of elements
@@ -123,12 +123,12 @@ Category 3: sorting of elements
     std::sort :
         takes input iterators to input and a comparator. returns void
     
-    Note: a) only applicable on random access iterators (containers that are accessed via positions 
-            b) it performs in place sorting (sante original containen, not a copy of elenetns)
+    Note:   a) only applicable on random access iterators (containers that are accessed via positions 
+            b) it performs in-place sorting (modify original container, not a copy of elenetns)
 
 Category 4: accumulate
     std::accumulate :
-        takes inputiterator to input and binar operation fucntion, returns the final answer
+        takes input iterator to input and binar operation function, returns the final answer
     Note: 
         Binary function has to be type of   
             answer upto curent point, one item from the container as inputs
@@ -136,8 +136,8 @@ Category 4: accumulate
 
 Category 5: find family 
     a) find_if: iterators for input container and a predicate function 
-            return ioterator to the first element found that matches the condition 
-            else returns input.end iterator
+            return iterator to the first element found that matches the condition 
+            else returns end iterator of input container
 
 Category 6: count family
     a) count_if : iterates for input container and a predicate function 
@@ -145,7 +145,7 @@ Category 6: count family
 
 Category 7: for each adaptor
     a) std::for_each : takes input iterator and a function object. Applies function obj on 
-            each input item seperately, one by one in sequence.
+            each input item seperately, one by one in a sequence.
 
 scenario 1: I have a main program which includes a function that can be executed parallel to main or concurrent to 
             main without any dependency on main since there is no write to shared memory, 
@@ -174,7 +174,8 @@ scenario 4: Function to be executed in thread returns a value
             use std::future<T> as return value and launch thread with std::async
 
 scenario 5: I want to start a thread for a function that requires input, but can process some 
-            commands even before input becomes available i.e. we can execute some part of the function without involving input parameter
+            commands even before input becomes available i.e. we can execute some part of the function without 
+            involving input parameter
 
             5(a) function returns nothing(void)
                 - use future and promise model to send input to the function
@@ -184,7 +185,8 @@ scenario 5: I want to start a thread for a function that requires input, but can
 
 scenario 6: One section of my program performs an action which generates data values. 
             These values maybe stored in some container/memory location.
-            I want to execute some function to consume/operate on generated values but I have certain expectations/limitations
+            I want to execute some function to consume/operate on generated values but I have 
+            certain expectations/limitations
 
             A) CONSUMPTION SHOULD BE TRIGGERED ONLY WHEN A VALUE BECOMES AVAILABLE
             B) DATA TO BE CONSUMED/PROCESSED SHALL NOT BE PROVIDED AS INPUT, SINCE
