@@ -2,13 +2,13 @@
 #include <thread>
 
 void pattern() {
-    for (long i = 0; i < 100; i++) {
+    for (long i = 1; i <= 100; i++) {
         if (i % 2 == 0) 
             std::cout << "\n\nIfPart: " << i << " --> SQUARE --> " << i * i << "" << std::endl;
         else {
             std::cout << "\nElsePart: " << i << "\n";
             int temp = 0;
-            for (long j = 0; j < 100; j++) {
+            for (long j = 1; j <= i; j++) {
                 if (temp > 4) {
                     temp = 0;
                     std::cout << std::endl;
