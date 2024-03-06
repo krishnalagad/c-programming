@@ -4,5 +4,7 @@
 /home/kpit/Desktop/C-Training-KPIT/c-programming/CMake/build/include/CMakeFiles/edit_cache.dir
 /home/kpit/Desktop/C-Training-KPIT/c-programming/CMake/build/src/CMakeFiles/rebuild_cache.dir
 /home/kpit/Desktop/C-Training-KPIT/c-programming/CMake/build/src/CMakeFiles/edit_cache.dir
+/home/kpit/Desktop/C-Training-KPIT/c-programming/CMake/build/src/CMakeFiles/simplecmake.dir
 /home/kpit/Desktop/C-Training-KPIT/c-programming/CMake/build/example/CMakeFiles/rebuild_cache.dir
 /home/kpit/Desktop/C-Training-KPIT/c-programming/CMake/build/example/CMakeFiles/edit_cache.dir
+/home/kpit/Desktop/C-Training-KPIT/c-programming/CMake/build/example/CMakeFiles/main.dir

@@ -1,4 +1,0 @@
-/home/kpit/Desktop/C-Training-KPIT/c-programming/CMake/Debug/CMakeFiles/rebuild_cache.dir
-/home/kpit/Desktop/C-Training-KPIT/c-programming/CMake/Debug/CMakeFiles/edit_cache.dir
-/home/kpit/Desktop/C-Training-KPIT/c-programming/CMake/Debug/CMakeFiles/hello.dir
-/home/kpit/Desktop/C-Training-KPIT/c-programming/CMake/Debug/CMakeFiles/helloCMake.dir

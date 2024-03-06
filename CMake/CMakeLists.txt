@@ -1,15 +1,13 @@
-cmake_minimum_required(VERSION 3.0)
-project(helloCMake)
+cmake_minimum_required(VERSION 3.15)
+project(SimpleCMakeProject)
 
-add_executable(helloCMake main.cpp)
+add_subdirectory(include)
+add_subdirectory(src)
 
-add_library(
-	hello
-	hello.hpp
-	hello.cpp
-)
+option(BUILD_EXAMPLE "Whether or nor to build examples: " ON)
 
-target_link_libraries(helloCMake hello)
-
-add_compile_options(-Wall) 
+if(BUILD_EXAMPLE)
+	message(STATUS "Building examples...")
+	add_subdirectory(example)
+endif()
 

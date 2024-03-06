@@ -110,6 +110,48 @@ depend:
 	cd /home/kpit/Desktop/C-Training-KPIT/c-programming/CMake/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
+# Convenience name for target.
+src/CMakeFiles/simplecmake.dir/rule:
+	cd /home/kpit/Desktop/C-Training-KPIT/c-programming/CMake/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/simplecmake.dir/rule
+.PHONY : src/CMakeFiles/simplecmake.dir/rule
+
+# Convenience name for target.
+simplecmake: src/CMakeFiles/simplecmake.dir/rule
+
+.PHONY : simplecmake
+
+# fast build rule for target.
+simplecmake/fast:
+	cd /home/kpit/Desktop/C-Training-KPIT/c-programming/CMake/build && $(MAKE) -f src/CMakeFiles/simplecmake.dir/build.make src/CMakeFiles/simplecmake.dir/build
+.PHONY : simplecmake/fast
+
+printhello.o: printhello.cpp.o
+
+.PHONY : printhello.o
+
+# target to build an object file
+printhello.cpp.o:
+	cd /home/kpit/Desktop/C-Training-KPIT/c-programming/CMake/build && $(MAKE) -f src/CMakeFiles/simplecmake.dir/build.make src/CMakeFiles/simplecmake.dir/printhello.cpp.o
+.PHONY : printhello.cpp.o
+
+printhello.i: printhello.cpp.i
+
+.PHONY : printhello.i
+
+# target to preprocess a source file
+printhello.cpp.i:
+	cd /home/kpit/Desktop/C-Training-KPIT/c-programming/CMake/build && $(MAKE) -f src/CMakeFiles/simplecmake.dir/build.make src/CMakeFiles/simplecmake.dir/printhello.cpp.i
+.PHONY : printhello.cpp.i
+
+printhello.s: printhello.cpp.s
+
+.PHONY : printhello.s
+
+# target to generate assembly for a file
+printhello.cpp.s:
+	cd /home/kpit/Desktop/C-Training-KPIT/c-programming/CMake/build && $(MAKE) -f src/CMakeFiles/simplecmake.dir/build.make src/CMakeFiles/simplecmake.dir/printhello.cpp.s
+.PHONY : printhello.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -118,6 +160,10 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
+	@echo "... simplecmake"
+	@echo "... printhello.o"
+	@echo "... printhello.i"
+	@echo "... printhello.s"
 .PHONY : help
 
 
