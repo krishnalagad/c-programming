@@ -5,18 +5,18 @@
 #include <ostream>
 
 class HR {
-private:
-    std::string _hrDepartment;
-    int _pendingInterviews;
+    private:
+        std::string _hrDepartment;
+        int _pendingInterviews;
 
-public:
-    HR(const std::string& hrDepartment, int pendingInterviews)
-        : _hrDepartment(hrDepartment), _pendingInterviews(pendingInterviews) {}
+    public:
+        HR(const std::string& hrDepartment, int pendingInterviews)
+            : _hrDepartment(hrDepartment), _pendingInterviews(pendingInterviews) {}
 
-    const std::string& getHRDepartment() const { return _hrDepartment; }
-    int getPendingInterviews() const { return _pendingInterviews; }
+        const std::string& getHRDepartment() const { return _hrDepartment; }
+        int getPendingInterviews() const { return _pendingInterviews; }
 
-    friend std::ostream &operator<<(std::ostream &os, const HR &rhs);
+        friend std::ostream &operator<<(std::ostream &os, const HR &rhs);
 };
 
 inline std::ostream &operator<<(std::ostream &os, const HR &rhs) {
