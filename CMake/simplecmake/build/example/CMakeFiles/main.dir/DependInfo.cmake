@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/kpit/Desktop/C-Training-KPIT/c-programming/CMake/example/main.cpp" "/home/kpit/Desktop/C-Training-KPIT/c-programming/CMake/build/example/CMakeFiles/main.dir/main.cpp.o"
+  "/home/kpit/Desktop/C-Training-KPIT/c-programming/CMake/simplecmake/example/main.cpp" "/home/kpit/Desktop/C-Training-KPIT/c-programming/CMake/simplecmake/build/example/CMakeFiles/main.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -15,7 +15,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/kpit/Desktop/C-Training-KPIT/c-programming/CMake/build/src/CMakeFiles/simplecmake.dir/DependInfo.cmake"
+  "/home/kpit/Desktop/C-Training-KPIT/c-programming/CMake/simplecmake/build/src/CMakeFiles/simplecmake.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

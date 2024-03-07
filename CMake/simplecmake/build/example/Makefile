@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/kpit/Desktop/C-Training-KPIT/c-programming/CMake
+CMAKE_SOURCE_DIR = /home/kpit/Desktop/C-Training-KPIT/c-programming/CMake/simplecmake
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/kpit/Desktop/C-Training-KPIT/c-programming/CMake/build
+CMAKE_BINARY_DIR = /home/kpit/Desktop/C-Training-KPIT/c-programming/CMake/simplecmake/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,14 +80,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/kpit/Desktop/C-Training-KPIT/c-programming/CMake/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/kpit/Desktop/C-Training-KPIT/c-programming/CMake/build/CMakeFiles /home/kpit/Desktop/C-Training-KPIT/c-programming/CMake/build/example/CMakeFiles/progress.marks
-	cd /home/kpit/Desktop/C-Training-KPIT/c-programming/CMake/build && $(MAKE) -f CMakeFiles/Makefile2 example/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/kpit/Desktop/C-Training-KPIT/c-programming/CMake/build/CMakeFiles 0
+	cd /home/kpit/Desktop/C-Training-KPIT/c-programming/CMake/simplecmake/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/kpit/Desktop/C-Training-KPIT/c-programming/CMake/simplecmake/build/CMakeFiles /home/kpit/Desktop/C-Training-KPIT/c-programming/CMake/simplecmake/build/example/CMakeFiles/progress.marks
+	cd /home/kpit/Desktop/C-Training-KPIT/c-programming/CMake/simplecmake/build && $(MAKE) -f CMakeFiles/Makefile2 example/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/kpit/Desktop/C-Training-KPIT/c-programming/CMake/simplecmake/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/kpit/Desktop/C-Training-KPIT/c-programming/CMake/build && $(MAKE) -f CMakeFiles/Makefile2 example/clean
+	cd /home/kpit/Desktop/C-Training-KPIT/c-programming/CMake/simplecmake/build && $(MAKE) -f CMakeFiles/Makefile2 example/clean
 .PHONY : clean
 
 # The main clean target
@@ -97,22 +97,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/kpit/Desktop/C-Training-KPIT/c-programming/CMake/build && $(MAKE) -f CMakeFiles/Makefile2 example/preinstall
+	cd /home/kpit/Desktop/C-Training-KPIT/c-programming/CMake/simplecmake/build && $(MAKE) -f CMakeFiles/Makefile2 example/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/kpit/Desktop/C-Training-KPIT/c-programming/CMake/build && $(MAKE) -f CMakeFiles/Makefile2 example/preinstall
+	cd /home/kpit/Desktop/C-Training-KPIT/c-programming/CMake/simplecmake/build && $(MAKE) -f CMakeFiles/Makefile2 example/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/kpit/Desktop/C-Training-KPIT/c-programming/CMake/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/kpit/Desktop/C-Training-KPIT/c-programming/CMake/simplecmake/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 example/CMakeFiles/main.dir/rule:
-	cd /home/kpit/Desktop/C-Training-KPIT/c-programming/CMake/build && $(MAKE) -f CMakeFiles/Makefile2 example/CMakeFiles/main.dir/rule
+	cd /home/kpit/Desktop/C-Training-KPIT/c-programming/CMake/simplecmake/build && $(MAKE) -f CMakeFiles/Makefile2 example/CMakeFiles/main.dir/rule
 .PHONY : example/CMakeFiles/main.dir/rule
 
 # Convenience name for target.
@@ -122,7 +122,7 @@ main: example/CMakeFiles/main.dir/rule
 
 # fast build rule for target.
 main/fast:
-	cd /home/kpit/Desktop/C-Training-KPIT/c-programming/CMake/build && $(MAKE) -f example/CMakeFiles/main.dir/build.make example/CMakeFiles/main.dir/build
+	cd /home/kpit/Desktop/C-Training-KPIT/c-programming/CMake/simplecmake/build && $(MAKE) -f example/CMakeFiles/main.dir/build.make example/CMakeFiles/main.dir/build
 .PHONY : main/fast
 
 main.o: main.cpp.o
@@ -131,7 +131,7 @@ main.o: main.cpp.o
 
 # target to build an object file
 main.cpp.o:
-	cd /home/kpit/Desktop/C-Training-KPIT/c-programming/CMake/build && $(MAKE) -f example/CMakeFiles/main.dir/build.make example/CMakeFiles/main.dir/main.cpp.o
+	cd /home/kpit/Desktop/C-Training-KPIT/c-programming/CMake/simplecmake/build && $(MAKE) -f example/CMakeFiles/main.dir/build.make example/CMakeFiles/main.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -140,7 +140,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	cd /home/kpit/Desktop/C-Training-KPIT/c-programming/CMake/build && $(MAKE) -f example/CMakeFiles/main.dir/build.make example/CMakeFiles/main.dir/main.cpp.i
+	cd /home/kpit/Desktop/C-Training-KPIT/c-programming/CMake/simplecmake/build && $(MAKE) -f example/CMakeFiles/main.dir/build.make example/CMakeFiles/main.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -149,7 +149,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	cd /home/kpit/Desktop/C-Training-KPIT/c-programming/CMake/build && $(MAKE) -f example/CMakeFiles/main.dir/build.make example/CMakeFiles/main.dir/main.cpp.s
+	cd /home/kpit/Desktop/C-Training-KPIT/c-programming/CMake/simplecmake/build && $(MAKE) -f example/CMakeFiles/main.dir/build.make example/CMakeFiles/main.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 # Help Target
@@ -175,6 +175,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/kpit/Desktop/C-Training-KPIT/c-programming/CMake/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/kpit/Desktop/C-Training-KPIT/c-programming/CMake/simplecmake/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

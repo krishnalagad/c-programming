@@ -8,9 +8,9 @@
 
 ../include/simplecmake/printhello.h
 
-/home/kpit/Desktop/C-Training-KPIT/c-programming/CMake/src/printhello.cpp
+/home/kpit/Desktop/C-Training-KPIT/c-programming/CMake/simplecmake/src/printhello.cpp
 simplecmake/printhello.h
-/home/kpit/Desktop/C-Training-KPIT/c-programming/CMake/src/simplecmake/printhello.h
+/home/kpit/Desktop/C-Training-KPIT/c-programming/CMake/simplecmake/src/simplecmake/printhello.h
 iostream
 -
 
