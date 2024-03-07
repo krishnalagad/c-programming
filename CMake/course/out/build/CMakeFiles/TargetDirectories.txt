@@ -1,0 +1,3 @@
+/home/kpit/Desktop/C-Training-KPIT/c-programming/CMake/course/out/build/CMakeFiles/rebuild_cache.dir
+/home/kpit/Desktop/C-Training-KPIT/c-programming/CMake/course/out/build/CMakeFiles/edit_cache.dir
+/home/kpit/Desktop/C-Training-KPIT/c-programming/CMake/course/out/build/CMakeFiles/CMakeCourse.dir
