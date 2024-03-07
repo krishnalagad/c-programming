@@ -60,15 +60,15 @@ include src/CMakeFiles/simplecmake.dir/flags.make
 src/CMakeFiles/simplecmake.dir/printhello.cpp.o: src/CMakeFiles/simplecmake.dir/flags.make
 src/CMakeFiles/simplecmake.dir/printhello.cpp.o: ../src/printhello.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kpit/Desktop/C-Training-KPIT/c-programming/CMake/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/CMakeFiles/simplecmake.dir/printhello.cpp.o"
-	cd /home/kpit/Desktop/C-Training-KPIT/c-programming/CMake/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/simplecmake.dir/printhello.cpp.o -c /home/kpit/Desktop/C-Training-KPIT/c-programming/CMake/src/printhello.cpp
+	cd /home/kpit/Desktop/C-Training-KPIT/c-programming/CMake/build/src && /usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/simplecmake.dir/printhello.cpp.o -c /home/kpit/Desktop/C-Training-KPIT/c-programming/CMake/src/printhello.cpp
 
 src/CMakeFiles/simplecmake.dir/printhello.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/simplecmake.dir/printhello.cpp.i"
-	cd /home/kpit/Desktop/C-Training-KPIT/c-programming/CMake/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kpit/Desktop/C-Training-KPIT/c-programming/CMake/src/printhello.cpp > CMakeFiles/simplecmake.dir/printhello.cpp.i
+	cd /home/kpit/Desktop/C-Training-KPIT/c-programming/CMake/build/src && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kpit/Desktop/C-Training-KPIT/c-programming/CMake/src/printhello.cpp > CMakeFiles/simplecmake.dir/printhello.cpp.i
 
 src/CMakeFiles/simplecmake.dir/printhello.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/simplecmake.dir/printhello.cpp.s"
-	cd /home/kpit/Desktop/C-Training-KPIT/c-programming/CMake/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kpit/Desktop/C-Training-KPIT/c-programming/CMake/src/printhello.cpp -o CMakeFiles/simplecmake.dir/printhello.cpp.s
+	cd /home/kpit/Desktop/C-Training-KPIT/c-programming/CMake/build/src && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kpit/Desktop/C-Training-KPIT/c-programming/CMake/src/printhello.cpp -o CMakeFiles/simplecmake.dir/printhello.cpp.s
 
 # Object files for target simplecmake
 simplecmake_OBJECTS = \
