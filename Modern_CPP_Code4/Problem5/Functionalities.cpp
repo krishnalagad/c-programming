@@ -93,7 +93,7 @@ int getTotalRevenueForAccount(const AccountPointerMap &data, int accountNumber) 
                 return total + unit.unitMonthlyRevenue();
             });
             return answer;
-
+            
         } else    
             throw CustomMessageException("Account has found, but no units exists for this account!!");
     } else {
