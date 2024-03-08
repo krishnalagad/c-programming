@@ -1,0 +1,1 @@
+/usr/bin/c++     CMakeFiles/testmath.dir/main.cpp.o  -o testmath   -L/home/kpit/Desktop/C-Training-KPIT/c-programming/CMake/LibraryDemo/cpp-test/../cpp/build  -Wl,-rpath,/home/kpit/Desktop/C-Training-KPIT/c-programming/CMake/LibraryDemo/cpp-test/../cpp/build -lmymath 
