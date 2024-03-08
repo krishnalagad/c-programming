@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/kpit/Desktop/C-Training-KPIT/c-programming/CMake/LibraryDemo/cpp/adder.cpp
+adder.h
+/home/kpit/Desktop/C-Training-KPIT/c-programming/CMake/LibraryDemo/cpp/adder.h
+
+/home/kpit/Desktop/C-Training-KPIT/c-programming/CMake/LibraryDemo/cpp/adder.h
+
