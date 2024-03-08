@@ -1,4 +1,5 @@
 cmake_minimum_required(VERSION 3.16)
-project(CMakeCourse)
+project(Trim)
 
-add_executable(${PROJECT_NAME} main.cpp)
+add_executable(trim main.cpp)
+install(TARGETS trim DESTINATION bin)
