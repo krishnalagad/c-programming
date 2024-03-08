@@ -1,0 +1,7 @@
+/home/kpit/Desktop/C-Training-KPIT/c-programming/CMake/course/build/CMakeFiles/install/strip.dir
+/home/kpit/Desktop/C-Training-KPIT/c-programming/CMake/course/build/CMakeFiles/install/local.dir
+/home/kpit/Desktop/C-Training-KPIT/c-programming/CMake/course/build/CMakeFiles/install.dir
+/home/kpit/Desktop/C-Training-KPIT/c-programming/CMake/course/build/CMakeFiles/list_install_components.dir
+/home/kpit/Desktop/C-Training-KPIT/c-programming/CMake/course/build/CMakeFiles/rebuild_cache.dir
+/home/kpit/Desktop/C-Training-KPIT/c-programming/CMake/course/build/CMakeFiles/edit_cache.dir
+/home/kpit/Desktop/C-Training-KPIT/c-programming/CMake/course/build/CMakeFiles/trim.dir
