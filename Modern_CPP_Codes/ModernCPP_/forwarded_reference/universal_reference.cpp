@@ -1,5 +1,6 @@
 #include <utility>
 #include <iostream>
+#include <functional>
 
 void destination(const std::string& str) {
     std::cout << "In const lvalue ref fun!! : " << str << std::endl;
@@ -12,9 +13,9 @@ void destination(std::string&& str) {
 }
 
 template<typename T>
-void middleware(T&& arg) {  
-    // T is universal reference: means it can hold the reference of lvalue and rvalue
-    // call to destination function
+void middleware(T&& arg) noexcept {  // noexcept means this function does not throws any exception.
+    // T is universal reference: means it can hold the reference of lvalue and rvalue.
+    // call to destination function.
     destination(std::forward<T>(arg));
 }
 
@@ -23,6 +24,7 @@ void middleware(T&& arg) {
 */
 int main() {
     const std::string str = "Krishna";
-    middleware(str);
+    middleware(std::ref(str));
+    middleware(std::move(str));
     return 0;
 }
