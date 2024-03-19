@@ -36,7 +36,7 @@ T middleware(Args&&... args) {
     g++ object_reference.cpp -o app && time ./app && rm app
 */
 int main() {
-    Krishna krish = middleware<Krishna>(5.9f, 69.0f, "Brown");
+    const Krishna krish = middleware<Krishna>(5.9f, 69.0f, "Brown");
     middleware<Krishna>(std::move(krish));
     middleware<Krishna>(std::ref(krish));
     middleware<Krishna>(krish);
