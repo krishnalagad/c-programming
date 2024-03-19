@@ -17,6 +17,8 @@ class Krishna {
         }
         Krishna(const Krishna& krish) { std::cout << "Copy constructor!!\n"; }
         Krishna(Krishna&& krish) { std::cout << "Move construtor!!\n"; }
+        Krishna& operator=(const Krishna& krish) { std::cout << "Copy assignment!!\n"; return *this; }
+        Krishna& operator=(Krishna&& krish) { std::cout << "Copy assignment!!\n"; return *this; }
         ~Krishna() = default;
 
         friend std::ostream &operator<<(std::ostream &os, const Krishna &rhs) {
@@ -36,9 +38,10 @@ T middleware(Args&&... args) {
     g++ object_reference.cpp -o app && time ./app && rm app
 */
 int main() {
-    const Krishna krish = middleware<Krishna>(5.9f, 69.0f, "Brown");
+    Krishna krish = middleware<Krishna>(5.9f, 69.0f, "Brown");
     middleware<Krishna>(std::move(krish));
     middleware<Krishna>(std::ref(krish));
     middleware<Krishna>(krish);
+
     return 0;
 }
