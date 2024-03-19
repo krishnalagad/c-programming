@@ -1,6 +1,10 @@
 #include <iostream>
 #include <thread>
 
+unsigned int getNumber(int param) {
+    return param;
+}
+
 void pattern() {
     for (long i = 1; i <= 100; i++) {
         if (i % 2 == 0) 
@@ -32,6 +36,8 @@ int main(int argc, char const *argv[]) {
     std::thread t1(pattern);
     if (t1.joinable())
         t1.join();
+
+    std::cout << getNumber(-230) << std::endl;
 
     return 0;
 }
