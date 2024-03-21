@@ -1,0 +1,3 @@
+/home/kpit/Desktop/C-Training-KPIT/c-programming/CLionProjects/build/CMakeFiles/rebuild_cache.dir
+/home/kpit/Desktop/C-Training-KPIT/c-programming/CLionProjects/build/CMakeFiles/edit_cache.dir
+/home/kpit/Desktop/C-Training-KPIT/c-programming/CLionProjects/build/CMakeFiles/CLionProjects.dir
