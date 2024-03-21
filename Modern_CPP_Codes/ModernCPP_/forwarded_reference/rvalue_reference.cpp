@@ -10,12 +10,11 @@ void destination(std::string& str) {
 void destination(std::string&& str) {
     std::cout << "In rvalue ref fun!! : " << str << std::endl;
 }
-
 /*
     g++ rvalue_reference.cpp -o app && time ./app && rm app
 */
 int main() {
-    const std::string str = "Krishna";
+    std::string str = "Krishna";
     destination(str);
     destination(std::move(str));
     destination(std::ref(str));
