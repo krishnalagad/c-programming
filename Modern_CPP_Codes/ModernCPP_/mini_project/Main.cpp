@@ -4,6 +4,9 @@
 #include <iostream>
 #include "Request.hpp"
 
+/*
+    g++ Main.cpp Request.cpp Response.cpp -lcurl -o app && time ./app && rm app
+*/
 int main() {
     std::string url = "https://min-api.cryptocompare.com/data/price?fsym=BTC&tsyms=USD,JPY,EUR,INR";
 
