@@ -9,6 +9,7 @@ int main() {
     Container data;
     createObjects(data);
     display(data);
+    getNonNullDebitCardPointers(data);
     
     return 0;
 }

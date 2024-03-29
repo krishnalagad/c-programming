@@ -113,9 +113,10 @@ std::optional<CardContainer> getNonNullDebitCardPointers(const Container &data) 
         throw std::runtime_error("Empty container!!");
     
     CardContainer result(data.size());
-    Container temp(data.size());
+    // Container temp(data.size());
+    Container temp;
 
-    std::copy_if(data.begin(), data.end(), temp.begin(), [](const BankPointer& ptr){
+    std::copy_if(data.begin(), data.end(), std::back_inserter(temp), [](const BankPointer& ptr){
         return ptr->acccountDebitCard() != nullptr;
     });
 
