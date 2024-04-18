@@ -1,0 +1,9 @@
+Training 11st day logs:
+
+sudo apt update --fix-missing
+sudo apt install  gcc  g++
+sudo snap install code --classic
+
+change c++ compiler
+1. nano ~/.bashrc 
+2. alias g++='-std=c++17'
