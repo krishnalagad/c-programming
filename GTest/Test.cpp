@@ -9,7 +9,8 @@ TEST(TestSuite1, NegativeNumbers) {
     EXPECT_EQ(-3, add(-1, -2));
 }
 TEST(TestSuite1, PositiveAndNegativeNumbers) {
-    EXPECT_EQ(0, add(-1, 1));
+    // EXPECT_EQ(0, add(-1, 1));
+    ASSERT_TRUE(0 == add(-1, 1));
 }
 
 // Test case for the subtract function
