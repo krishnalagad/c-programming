@@ -1,3 +1,0 @@
-/home/kpit/Desktop/C-Training-KPIT/c-programming/CMake/LibraryDemo/cpp-test/build/CMakeFiles/rebuild_cache.dir
-/home/kpit/Desktop/C-Training-KPIT/c-programming/CMake/LibraryDemo/cpp-test/build/CMakeFiles/edit_cache.dir
-/home/kpit/Desktop/C-Training-KPIT/c-programming/CMake/LibraryDemo/cpp-test/build/CMakeFiles/testmath.dir

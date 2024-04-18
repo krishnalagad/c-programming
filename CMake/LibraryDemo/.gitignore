@@ -1,2 +1,3 @@
-./cpp-test/build/
-./cpp/build/
+./cpp-test/build/**
+./cpp/build/** 
+.vscode/** 
