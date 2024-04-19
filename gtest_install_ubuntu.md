@@ -1,7 +1,8 @@
 # Google Test Installation on Ubuntu
 
-The following steps are used to install Google Test (gtest) on an Ubuntu system. These commands download the library, build it from source, and set up the environment for using Google Test.
+The following steps are used to install Google Test (gtest) and GMock on an Ubuntu system. These commands download the library, build it from source, and set up the environment for using Google Test.
 
+Install GTest
 ```bash
 sudo apt-get install -y libgtest-dev cmake
 mkdir -p $HOME/build
