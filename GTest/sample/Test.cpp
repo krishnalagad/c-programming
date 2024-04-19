@@ -7,6 +7,7 @@ TEST(TestSuite1, PositiveNumbers) {
     ASSERT_EQ(3, add(1, 2));
 }
 TEST(TestSuite1, NegativeNumbers) {
+    // ASSERT_EQ(-2, add(-1, -2));
     ASSERT_EQ(-3, add(-1, -2));
     std::cout << "Negative number test !!\n";
 }
