@@ -14,4 +14,38 @@ sudo rm -rf build
 sudo mkdir /usr/local/lib/googletest
 sudo ln -s /usr/lib/libgtest.a /usr/local/lib/googletest/libgtest.a
 sudo ln -s /usr/lib/libgtest_main.a /usr/local/lib/googletest/libgtest_main.a
+```
 
+Install GMock
+```bash
+# Assuming you are starting in your home directory
+mkdir -p $HOME/build
+cd $HOME/build
+
+# Configure CMake to build both gtest and gmock
+sudo cmake /usr/src/googletest/ # This path assumes that Google Test is still located here
+
+# Build (this builds both Google Test and Google Mock)
+sudo make
+
+# Copy the Google Mock libraries to /usr/lib (or another directory in your library path)
+sudo cp lib/libgmock* /usr/lib/
+
+# Create links in your local library directory for easier use with linking in projects
+sudo ln -s /usr/lib/libgmock.a /usr/local/lib/googletest/libgmock.a
+sudo ln -s /usr/lib/libgmock_main.a /usr/local/lib/googletest/libgmock_main.a
+
+cd ..
+sudo rm -rf build
+
+```
+
+Install libraries globally now
+```bash
+cd /usr/src/googletest
+mkdir build
+cd build
+cmake ..
+make
+sudo make install
+```
