@@ -19,7 +19,8 @@ class Stack {
         int size() { return stack.size(); }
 };
 
-struct StackTest: public testing::Test {
+class StackTest: public testing::Test {
+    public:
     Stack s1;
     void SetUp() override {
         int arr[] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
@@ -36,10 +37,11 @@ TEST_F(StackTest, LastPopTest) {
 }
 
 TEST_F(StackTest, StackSizeTest) {
-    int size = s1.size();
-    for (size; size >= 0; size--) {
-        EXPECT_EQ(s1.pop(), -1);
+    int expected = 9;
+    while (s1.size() > 0) {
+        EXPECT_EQ(s1.pop(), expected--); 
     }
+    EXPECT_EQ(s1.pop(), -1); 
 }
 
 /*
