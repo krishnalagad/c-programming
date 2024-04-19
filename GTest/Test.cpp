@@ -1,12 +1,14 @@
 #include <gtest/gtest.h>
+#include <iostream>
 #include "Math.hpp"
 
 // Test case for the add function
 TEST(TestSuite1, PositiveNumbers) {
-    EXPECT_EQ(3, add(1, 2));
+    ASSERT_EQ(3, add(1, 2));
 }
 TEST(TestSuite1, NegativeNumbers) {
-    EXPECT_EQ(-3, add(-1, -2));
+    ASSERT_EQ(-3, add(-1, -2));
+    std::cout << "Negative number test !!\n";
 }
 TEST(TestSuite1, PositiveAndNegativeNumbers) {
     // EXPECT_EQ(0, add(-1, 1));
