@@ -15,6 +15,14 @@ class DatabaseConnect {
         virtual int fetchRecord() { return -1; }
 };
 
+class MockDB: public DatabaseConnect {
+    public:
+        MOCK_METHOD0(fetchRecord, int());
+        MOCK_METHOD1(logout, bool(std::string username));
+        MOCK_METHOD2(login, bool(std::string username, std::string password));
+
+};
+
 using DatabaseRef = std::reference_wrapper<DatabaseConnect>;
 class MyDatabase {
     DatabaseRef dbC;
@@ -29,8 +37,23 @@ class MyDatabase {
         }
 };
 
+TEST(DB_Test, LoginTest) {
+    // Arrange
+    MockDB mdb;
+    MyDatabase db(mdb);
+    EXPECT_CALL(mdb, login("krishna", "lagad"))
+        .Times(1)
+        .WillOnce(Return(true));
+
+    // Act
+    int response = db.Init("krishna", "lagad");
+
+    // Asssert
+    EXPECT_EQ(response, 1);
+}
+
 /*
-    g++ Mock.cpp -o test_exec -lgtest -lgtest_main -pthread && time ./test_exec && rm test_exec
+    g++ Mock.cpp -o test_exec -lgtest -lgtest_main -pthread -lgmock -lgmock_main && time ./test_exec && rm test_exec
 */
 int main(int argc, char *argv[]) {
     testing::InitGoogleTest(&argc, argv);
