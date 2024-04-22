@@ -30,7 +30,10 @@ class MyDatabase {
         MyDatabase(DatabaseRef _dbC): dbC(_dbC) {}
         int Init(std::string username, std::string password) {
             if (dbC.get().login(username, password) !=true) {
-                std::cout << "DB FAILURE!!" << std::endl; return -1;
+                // std::cout << "DB FAILURE!!" << std::endl; return -1;
+                if (dbC.get().login(username, password) != true) {
+                    std::cout << "DB FAILURE 2nd TIME!!" << std::endl; return -1;
+                }
             } else {
                 std::cout << "DB SUCCESS!!" << std::endl; return 1;
             }
@@ -41,15 +44,30 @@ TEST(DB_Test, LoginTest) {
     // Arrange
     MockDB mdb;
     MyDatabase db(mdb);
-    EXPECT_CALL(mdb, login("krishna", "lagad"))
-        .Times(1)
-        .WillOnce(Return(true));
+    EXPECT_CALL(mdb, login(_, _))
+        .Times(AtLeast(1))
+        .WillRepeatedly(Return(true));
 
     // Act
     int response = db.Init("krishna", "lagad");
 
     // Asssert
     EXPECT_EQ(response, 1);
+}
+
+TEST(DB_Test, LoginFailure) {
+    // Arrange
+    MockDB mdb;
+    MyDatabase db(mdb);
+    EXPECT_CALL(mdb, login(_, _))
+        .Times(AtLeast(2))
+        .WillRepeatedly(Return(false));
+
+    // Act
+    int response = db.Init("krishna", "lagad");
+
+    // Assert
+    EXPECT_EQ(response, -1);
 }
 
 /*
