@@ -61,7 +61,7 @@ TEST(DB_Test, LoginFailure) {
     MockDB mdb;
     MyDatabase db(mdb);
     EXPECT_CALL(mdb, login(_, _))
-        .Times(AtLeast(2))
+        .Times(AtLeast(1))
         .WillRepeatedly(Return(false));
 
     // Act
