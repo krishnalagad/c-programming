@@ -44,9 +44,9 @@ sudo rm -rf build
 Install libraries globally now
 ```bash
 cd /usr/src/googletest
-mkdir build
+sudo mkdir build
 cd build
-cmake ..
-make
+sudo cmake ..
+sudo make
 sudo make install
 ```
