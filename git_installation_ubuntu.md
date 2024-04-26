@@ -17,3 +17,8 @@ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 eval "$(ssh-agent -s)"  # after this command add public key in your GitHub profile
 
 ```
+
+# Clone remote Git repository using SSH
+```bash
+git clone <your_git_ssh_url>
+```
