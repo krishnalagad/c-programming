@@ -21,13 +21,13 @@ class Stack {
 
 class StackTest: public testing::Test {
     public:
-    Stack s1;
-    void SetUp() override {
-        int arr[] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
-        for (int num: arr)
-            s1.push(num);
-    }
-    void TearDown() override {}
+        Stack s1;
+        void SetUp() override {
+            int arr[] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+            for (int num: arr)
+                s1.push(num);
+        }
+        void TearDown() override {}
 };
 
 TEST_F(StackTest, LastPopTest) {
