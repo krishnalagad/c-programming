@@ -1,17 +1,9 @@
 #include <gtest/gtest.h>
-#include <gmock/gmock.h>
 #include <stdexcept>
-#include <tuple>
 #include <iostream>
-#include "LibraryCode.hpp"
+#include "ValidatorFixture.hpp"
 
-using Tuple = std::tuple<int, bool>;
-class ValidatorFixture: public testing::TestWithParam<Tuple> {
-    protected:
-        Validator validator {5,10};
-        void SetUp() override {}
-        void TearDown() override {}
-};
+
 
 TEST_P(ValidatorFixture, TestInRange) {
     // Arrange
