@@ -1,9 +1,7 @@
 #include <gtest/gtest.h>
 #include <stdexcept>
 #include <iostream>
-#include "ValidatorFixture.hpp"
-
-
+#include "Fixture.hpp"
 
 TEST_P(ValidatorFixture, TestInRange) {
     // Arrange
@@ -28,6 +26,19 @@ INSTANTIATE_TEST_CASE_P(InRangeValues, ValidatorFixture, testing::Values(
     std::make_tuple(100, false),
     std::make_tuple(-234, false)
 ));
+
+TEST_P(NumbersFixture, StringLengthTest) {
+    // Arrange
+    std::string inp = GetParam();
+
+    // Act
+    bool result = inp.length() > 3;
+
+    // Assert
+    ASSERT_TRUE(result);
+}
+
+INSTANTIATE_TEST_CASE_P(StringLength, NumbersFixture, testing::Values("Krishna", "Dilip", "Lagad", "is", "my", "name"));
 
 /*
     g++ TestRunner.cpp LibraryCode.cpp -o test_exec -lgtest -lgtest_main -lgmock -lgmock_main -pthread &&
