@@ -4,7 +4,6 @@
 #include <gmock/gmock.h>
 #include <functional>
 #include <tuple>
-#include <vector>
 
 #include "LibraryCode.hpp"
 
