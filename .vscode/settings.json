@@ -1,7 +1,0 @@
-{
-    "C_Cpp.errorSquiggles": "disabled",
-    "files.associations": {
-        "stdio.h": "c"
-    },
-    "cmake.sourceDirectory": "/home/kpit/Desktop/C-Training-KPIT/c-programming/CMake/simplecmake"
-}

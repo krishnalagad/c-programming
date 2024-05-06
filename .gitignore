@@ -1,2 +1,4 @@
-
+GTest/.vscode/**
 Modern_CPP/STL/T25_stl_queue
+.vscode/**
+**/.vscode/**
