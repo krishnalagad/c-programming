@@ -52,6 +52,7 @@
         "condition_variable": "cpp",
         "mutex": "cpp",
         "variant": "cpp",
-        "future": "cpp"
+        "future": "cpp",
+        "cinttypes": "cpp"
     }
 }
