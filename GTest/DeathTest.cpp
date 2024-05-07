@@ -11,7 +11,7 @@ TEST(DeathTest, Check1) {
 
 /*
     g++ DeathTest.cpp -o test_exec -lgtest -lgmock -pthread &&
-    time ./test_exec &&
+    time ./test_exec --test_filter=DeathTest.Check1 &&
     rm test_exec
 */
 int main(int argc, char *argv[]) {
